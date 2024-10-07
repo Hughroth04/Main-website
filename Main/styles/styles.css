@@ -1,0 +1,30 @@
+.p13 {
+    font-size: 24px;
+}
+
+.img-container {
+    display: flex;
+  }
+  .img-container img {
+    width: 20%;
+    padding: 5px;
+  }
+  body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.img-container img {
+    width: 266px;
+    height: 177px;
+    object-fit: cover;
+}
