@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: #FFFFFF; /* Set a default background color to white */
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.75);
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .nav a {
+            color: #4682B4;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 60px 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            opacity: 1; /* Ensure sections are visible */
+            transition: opacity 0.5s ease-in-out;
+            background-color: #B2E0F0; /* Slightly lighter blue background for sections */
+            text-align: center; /* Center text in each section */
+        }
+
+        /* Profile Photo Style */
+        .profile-photo {
+            width: 200px; /* Doubled width for the photo */
+            height: 200px; /* Doubled height for the photo */
+            border-radius: 50%; /* Make it circular */
+            object-fit: cover; /* Ensure the image covers the area */
+            margin-bottom: 20px; /* Space between photo and text */
+        }
+
+        /* About Me Box */
+        .about-me-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Same color as project boxes */
+            border-radius: 10px; /* Rounded corners */
+            padding: 40px; /* Increased padding for the box */
+            margin: 20px auto; /* Center the box */
+            max-width: 800px; /* Increased maximum width for the box */
+            text-align: center; /* Center text in the box */
+            font-size: 1.5em; /* Increased font size */
+        }
+
+        .about-me-box h2 {
+            margin: 0 0 10px; /* Margin for the header */
+            font-size: 2em; /* Increased font size for the header */
+        }
+
+        /* More Info Button */
+        .more-info-btn {
+            position: fixed;
+            top: 100px; /* Lowered by about the height of the button */
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%; /* Circular button */
+            background-color: #4682B4; /* Blue color */
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure it is above other content */
+            transition: background-color 0.3s;
+        }
+
+        .more-info-btn:hover {
+            background-color: #36648B; /* Darker blue on hover */
+        }
+
+        /* More Info Section */
+        .more-info-section {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1000; /* Ensure it covers the home page */
+            overflow-y: auto; /* Allow scrolling if content is too large */
+        }
+
+        .close-info-btn {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        /* Portfolio Section (now containing Projects) */
+        #portfolio {
+            padding: 60px 20px;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-direction: column; /* Stack project items vertically */
+            gap: 20px; /* Space between project items */
+        }
+
+        .project-item {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for project items */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .project-item h2 {
+            margin: 0 0 10px; /* Margin for project title */
+        }
+
+        .project-item a {
+            color: #4682B4; /* Link color */
+            text-decoration: underline; /* Underline for links */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .project-item a:hover {
+            color: #36648B; /* Darker color on hover */
+        }
+
+        /* Contact Info Box */
+        .contact-info-box {
+            background-color: #F0EAD6; /* Eggshell white */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px;
+            display: inline-block; /* Center the box */
+            margin: 0 auto; /* Center the box */
+        }
+
+        .contact-info {
+            margin: 10px 0; /* Margin for contact info */
+        }
+
+        /* Writings Description */
+        .writing-description {
+            font-size: 14px; /* Smaller font size for descriptions */
+            color: #555; /* Darker gray for better readability */
+            margin-top: 5px; /* Space above the description */
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#about">About Me</a>
+        <a href="#writings">Writings</a>
+        <a href="#portfolio">My Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="section">
+        <div class="content">
+            <img src="img/headshot.jpg" alt="Profile Photo" class="profile-photo">
+            <div class="about-me-box">
+                <h2>About Me</h2>
+                <p>Hello! My name is Hugh Roth, I am 20 years old and I love Jesus and entrepreneurship. I have a passion for evangelism and a burden for the lost. Feel free to contact me about anything whether it be religion, business, or just to chat. Below you will find links to my writings, my portfolio, my social profiles, and my contact information.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="writings" class="section">
+        <div class="content">
+            <h1>Writings</h1>
+            <p>Here are some of my writings:</p>
+            <div>
+                <strong>Masculinity in Christianity (2023)</strong>
+                <p class="writing-description">A deep dive into the role of masculinity within the Christian faith and its implications.</p>
+                <strong>Legalistic or Scriptural? (2024)</strong>
+                <p class="writing-description">
+                    A dive into the qualifications of an overseer, in which we decipher and determine <br>
+                    whether divorce (after salvation) disqualifies one from ministry.
+                </p>
+                <strong>Writing 3(2023)</strong>
+                <p class="writing-description">
+                    An exploration of the key ideas presented in this piece.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <h1>My Projects</h1>
+        <div class="projects-container">
+            <div class="project-item">
+                <h2>Project Title 1</h2>
+                <p>Brief description of Project 1.</p>
+                <a href="https://vimeo.com/yourproject1" target="_blank">View on Vimeo</a>
+            </div>
+            <div class="project-item">
+                <h2>Project Title 2</h2>
+                <p>Brief description of Project 2.</p>
+                <a href="https://vimeo.com/yourproject2" target="_blank">View on Vimeo</a>
+            </div>
+            <div class="project-item">
+                <h2>Project Title 3</h2>
+                <p>Brief description of Project 3.</p>
+                <a href="https://vimeo.com/yourproject3" target="_blank">View on Vimeo</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="content contact-info-box" style="font-size: 1.5em; padding: 40px;"> <!-- Increased font size and padding -->
+            <h1 style="font-size: 2em;">Contact</h1> <!-- Increased header font size -->
+            <p class="contact-info">
+                Cell: <a href="tel:832-580-4096" class="contact-link">832-580-4096</a>
+            </p>
+            <p class="contact-info">
+                Email: <a href="mailto:huroth15@gmail.com" class="contact-link">huroth15@gmail.com</a>
+            </p>
+            <div class="social-icons" style="font-size: 1.5em;"> <!-- Increased icon size -->
+                <a href="https://www.instagram.com/yourusername" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/yourusername" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/yourchannelid" target="_blank" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <button id="more-info-btn" class="more-info-btn">More Info</button>
+    
+    <div id="more-info-section" class="more-info-section">
+        <button id="close-info-btn" class="close-info-btn">&times;</button>
+        <h2>More Information</h2>
+        <p>Your large body of text goes here. You can add as much text as you need, and it will be displayed in 12pt font size.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>More text can be added here as needed...</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const moreInfoBtn = document.getElementById('more-info-btn');
+            const moreInfoSection = document.getElementById('more-info-section');
+            const closeInfoBtn = document.getElementById('close-info-btn');
+
+            moreInfoBtn.addEventListener('click', function() {
+                if (moreInfoSection.style.display === 'block') {
+                    moreInfoSection.style.display = 'none'; // Hide the info section
+                } else {
+                    moreInfoSection.style.display = 'block'; // Show the info section
+                }
+            });
+
+            closeInfoBtn.addEventListener('click', function() {
+                moreInfoSection.style.display = 'none'; // Hide the info section
+            });
+        });
+    </script>
+</body>
+</html>
