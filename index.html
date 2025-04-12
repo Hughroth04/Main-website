@@ -47,7 +47,7 @@
             
             .nav a {
                 padding: 8px 15px;
-                min-width: 120px;
+                min-width: 100px; /* Reduced minimum width for more items */
                 font-size: 14px;
             }
         }
@@ -174,11 +174,11 @@
 
         /* Contact Info Box */
         .contact-info-box {
-            background-color: #F0EAD6; /* Eggshell white */
-            border-radius: 10px; /* Rounded corners */
+            background-color: rgba(240, 234, 214, 0.75); /* Eggshell white with 75% opacity */
+            border-radius: 10px;
             padding: 20px;
-            display: inline-block; /* Center the box */
-            margin: 0 auto; /* Center the box */
+            display: inline-block;
+            margin: 0 auto;
         }
 
         .contact-info {
@@ -248,6 +248,46 @@
                 width: 90%;
             }
         }
+
+        /* Update the newsletter section styles */
+        .newsletter-section {
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .newsletter-btn {
+            display: inline-block;
+            background-color: #4682B4;
+            color: white;
+            padding: 10px 20px; /* Smaller padding */
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+            font-size: 16px; /* Smaller font size */
+        }
+
+        .newsletter-btn:hover {
+            background-color: #36648B;
+        }
+
+        /* Update the contact section styles */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px; /* Space between boxes */
+            width: 100%;
+        }
+
+        /* Update the content-box style in the giving section */
+        #giving .content-box {
+            background-color: rgba(255, 255, 255, 0.5); /* Change opacity from 0.8 to 0.5 */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body>
@@ -256,6 +296,7 @@
         <a href="#evangelismcontent">Evangelism Content</a>
         <a href="#youtubecontent">Youtube Content</a>
         <a href="#contact">Contact</a>
+        <a href="#giving">Giving</a>
     </nav>
 
     <section id="about" class="section">
@@ -263,7 +304,7 @@
             <img src="img/headshot.jpg" alt="Profile Photo" class="profile-photo">
             <div class="about-me-box">
                 <h2>About Me</h2>
-                <p>Hello! My name is Hugh Roth, I am a second year seminary student, and evangelist sent out by Alvin MBC.
+                <p>My name is Hugh Roth, I am a second year seminary student, and evangelist sent out by Alvin MBC.
                       Below you will find links (under construction) to content of mine, as well as my contact info. Click "more info"
                        to learn more about me and my call to ministry. Feel free to reach out using my email or phone number.</p>
             </div>
@@ -273,7 +314,7 @@
     <section id="Evangelismcontent" class="section">
         <div class="content">
             <h1>Evangelism Content</h1>
-            <p>As I make my evangelism content public, it will be posted here.:</p>
+            <p>As I make my evangelism content public, it will be posted here:</p>
         </div>
     </section>
 
@@ -311,25 +352,52 @@
     </section>
 
     <section id="contact" class="section">
-        <div class="content contact-info-box" style="font-size: 1.5em; padding: 40px;"> <!-- Increased font size and padding -->
-            <h1 style="font-size: 2em;">Contact</h1> <!-- Increased header font size -->
-            <p class="contact-info">
-                Cell: <a href="tel:832-580-4096" class="contact-link">(832) 580-4096</a>
-            </p>
-            <p class="contact-info">
-                Email: <a href="bro.roth@hughroth.com" class="contact-link">bro.roth@hughroth.com</a>
-            </p>
-            <div class="social-icons" style="font-size: 1.5em;"> <!-- Increased icon size -->
-                <a href="https://www.instagram.com/hughtrothofficial" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
+        <div class="contact-container">
+            <div class="content contact-info-box" style="font-size: 1.5em; padding: 40px;">
+                <h1 style="font-size: 2em;">Contact</h1>
+                <div class="contact-info-box">
+                    <p class="contact-info">
+                        Cell: <a href="tel:832-580-4096" class="contact-link">(832) 580-4096</a>
+                    </p>
+                    <p class="contact-info">
+                        Email: <a href="bro.roth@hughroth.com" class="contact-link">bro.roth@hughroth.com</a>
+                    </p>
+                    <div class="social-icons" style="font-size: 1.5em;">
+                        <a href="https://www.instagram.com/hughtrothofficial" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/people/Hugh-Roth/pfbid02bdb7ArWmF9SHn1oqamhieKkfES7C2dS5sT
+                        9fbxdgM5sC7TB4RBUgiZUHRk1Vk3Bpl/" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/yourchannelid" target="_blank" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter-section contact-info-box">
+                <h2 style="font-size: 1.5em;">Monthly Newsletter</h2>
+                <p style="font-size: 1em;">Sign up for monthly ministry updates and evangelism content:</p>
+                <a href="https://your-newsletter-signup-link.com" target="_blank" class="newsletter-btn">
+                    Sign Up
                 </a>
-                <a href="https://www.facebook.com/people/Hugh-Roth/pfbid02bdb7ArWmF9SHn1oqamhieKkfES7C2dS5sT
-                9fbxdgM5sC7TB4RBUgiZUHRk1Vk3Bpl/" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.youtube.com/channel/yourchannelid" target="_blank" class="social-icon">
-                    <i class="fab fa-youtube"></i>
-                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="giving" class="section">
+        <div class="contact-container">
+            <div class="content contact-info-box" style="font-size: 1.5em; padding: 40px;">
+                <h1 style="font-size: 2em;">Giving</h1>
+                <div class="content-box">
+                    <p>If you feel led to give to our ministry, you can give through Alvin Missionary Baptist Church. 
+                    The link below will lead you directly to the OBP bucket on their giving page.</p>
+                    <a href="https://alvinmbc.com/give/obp" target="_blank" class="newsletter-btn" style="margin-top: 20px;">
+                        Give Now
+                    </a>
+                </div>
             </div>
         </div>
     </section>
