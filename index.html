@@ -71,22 +71,25 @@
         /* More Info Button */
         .more-info-btn {
             position: fixed;
-            top: 100px; /* Lowered by about the height of the button */
             right: 20px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%; /* Circular button */
-            background-color: #4682B4; /* Blue color */
+            width: 100px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: #4682B4;
             color: white;
             border: none;
             font-size: 16px;
             cursor: pointer;
-            z-index: 1001; /* Ensure it is above other content */
-            transition: background-color 0.3s;
+            z-index: 1001;
+            transition: all 0.3s ease-in-out;
         }
 
-        .more-info-btn:hover {
-            background-color: #36648B; /* Darker blue on hover */
+        #more-info-btn {
+            top: 100px;
+        }
+
+        #ministry-info-btn {
+            top: 160px;
         }
 
         /* More Info Section */
@@ -99,7 +102,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
             color: white;
-            padding: 20px;
+            padding: 60px 20px 100px; /* Added more padding at bottom for button */
             box-sizing: border-box;
             z-index: 1000; /* Ensure it covers the home page */
             overflow-y: auto; /* Allow scrolling if content is too large */
@@ -167,12 +170,49 @@
             color: #555; /* Darker gray for better readability */
             margin-top: 5px; /* Space above the description */
         }
+
+        /* Add new styles for the repositioned buttons */
+        .more-info-btn.repositioned {
+            position: fixed;
+            bottom: 20px !important;
+            right: 20px;
+            top: auto !important;
+            z-index: 1002;
+        }
+
+        /* Update the link styles */
+        .more-info-section a {
+            color: #CCCCCC; /* Light grey color */
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .more-info-section a:hover {
+            color: #FFFFFF; /* White on hover */
+        }
+
+        /* Add these styles to your existing style section */
+        .more-info-section .content-box {
+            background-color: rgba(178, 224, 240, 0.75); /* Light blue with 75% opacity */
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            font-size: 18px;
+            color: #333333; /* Dark grey text color */
+        }
+
+        .more-info-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
     </style>
 </head>
 <body>
     <nav class="nav">
         <a href="#about">About Me</a>
-        <a href="#writings">Writings</a>
+        <a href="#evangelismcontent">Evangelism Content</a>
         <a href="#youtubecontent">Youtube Content</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -189,23 +229,10 @@
         </div>
     </section>
 
-    <section id="writings" class="section">
+    <section id="Evangelismcontent" class="section">
         <div class="content">
-            <h1>Writings</h1>
-            <p>These witings are currently in progress. Writings will be uploaded here as I finish them:</p>
-            <div>
-                <strong>Masculinity in Christianity</strong>
-                <p class="writing-description">A deep dive into the role of masculinity within the Christian faith and its implications.</p>
-                <strong>Legalistic or Scriptural?</strong>
-                <p class="writing-description">
-                    A dive into the qualifications of an overseer, in which we decipher and determine <br>
-                    whether divorce (after salvation) disqualifies one from ministry.
-                </p>
-                <strong>Becoming a nobody</strong>
-                <p class="writing-description">
-                    How to better allow the Holy Spirit to lead you in daily evangelism. 
-                    A 2 part series</p>
-            </div>
+            <h1>Evangelism Content</h1>
+            <p>As I make my evangelism content public, it will be posted here.:</p>
         </div>
     </section>
 
@@ -261,62 +288,91 @@
         </div>
     </section>
 
-    <button id="more-info-btn" class="more-info-btn">More Info</button>
+    <button id="more-info-btn" class="more-info-btn">My Testimony</button>
+    <button id="ministry-info-btn" class="more-info-btn">My Ministry</button>
     
     <div id="more-info-section" class="more-info-section">
         <button id="close-info-btn" class="close-info-btn">&times;</button>
-        <h2>Why The Website?</h2>
-        <p>Honestly, the only reason I have this website is because I wanted to learn HTML, so this is me doing that. I am hoping to utilize it for
-            ministry purposes, specifically evangelism resources as I continue to learn how to teach evangelism. I would also like to use this page 
-            as an opportunity for anybody in associated ministry to get to know me briefly through reading about my calling.</p>
-         <h2>My Ministry</h2>
-        <p>I surrendered to ministry in 2022 after turning 18, in doing this I really did not know what exactly 
-            that entailed. I knew God was calling me to serve Him in a unique capacity and up until recently I had 
-            zero idea what God was calling me to. Before explaining my calling, I would like to note that I am beyond 
-            thankful to be called by the creator of the universe to serve in ministry. There is no higher honor. 
-            I am a broken sinner in need of Jesus, and am not putting this content on my website to gain publicity,
-            but instead to give a personal insight to anyone who is interested. As a young preacher, it is important 
-            to me that people know my heart before deciding to endorse me in any way. Now, let's shift gears. 
-            God has called me to serve as an evangelist, and my burden is for the 70% of Christians who have never
-             shared the Gospel with a stranger. I cannot say what I will be doing 20 years from now, however in this 
-             season of my life, God has called me to pour into others and help equip them to share Jesus daily.
-             I have a lot in mind as far as how I would like to do this in the future, but at the moment I am an evangelist 
-             sent out by Alvin Missionary Baptist Church in Alvin, TX. I host small evangelism outreaches, and am currently 
-             the director of the Outreach Bible Project for the state of Texas. I am the social media coordinator for the OBP 
-             but have also been blessed with opportunities to help cultivate the training, and systems that encourage growth
-              of our attendees in their daily walk beyond the outreach events. 
-              I am beyond thankful to be a part of the Outreach Bible Project, and it has been a huge part of my development 
-              as an evangelist.
-        </p>
-        <h2>My career</h2>
-        <p>If you are reading this, you may be my grandma, a fellow church member, maybe you are a co worker, or someone looking to
-             do business. If I could do ministry full time, I would. But that is not realistic at the moment. I am a student, and will
-             get married soon. I am marketing coordinator for Green Country Pest Control, I do social media marketing, email marketing, 
-             videography, photography, graphic design, inside sales, and a little bit of outside sales. I do this part time and this job
-             has helped me grow in many ways that benefit my ministry goals. I am thankful to say that my employer is very patient 
-             and allows me to go on quite a bit of trips for ministry with no consequences. Long term, I would love to be all in on 
-             ministry as far as time allocation goes, however I am aware that I will be working in this field for a while longer
-             until God leads me to a place of full time ministry. I am looking forward to the future God has for me, but for now 
-             am going to strive to be a good steward of the job situation God has blessed me with.
+        <h2>My Testimony</h2>
+        <div class="content-box">
+            <p>I am 20 years old. I did not grow up in a Christian home, but did grow up around church. My mom 
+                did teach my siblings and I to pray, but it was not until middle school that we got involved in 
+                church. I came to accept Christ as my Lord and Savior when I was about 13, and was baptized with 
+                my brother, mom, and step dad at age 14. I was devoted to Jesus, but as highschool went on, I 
+                grew into the habit of leaning on my own understanding and putting Jesus second. Despite my selfishness, 
+                Our Lord in His abounding grace was a comfort to me in the latter half of highschool as life began to 
+                hit hard. This led me back on the right path, and the summer after I graduated Highschool God called 
+                me to ministry, and I surrendered my life to ministry a few months after recieving the call at age 18. 
+                I enrolled in Seminary at Texas Baptist Institute in August 2022, and have remained a student there since.
+             </p>
+        </div>
+    </div>
+
+    <div id="ministry-info-section" class="more-info-section">
+        <button id="close-ministry-btn" class="close-info-btn">&times;</button>
+        <h2>My ministry</h2>
+        <div class="content-box">
+            <p>As you read in my testimony, I am a student at Texas Baptist Institute, and I am pursuing an education 
+            that has and will continue to equip me for Kingdom work. As of 04/09/2025, I am an evangelist sent out by 
+            Alvin Missionary Baptist Church in Alvin, Texas. I have been sent out for the purpose of sharing the Gospel,
+            creating training materials and curriculum, and hosting evangelism outreaches. God has called me to work 
+            with the Outreach Bible Project as director for the state of Texas. I am also the social media coordinator 
+            for the OBP. Within my role, I am blessed with the opportunity to present the Project to churches throughout 
+            the state of Texas, and raise support for both the project as a whole and the role that God has called me 
+            to have within it.
+            If you feel led to support my ministry, you can sign up for my newsletter in the <a href=#contact>Contact</a> section, or give 
+            at <a href="https://alvinmbc.com/give/obp">alvinmbc.com/give/obp</a>.
+            </p>
+        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const moreInfoBtn = document.getElementById('more-info-btn');
+            const ministryInfoBtn = document.getElementById('ministry-info-btn');
             const moreInfoSection = document.getElementById('more-info-section');
+            const ministryInfoSection = document.getElementById('ministry-info-section');
             const closeInfoBtn = document.getElementById('close-info-btn');
+            const closeMinistryBtn = document.getElementById('close-ministry-btn');
+
+            function showSection(sectionToShow, buttonToHide, buttonToReposition) {
+                // Hide all sections except the one to show
+                moreInfoSection.style.display = 'none';
+                ministryInfoSection.style.display = 'none';
+                sectionToShow.style.display = 'block';
+
+                // Hide the clicked button
+                buttonToHide.style.display = 'none';
+
+                // Show and reposition the other button
+                buttonToReposition.style.display = 'block';
+                buttonToReposition.classList.add('repositioned');
+            }
+
+            function resetButtons() {
+                // Show both buttons
+                moreInfoBtn.style.display = 'block';
+                ministryInfoBtn.style.display = 'block';
+
+                // Remove repositioned class from both buttons
+                moreInfoBtn.classList.remove('repositioned');
+                ministryInfoBtn.classList.remove('repositioned');
+
+                // Hide both sections
+                moreInfoSection.style.display = 'none';
+                ministryInfoSection.style.display = 'none';
+            }
 
             moreInfoBtn.addEventListener('click', function() {
-                if (moreInfoSection.style.display === 'block') {
-                    moreInfoSection.style.display = 'none'; // Hide the info section
-                } else {
-                    moreInfoSection.style.display = 'block'; // Show the info section
-                }
+                showSection(moreInfoSection, moreInfoBtn, ministryInfoBtn);
             });
 
-            closeInfoBtn.addEventListener('click', function() {
-                moreInfoSection.style.display = 'none'; // Hide the info section
+            ministryInfoBtn.addEventListener('click', function() {
+                showSection(ministryInfoSection, ministryInfoBtn, moreInfoBtn);
             });
+
+            closeInfoBtn.addEventListener('click', resetButtons);
+            closeMinistryBtn.addEventListener('click', resetButtons);
         });
     </script>
 </body>
