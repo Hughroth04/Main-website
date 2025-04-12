@@ -288,10 +288,67 @@
             border-radius: 10px;
             margin: 20px auto;
         }
+
+        /* Add these styles */
+        .hamburger {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background: #4682B4;
+            transition: 0.3s;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                height: 100vh;
+                width: 250px;
+                background-color: rgba(255, 255, 255, 0.95);
+                flex-direction: column;
+                padding-top: 60px;
+                transition: 0.3s;
+            }
+
+            .nav.active {
+                left: 0;
+            }
+
+            .nav a {
+                padding: 15px;
+                margin: 5px 20px;
+                min-width: auto;
+                max-width: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="nav">
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="nav" id="nav">
         <a href="#about">About Me</a>
         <a href="#evangelismcontent">Evangelism Content</a>
         <a href="#youtubecontent">Youtube Content</a>
@@ -502,6 +559,24 @@
                     closeInfoAndScrollTo('contact');
                 });
             }
+        });
+
+        // Add hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            // Optional: animate hamburger to X
+            this.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
         });
     </script>
 </body>
