@@ -357,6 +357,46 @@
                 flex: 0 0 auto;
             }
         }
+
+        /* Add these to your existing styles */
+        #mc_embed_signup {
+            background: transparent !important;
+            clear: left;
+            font: 14px Helvetica,Arial,sans-serif;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #mc_embed_signup .button {
+            background-color: #4682B4 !important;
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: 5px !important;
+            margin-top: 10px !important;
+            transition: background-color 0.3s !important;
+            font-size: 16px !important;
+        }
+
+        #mc_embed_signup .button:hover {
+            background-color: #36648B !important;
+        }
+
+        #mc_embed_signup input.email {
+            width: 100% !important;
+            padding: 10px !important;
+            margin-bottom: 10px !important;
+            border-radius: 5px !important;
+        }
+
+        #mc_embed_signup label {
+            color: #333 !important;
+            margin-bottom: 5px !important;
+            display: block !important;
+        }
+
+        /* Add Mailchimp CSS */
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     </style>
 </head>
 <body>
@@ -455,10 +495,26 @@
 
             <div class="newsletter-section contact-info-box">
                 <h2 style="font-size: 1.5em;">Monthly Newsletter</h2>
-                <p style="font-size: 1em;">Sign up for monthly ministry updates and evangelism content:</p>
-                <a href="https://your-newsletter-signup-link.com" target="_blank" class="newsletter-btn">
-                    Sign Up
-                </a>
+                <div id="mc_embed_signup">
+                    <form action="https://hughroth.us14.list-manage.com/subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;f_id=00f5b3e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                        <div id="mc_embed_signup_scroll">
+                            <div class="mc-field-group">
+                                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                            </div>
+                            <div id="mce-responses" class="clear foot">
+                                <div class="response" id="mce-error-response" style="display: none;"></div>
+                                <div class="response" id="mce-success-response" style="display: none;"></div>
+                            </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" name="b_0d195388e607dce3844ecf1b8_b76b6737b6" tabindex="-1" value="">
+                            </div>
+                            <div class="clear foot">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -597,6 +653,30 @@
                 hamburger.classList.remove('active');
             });
         });
+    </script>
+
+    <!-- Add Mailchimp JavaScript at the end of your body tag -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0]='EMAIL';
+            ftypes[0]='email';
+            fnames[1]='FNAME';
+            ftypes[1]='text';
+            fnames[2]='LNAME';
+            ftypes[2]='text';
+            fnames[3]='ADDRESS';
+            ftypes[3]='address';
+            fnames[4]='PHONE';
+            ftypes[4]='phone';
+            fnames[5]='BIRTHDAY';
+            ftypes[5]='birthday';
+            fnames[6]='COMPANY';
+            ftypes[6]='text';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
     </script>
 </body>
 </html>
