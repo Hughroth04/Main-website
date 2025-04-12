@@ -228,6 +228,26 @@
             margin-bottom: 30px;
             font-size: 2em;
         }
+
+        /* Add these styles to your existing style section */
+        .video-container {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            max-width: 560px;
+        }
+
+        /* Update mobile styles */
+        @media screen and (max-width: 768px) {
+            .video-container {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -263,7 +283,9 @@
             <div class="project-item" style="text-align: center;background-color: rgba(255, 255, 255, 0.6); padding: 20px; border-radius: 5px;">
                 <h2>Turkana Missions (3 minute)</h2>
                 <p>3 minute deputation video for missionary Eddie Williams.</p>
-                <iframe width="21.5%" height="150" src="https://www.youtube.com/embed/YaqhYe9a_58" frameborder="0" allowfullscreen></iframe>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YaqhYe9a_58" frameborder="0" allowfullscreen></iframe>
+                </div>
                 <br>
                 <a href="https://youtu.be/YaqhYe9a_58?si=RiDebMuP0GqXZR61" target="_blank">View on YouTube</a>
             </div>
@@ -271,18 +293,21 @@
         <div class="project-item" style="text-align: center;background-color: rgba(255, 255, 255, 0.6); padding: 20px; border-radius: 5px;"> 
             <h2>Turkana Missions 20th Anniversary</h2>
             <p>20 year anniversary of mission work among Turkana Kenya.</p>
-            <iframe width="21.5%" height="150" src="https://www.youtube.com/embed/yourproject2" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/yourproject2" frameborder="0" allowfullscreen></iframe>
+            </div>
             <br>
             <a href="https://vimeo.com/yourproject2" target="_blank">View on YouTube</a>
         </div>
-            <div class="project-item" style="text-align: center;background-color: rgba(255, 255, 255, 0.6); padding: 20px; border-radius: 5px;">
-                <h2>Your Only Hope</h2>
-                <p>A recent sermon God blessed me with the opportunity to preach.</p>
-                <iframe width="21.5%" height="150" src="https://www.youtube.com/embed/3_26OWfiPWk" frameborder="0" allowfullscreen></iframe>
-                <br>
-                <a href="https://youtu.be/3_26OWfiPWk?si=SeTUGz2GKmlpB1u1" target="_blank">View on YouTube</a>
+        <div class="project-item" style="text-align: center;background-color: rgba(255, 255, 255, 0.6); padding: 20px; border-radius: 5px;">
+            <h2>Your Only Hope</h2>
+            <p>A recent sermon God blessed me with the opportunity to preach.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/3_26OWfiPWk" frameborder="0" allowfullscreen></iframe>
             </div>
-        
+            <br>
+            <a href="https://youtu.be/3_26OWfiPWk?si=SeTUGz2GKmlpB1u1" target="_blank">View on YouTube</a>
+        </div>
     </section>
 
     <section id="contact" class="section">
