@@ -22,13 +22,34 @@
             padding: 10px 0;
             text-align: center;
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .nav a {
             color: #4682B4;
             text-decoration: none;
             padding: 10px 20px;
-            margin: 0 5px;
+            margin: 5px;
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* Add media query for mobile devices */
+        @media screen and (max-width: 768px) {
+            .nav {
+                padding: 5px 0;
+            }
+            
+            .nav a {
+                padding: 8px 15px;
+                min-width: 120px;
+                font-size: 14px;
+            }
         }
 
         .section {
@@ -320,9 +341,8 @@
             for the OBP. Within my role, I am blessed with the opportunity to present the Project to churches throughout 
             the state of Texas, and raise support for both the project as a whole and the role that God has called me 
             to have within it.
-            If you feel led to support my ministry, you can sign up for my newsletter in the <a href=#contact>Contact</a> section, or give 
-            at <a href="https://alvinmbc.com/give/obp">alvinmbc.com/give/obp</a>.
-            </p>
+            If you feel led to support my ministry, you can sign up for my newsletter in the <a href="#contact">Contact</a> section, or give 
+            at <a href="https://alvinmbc.com/give/obp">alvinmbc.com/give/obp</a>.</p>
         </div>
     </div>
 
@@ -373,6 +393,22 @@
 
             closeInfoBtn.addEventListener('click', resetButtons);
             closeMinistryBtn.addEventListener('click', resetButtons);
+
+            // Add this new function
+            function closeInfoAndScrollTo(sectionId) {
+                resetButtons(); // Close info sections
+                const section = document.getElementById(sectionId);
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Add click handler for the contact link inside ministry info
+            const ministryContactLink = document.querySelector('#ministry-info-section a[href="#contact"]');
+            if (ministryContactLink) {
+                ministryContactLink.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    closeInfoAndScrollTo('contact');
+                });
+            }
         });
     </script>
 </body>
