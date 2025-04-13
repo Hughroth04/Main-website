@@ -264,29 +264,40 @@
             text-align: center;
             margin: 0 auto;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        .newsletter-section h2 {
-            margin-bottom: 20px;
+        #mc_embed_signup {
+            background: transparent !important;
+            clear: left;
+            font: 14px Helvetica,Arial,sans-serif;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
-        .newsletter-btn {
-            display: inline-block;
-            background-color: #4682B4;
-            color: white;
-            padding: 10px 20px; /* Smaller padding */
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-            font-size: 16px; /* Smaller font size */
+        #mc_embed_signup .mc-field-group {
+            margin-bottom: 15px;
         }
 
-        .newsletter-btn:hover {
-            background-color: #36648B;
+        #mc_embed_signup input.email {
+            width: 100% !important;
+            padding: 10px !important;
+            margin-bottom: 10px !important;
+            border-radius: 5px !important;
+        }
+
+        #mc_embed_signup .button {
+            background-color: #4682B4 !important;
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: 5px !important;
+            margin-top: 10px !important;
+            transition: background-color 0.3s !important;
+            font-size: 16px !important;
+        }
+
+        #mc_embed_signup .button:hover {
+            background-color: #36648B !important;
         }
 
         /* Update the contact section styles */
@@ -367,58 +378,55 @@
             }
         }
 
-        /* Add these to your existing styles */
-        #mc_embed_signup {
-            background: transparent !important;
-            clear: left;
-            font: 14px Helvetica,Arial,sans-serif;
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
+        /* Add styles for evangelism grid */
+        .evangelism-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .evangelism-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            min-height: 150px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
 
-        #mc_embed_signup .mc-field-group {
-            text-align: center;
-            margin-bottom: 15px;
-            width: 100%;
+        .evangelism-box:hover {
+            transform: translateY(-5px);
         }
 
-        #mc_embed_signup input.email {
-            width: 100% !important;
-            padding: 10px !important;
-            margin: 0 auto 10px !important;
-            border-radius: 5px !important;
-            text-align: center;
-            display: block !important;
-            box-sizing: border-box !important;
+        .evangelism-box h2 {
+            margin: 0 0 10px;
+            color: #4682B4;
         }
 
-        #mc_embed_signup .button {
-            background-color: #4682B4 !important;
-            color: white !important;
-            padding: 10px 20px !important;
-            border-radius: 5px !important;
-            margin: 10px auto !important;
-            transition: background-color 0.3s !important;
-            font-size: 16px !important;
-            display: block !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
+        .evangelism-box p {
+            margin: 0;
+            color: #555;
         }
 
-        #mc_embed_signup .button:hover {
-            background-color: #36648B !important;
+        @media screen and (max-width: 768px) {
+            .evangelism-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        #mc_embed_signup label {
-            color: #333 !important;
-            margin-bottom: 5px !important;
-            display: block !important;
-            text-align: center;
+        @media screen and (max-width: 480px) {
+            .evangelism-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
@@ -455,6 +463,33 @@
             <h1>Evangelism Content</h1>
             <p>I have future plans to upload evangelism content to this page. 
             As I make my evangelism content public, it will be posted here:</p>
+            
+            <div class="evangelism-grid">
+                <div class="evangelism-box">
+                    <h2>Content Coming Soon</h2>
+                    <p>Check back later for new evangelism content.</p>
+                </div>
+                <div class="evangelism-box">
+                    <h2>Content Coming Soon</h2>
+                    <p>Check back later for new evangelism content.</p>
+                </div>
+                <div class="evangelism-box">
+                    <h2>Content Coming Soon</h2>
+                    <p>Check back later for new evangelism content.</p>
+                </div>
+                <div class="evangelism-box">
+                    <h2>Content Coming Soon</h2>
+                    <p>Check back later for new evangelism content.</p>
+                </div>
+                <div class="evangelism-box">
+                    <h2>Content Coming Soon</h2>
+                    <p>Check back later for new evangelism content.</p>
+                </div>
+                <div class="evangelism-box">
+                    <h2>Content Coming Soon</h2>
+                    <p>Check back later for new evangelism content.</p>
+                </div>
+            </div>
         </div>
     </section>
 
