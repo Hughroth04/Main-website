@@ -428,6 +428,23 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Add styles for ministry section image */
+        .ministry-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+
+        @media screen and (max-width: 768px) {
+            .ministry-image {
+                max-width: 100%;
+                margin: 20px auto;
+            }
+        }
     </style>
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 </head>
@@ -450,8 +467,8 @@
             <img src="img/headshot.jpg" alt="Profile Photo" class="profile-photo">
             <div class="about-me-box">
                 <h2>About Me</h2>
-                <p>My name is Hugh Roth, I am a second year seminary student, and evangelist sent out by Alvin MBC.
-                      Below you will find links (under construction) to content of mine, as well as my contact info. Click "more info"
+                <p>My name is Hugh Roth, I am a second year seminary student, and evangelist sent out by Alvin Missionary
+                    Baptist Church. Below you will find links (under construction) to content of mine, as well as my contact info. Click "more info"
                        to learn more about me and my call to ministry. Feel free to reach out using my email or phone number.</p>
             </div>
         </div>
@@ -591,6 +608,7 @@
             to have within it.
             If you feel led to support my ministry, you can sign up for my newsletter in the <a href="#contact">Contact</a> section, or give 
             at <a href="https://alvinmbc.com/give/obp">alvinmbc.com/give/obp</a>.</p>
+            <img src="img/evangelizing.jpg" alt="Ministry Photo" class="ministry-image">
         </div>
     </div>
 
