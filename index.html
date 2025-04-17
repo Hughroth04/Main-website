@@ -445,6 +445,21 @@
                 margin: 20px auto;
             }
         }
+
+        /* Add styles for newsletter PDF link */
+        .newsletter-pdf-link {
+            display: block;
+            color: #4682B4;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .newsletter-pdf-link:hover {
+            color: #36648B;
+            text-decoration: underline;
+        }
     </style>
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 </head>
@@ -468,10 +483,10 @@
             <div class="about-me-box">
                 <h2>About Me</h2>
                 <p>My name is Hugh Roth, I am a second year seminary student, and evangelist sent out by Alvin Missionary
-                    Baptist Church. Below you will find links to content of mine, as well as my contact info. Click "more info"
-                       to learn more about me and my call to ministry. Feel free to reach out using my email or phone number.</p>
+                    Baptist Church. Below you will find links to my newsletter, giving page, as well as my contact info. Click the
+                    buttons to the right to learn more about my calling. Feel free to reach out using my email or phone number.</p>
             </div>
-        </div>
+        </div
     </section>
 
     <section id="youtubecontent" class="section">
@@ -494,7 +509,7 @@
                 <iframe src="https://www.youtube.com/embed/7N9nViWQayU" frameborder="0" allowfullscreen></iframe>
             </div>
             <br>
-            <a href="https://vimeo.com/yourproject2" target="_blank">View on YouTube</a>
+            <a href="https://www.youtube.com/embed/7N9nViWQayU" target="_blank">View on YouTube</a>
         </div>
         <div class="project-item" style="text-align: center;background-color: rgba(255, 255, 255, 0.6); padding: 20px; border-radius: 5px;">
             <h2>Your Only Hope</h2>
@@ -536,7 +551,10 @@
             <div class="newsletter-section contact-info-box">
                 <h2 style="font-size: 1.5em;">Monthly Newsletter</h2>
                 <div id="mc_embed_signup">
-                    <form action="https://hughroth.us14.list-manage.com/subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;f_id=00f5b3e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <form action="https://hughroth.us14.list-manage.com/
+                    subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;
+                    f_id=00f5b3e0f0" method="post" id="mc-embedded-subscribe-form" 
+                    name="mc-embedded-subscribe-form" class="validate" target="_blank">
                         <div id="mc_embed_signup_scroll">
                             <div class="mc-field-group">
                                 <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
@@ -555,6 +573,9 @@
                         </div>
                     </form>
                 </div>
+                <a href="img/Introductory-Newletter-Final.pdf" class="newsletter-pdf-link" target="_blank">
+                    <i class="fas fa-file-pdf"></i> View Most Recent Newsletter
+                </a>
             </div>
         </div>
     </section>
