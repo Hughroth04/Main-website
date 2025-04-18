@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evangelism Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: #FFFFFF;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.75);
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #4682B4;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 60px 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            background-color: #B2E0F0;
+            text-align: center;
+        }
+
+        .evangelism-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .evangelism-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .evangelism-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .evangelism-box h2 {
+            color: #4682B4;
+            margin-bottom: 15px;
+        }
+
+        .evangelism-box p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .download-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4682B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .download-link:hover {
+            background-color: #36648B;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #4682B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            z-index: 1001;
+        }
+
+        .back-button:hover {
+            background-color: #36648B;
+        }
+
+        @media screen and (max-width: 768px) {
+            .evangelism-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .evangelism-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">Back to Home</a>
+
+    <section id="evangelism" class="section">
+        <h1>Evangelism Resources</h1>
+        <div class="evangelism-grid">
+            <div class="evangelism-box">
+                <h2>Gospel Tracts</h2>
+                <p>Download and print our collection of gospel tracts for sharing the good news.</p>
+                <a href="#" class="download-link">Download Tracts</a>
+            </div>
+            <div class="evangelism-box">
+                <h2>Training Materials</h2>
+                <p>Access our evangelism training guides and resources for effective outreach.</p>
+                <a href="#" class="download-link">View Materials</a>
+            </div>
+            <div class="evangelism-box">
+                <h2>Outreach Events</h2>
+                <p>Learn about upcoming evangelism events and how you can get involved.</p>
+                <a href="#" class="download-link">View Events</a>
+            </div>
+            <div class="evangelism-box">
+                <h2>Testimonies</h2>
+                <p>Read powerful testimonies of lives changed through evangelism.</p>
+                <a href="#" class="download-link">Read Stories</a>
+            </div>
+            <div class="evangelism-box">
+                <h2>Prayer Guide</h2>
+                <p>Download our evangelism prayer guide for effective ministry.</p>
+                <a href="#" class="download-link">Get Guide</a>
+            </div>
+            <div class="evangelism-box">
+                <h2>Contact Us</h2>
+                <p>Need help with evangelism? Reach out to our team for support.</p>
+                <a href="index.html#contact" class="download-link">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
