@@ -53,11 +53,12 @@
 
         .evangelism-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+            justify-items: center;
         }
 
         .evangelism-box {
@@ -67,6 +68,8 @@
             text-align: center;
             transition: transform 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
         }
 
         .evangelism-box:hover {
@@ -115,13 +118,246 @@
 
         @media screen and (max-width: 768px) {
             .evangelism-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 15px;
+            }
+
+            .evangelism-box {
+                padding: 15px;
+                max-width: 300px;
+            }
+
+            .evangelism-box h2 {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+
+            .evangelism-box p {
+                font-size: 0.9em;
+                margin-bottom: 10px;
+            }
+
+            .download-link {
+                padding: 6px 12px;
+                font-size: 0.9em;
             }
         }
 
         @media screen and (max-width: 480px) {
             .evangelism-grid {
-                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .evangelism-box {
+                max-width: 280px;
+                padding: 12px;
+            }
+
+            .evangelism-box h2 {
+                font-size: 1.1em;
+            }
+
+            .evangelism-box p {
+                font-size: 0.85em;
+            }
+        }
+
+        /* Add styles for popup sheets */
+        .popup-sheet {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 60px 20px 100px;
+            box-sizing: border-box;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .popup-sheet.active {
+            display: block;
+        }
+
+        .popup-content {
+            background-color: rgba(178, 224, 240, 0.75);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            font-size: 18px;
+            color: #333333;
+        }
+
+        .close-popup {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 60px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            line-height: 1;
+            padding: 0;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-sheet h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            color: white;
+        }
+
+        .download-link {
+            cursor: pointer;
+        }
+
+        .testimony-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimony-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimony-author {
+            text-align: right;
+            color: #4682B4;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .testimony-box {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .testimony-text {
+                font-size: 1em;
+            }
+        }
+
+        .devotion-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .devotion-box h3 {
+            color: #4682B4;
+            margin: 0 0 15px 0;
+            font-size: 1.4em;
+        }
+
+        .devotion-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .devotion-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4682B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .devotion-link:hover {
+            background-color: #36648B;
+        }
+
+        .devotion-link i {
+            margin-right: 8px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .devotion-box {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .devotion-box h3 {
+                font-size: 1.2em;
+            }
+
+            .devotion-description {
+                font-size: 0.9em;
+            }
+        }
+
+        .prayer-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .prayer-box h3 {
+            color: #4682B4;
+            margin: 0 0 15px 0;
+            font-size: 1.4em;
+        }
+
+        .prayer-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .prayer-details {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .prayer-details li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+
+        .prayer-details li:last-child {
+            border-bottom: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .prayer-box {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .prayer-box h3 {
+                font-size: 1.2em;
+            }
+
+            .prayer-description {
+                font-size: 0.9em;
             }
         }
     </style>
@@ -133,36 +369,150 @@
         <h1>Evangelism Resources</h1>
         <div class="evangelism-grid">
             <div class="evangelism-box">
-                <h2>Gospel Tracts</h2>
-                <p>Download and print our collection of gospel tracts for sharing the good news.</p>
-                <a href="#" class="download-link">Download Tracts</a>
-            </div>
-            <div class="evangelism-box">
-                <h2>Training Materials</h2>
-                <p>Access our evangelism training guides and resources for effective outreach.</p>
-                <a href="#" class="download-link">View Materials</a>
-            </div>
-            <div class="evangelism-box">
                 <h2>Outreach Events</h2>
                 <p>Learn about upcoming evangelism events and how you can get involved.</p>
-                <a href="#" class="download-link">View Events</a>
+                <a class="download-link" data-popup="events">View Events</a>
             </div>
             <div class="evangelism-box">
                 <h2>Testimonies</h2>
                 <p>Read powerful testimonies of lives changed through evangelism.</p>
-                <a href="#" class="download-link">Read Stories</a>
+                <a class="download-link" data-popup="testimonies">Read Stories</a>
             </div>
             <div class="evangelism-box">
-                <h2>Prayer Guide</h2>
-                <p>Download our evangelism prayer guide for effective ministry.</p>
-                <a href="#" class="download-link">Get Guide</a>
+                <h2>Devotions on Evangelism</h2>
+                <p>Daily applications and reflections that can be utilized for daily sanctification.</p>
+                <a class="download-link" data-popup="devotions">View Materials</a>
             </div>
             <div class="evangelism-box">
-                <h2>Contact Us</h2>
-                <p>Need help with evangelism? Reach out to our team for support.</p>
-                <a href="index.html#contact" class="download-link">Get in Touch</a>
+                <h2>Prayer Needs</h2>
+                <p>Join us in prayer for the needs of our ministry.</p>
+                <a class="download-link" data-popup="prayer">Prayer List</a>
             </div>
         </div>
     </section>
+
+    <!-- Popup Sheets -->
+    <div id="events-popup" class="popup-sheet">
+        <button class="close-popup">&times;</button>
+        <h2>Outreach Events</h2>
+        <div class="popup-content">
+            <p>Upcoming evangelism events and opportunities to get involved will be listed here.</p>
+            <!-- Add your events content here -->
+        </div>
+    </div>
+
+    <div id="testimonies-popup" class="popup-sheet">
+        <button class="close-popup">&times;</button>
+        <h2>Testimonies</h2>
+        <div class="popup-content">
+            <div class="testimony-box">
+                <p class="testimony-text">"Through the evangelism training, I learned how to share my faith with confidence. The practical approach and biblical foundation gave me the tools I needed to start meaningful conversations about Jesus. I've seen God work in amazing ways as I've stepped out in faith."</p>
+                <p class="testimony-author">- John D., Houston, TX</p>
+            </div>
+            <div class="testimony-box">
+                <p class="testimony-text">"The evangelism outreach changed my perspective on sharing the Gospel. I used to be afraid of rejection, but now I understand that it's not about me - it's about being faithful to share the good news. I've had the privilege of leading two people to Christ this year!"</p>
+                <p class="testimony-author">- Sarah M., Dallas, TX</p>
+            </div>
+            <div class="testimony-box">
+                <p class="testimony-text">"As a new believer, I wasn't sure how to talk about my faith. The training materials and practical exercises helped me develop my testimony and gave me confidence to share what God has done in my life. I'm now actively involved in our church's outreach ministry."</p>
+                <p class="testimony-author">- Michael R., Austin, TX</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="devotions-popup" class="popup-sheet">
+        <button class="close-popup">&times;</button>
+        <h2>Devotions on Evangelism</h2>
+        <div class="popup-content">
+            <div class="devotion-box">
+                <h3>Daily Evangelism Guide</h3>
+                <p class="devotion-description">A comprehensive guide to incorporating evangelism into your daily walk with Christ. Includes scripture references, practical applications, and prayer points.</p>
+                <a href="#" class="devotion-link">
+                    <i class="fas fa-file-pdf"></i> Download PDF
+                </a>
+            </div>
+            <div class="devotion-box">
+                <h3>30 Days of Evangelism</h3>
+                <p class="devotion-description">A month-long devotional series focusing on different aspects of evangelism. Each day includes a Bible passage, reflection questions, and action steps.</p>
+                <a href="#" class="devotion-link">
+                    <i class="fas fa-file-pdf"></i> Download PDF
+                </a>
+            </div>
+            <div class="devotion-box">
+                <h3>Prayer for the Lost</h3>
+                <p class="devotion-description">A collection of prayers and scriptures to guide your intercession for those who need to know Christ. Includes specific prayer points and testimonies of answered prayers.</p>
+                <a href="#" class="devotion-link">
+                    <i class="fas fa-file-pdf"></i> Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="prayer-popup" class="popup-sheet">
+        <button class="close-popup">&times;</button>
+        <h2>Prayer Needs</h2>
+        <div class="popup-content">
+            <div class="prayer-box">
+                <h3>Upcoming Outreach Events</h3>
+                <p class="prayer-description">Please pray for our upcoming evangelism events in local communities. Pray for open hearts, divine appointments, and boldness in sharing the Gospel.</p>
+                <ul class="prayer-details">
+                    <li>Community Outreach - March 15th</li>
+                    <li>College Campus Ministry - March 22nd</li>
+                    <li>Local Park Evangelism - March 29th</li>
+                </ul>
+            </div>
+            <div class="prayer-box">
+                <h3>Ministry Partners</h3>
+                <p class="prayer-description">Pray for our ministry partners and their continued support. Ask God to bless their generosity and multiply their impact.</p>
+                <ul class="prayer-details">
+                    <li>Alvin Missionary Baptist Church</li>
+                    <li>Outreach Bible Project Team</li>
+                    <li>Local Church Partners</li>
+                </ul>
+            </div>
+            <div class="prayer-box">
+                <h3>Personal Prayer Needs</h3>
+                <p class="prayer-description">Pray for wisdom, strength, and guidance in ministry. Ask God to continue opening doors for evangelism and discipleship.</p>
+                <ul class="prayer-details">
+                    <li>Seminary Studies</li>
+                    <li>Ministry Planning</li>
+                    <li>Personal Spiritual Growth</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all download links
+            const downloadLinks = document.querySelectorAll('.download-link');
+            const closeButtons = document.querySelectorAll('.close-popup');
+
+            // Add click handlers for download links
+            downloadLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const popupId = this.getAttribute('data-popup') + '-popup';
+                    document.getElementById(popupId).classList.add('active');
+                });
+            });
+
+            // Add click handlers for close buttons
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.popup-sheet').classList.remove('active');
+                });
+            });
+
+            // Close popup when clicking outside the content
+            document.querySelectorAll('.popup-sheet').forEach(popup => {
+                popup.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
