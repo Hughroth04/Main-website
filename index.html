@@ -431,17 +431,58 @@
 
         /* Add styles for ministry section image */
         .ministry-image {
-            width: 100%;
-            max-width: 800px;
-            margin: 30px auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ministry-content-wrapper .ministry-image {
+            width: 200px;
+            max-width: 200px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .ministry-content-wrapper + .ministry-image {
+            width: 400px;
+            max-width: 400px;
+            margin: 20px auto;
             display: block;
         }
 
+        .ministry-content-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ministry-content-wrapper p {
+            margin: 0;
+            flex: 1;
+        }
+
         @media screen and (max-width: 768px) {
-            .ministry-image {
-                max-width: 100%;
+            .ministry-content-wrapper {
+                flex-direction: row; /* Changed from column to row */
+                flex-wrap: nowrap; /* Prevent wrapping */
+                overflow-x: auto; /* Allow horizontal scrolling if needed */
+            }
+            
+            .ministry-content-wrapper .ministry-image {
+                width: 200px;
+                max-width: 200px;
+                margin: 10px;
+                flex-shrink: 0; /* Prevent image from shrinking */
+            }
+            
+            .ministry-content-wrapper p {
+                min-width: 200px; /* Ensure text has minimum width */
+            }
+            
+            .ministry-content-wrapper + .ministry-image {
+                width: 100%;
+                max-width: 400px;
                 margin: 20px auto;
             }
         }
@@ -617,16 +658,19 @@
         <button id="close-ministry-btn" class="close-info-btn">&times;</button>
         <h2>My ministry</h2>
         <div class="content-box">
-            <p>As you read in my testimony, I am a student at Texas Baptist Institute, and I am pursuing an education 
-            that has and will continue to equip me for Kingdom work. As of 04/09/2025, I am an evangelist sent out by 
-            Alvin Missionary Baptist Church in Alvin, Texas. I have been sent out for the purpose of sharing the Gospel,
-            creating training materials and curriculum, and hosting evangelism outreaches. God has called me to work 
-            with the Outreach Bible Project as Director of the South-Central region. I am also the social media coordinator 
-            for the OBP. Within my role, I am blessed with the opportunity to present the Project to churches throughout 
-            the state of Texas, and raise support for both the project as a whole and the role that God has called me 
-            to have within it.
-            If you feel led to support my ministry, you can sign up for my newsletter in the <a href="#contact">Contact</a> section, or give 
-            at <a href="https://alvinmbc.com/give/obp">alvinmbc.com/give/obp</a>.</p>
+            <div class="ministry-content-wrapper">
+                <img src="img/evang2.jpg" alt="Ministry Photo" class="ministry-image">
+                <p>As you read in my testimony, I am a student at Texas Baptist Institute, and I am pursuing an education 
+                that has and will continue to equip me for Kingdom work. As of 04/09/2025, I am an evangelist sent out by 
+                Alvin Missionary Baptist Church in Alvin, Texas. I have been sent out for the purpose of sharing the Gospel,
+                creating training materials and curriculum, and hosting evangelism outreaches. God has called me to work 
+                with the Outreach Bible Project as Director of the South-Central region. I am also the social media coordinator 
+                for the OBP. Within my role, I am blessed with the opportunity to present the Project to churches throughout 
+                the state of Texas, and raise support for both the project as a whole and the role that God has called me 
+                to have within it.
+                If you feel led to support my ministry, you can sign up for my newsletter in the <a href="#contact">Contact</a> section, or give 
+                at <a href="https://alvinmbc.com/give/obp">alvinmbc.com/give/obp</a>.</p>
+            </div>
             <img src="img/evangelizing.jpg" alt="Ministry Photo" class="ministry-image">
         </div>
     </div>
