@@ -99,7 +99,7 @@
 
         /* More Info Button */
         .more-info-btn {
-            position: fixed;
+            position: absolute;
             right: 20px;
             width: 100px;
             height: 40px;
@@ -200,14 +200,7 @@
             margin-top: 5px; /* Space above the description */
         }
 
-        /* Add new styles for the repositioned buttons */
-        .more-info-btn.repositioned {
-            position: fixed;
-            bottom: 20px !important;
-            right: 20px;
-            top: auto !important;
-            z-index: 1002;
-        }
+        /* Buttons are now positioned within the about section */
 
         /* Update the link styles */
         .more-info-section a {
@@ -605,7 +598,7 @@
         </div>
     </section>
 
-    <button id="more-info-btn" class="more-info-btn">My Testimony</button>
+    <button id="more-info-btn" class="more-info-btn">My Testimony</button> /** Free Floating put into containter */
     <button id="ministry-info-btn" class="more-info-btn">My Ministry</button>
     
     <div id="more-info-section" class="more-info-section">
@@ -663,19 +656,14 @@
                 // Hide the clicked button
                 buttonToHide.style.display = 'none';
 
-                // Show and reposition the other button
+                // Show the other button (no repositioning)
                 buttonToReposition.style.display = 'block';
-                buttonToReposition.classList.add('repositioned');
             }
 
             function resetButtons() {
                 // Show both buttons
                 moreInfoBtn.style.display = 'block';
                 ministryInfoBtn.style.display = 'block';
-
-                // Remove repositioned class from both buttons
-                moreInfoBtn.classList.remove('repositioned');
-                ministryInfoBtn.classList.remove('repositioned');
 
                 // Hide both sections
                 moreInfoSection.style.display = 'none';
