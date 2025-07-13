@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evangelism Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: #FFFFFF;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.75);
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #4682B4;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 60px 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            background-color: #B2E0F0;
+            text-align: center;
+        }
+
+        .evangelism-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .evangelism-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .evangelism-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .evangelism-box h2 {
+            color: #4682B4;
+            margin-bottom: 15px;
+        }
+
+        .evangelism-box p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .download-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4682B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .download-link:hover {
+            background-color: #36648B;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #4682B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            z-index: 1001;
+        }
+
+        .back-button:hover {
+            background-color: #36648B;
+        }
+
+        @media screen and (max-width: 768px) {
+            .evangelism-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 15px;
+            }
+
+            .evangelism-box {
+                padding: 15px;
+                max-width: 300px;
+            }
+
+            .evangelism-box h2 {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+
+            .evangelism-box p {
+                font-size: 0.9em;
+                margin-bottom: 10px;
+            }
+
+            .download-link {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .evangelism-grid {
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .evangelism-box {
+                max-width: 280px;
+                padding: 12px;
+            }
+
+            .evangelism-box h2 {
+                font-size: 1.1em;
+            }
+
+            .evangelism-box p {
+                font-size: 0.85em;
+            }
+        }
+
+        /* Add styles for popup sheets */
+        .popup-sheet {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 60px 20px 100px;
+            box-sizing: border-box;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .popup-sheet.active {
+            display: block;
+        }
+
+        .popup-content {
+            background-color: rgba(178, 224, 240, 0.75);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            font-size: 18px;
+            color: #333333;
+        }
+
+        .close-popup {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 60px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            line-height: 1;
+            padding: 0;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-sheet h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            color: white;
+        }
+
+        .download-link {
+            cursor: pointer;
+        }
+
+        .testimony-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimony-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimony-author {
+            text-align: right;
+            color: #4682B4;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .testimony-box {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .testimony-text {
+                font-size: 1em;
+            }
+        }
+
+        .devotion-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .devotion-box h3 {
+            color: #4682B4;
+            margin: 0 0 15px 0;
+            font-size: 1.4em;
+        }
+
+        .devotion-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .devotion-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4682B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .devotion-link:hover {
+            background-color: #36648B;
+        }
+
+        .devotion-link i {
+            margin-right: 8px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .devotion-box {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .devotion-box h3 {
+                font-size: 1.2em;
+            }
+
+            .devotion-description {
+                font-size: 0.9em;
+            }
+        }
+
+        .prayer-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .prayer-box h3 {
+            color: #4682B4;
+            margin: 0 0 15px 0;
+            font-size: 1.4em;
+        }
+
+        .prayer-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .prayer-details {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .prayer-details li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+
+        .prayer-details li:last-child {
+            border-bottom: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .prayer-box {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .prayer-box h3 {
+                font-size: 1.2em;
+            }
+
+            .prayer-description {
+                font-size: 0.9em;
+            }
+        }
+
+        .event-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-box h3 {
+            color: #4682B4;
+            margin: 0 0 10px 0;
+            font-size: 1.4em;
+        }
+
+        .event-date {
+            color: #666;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+
+        .event-location {
+            color: #555;
+            margin: 0 0 15px 0;
+            font-style: italic;
+        }
+
+        .event-description {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .event-details {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            color: #555;
+        }
+
+        .event-details li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .event-details li:last-child {
+            border-bottom: none;
+        }
+
+        .event-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4682B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .event-link:hover {
+            background-color: #36648B;
+        }
+
+        @media screen and (max-width: 768px) {
+            .event-box {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .event-box h3 {
+                font-size: 1.2em;
+            }
+
+            .event-description {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">Back to Home</a>
+
+    <section id="evangelism" class="section">
+        <h1>Evangelism Resources</h1>
+        <div class="evangelism-grid">
+            <div class="evangelism-box">
+                <h2>Outreach Events</h2>
+                <p>Learn about upcoming evangelism events and how you can get involved.</p>
+                <a class="download-link" data-popup="events">View Events</a>
+            </div>
+            <div class="evangelism-box">
+                <h2>Testimonies</h2>
+                <p>Read powerful testimonies of lives changed through the Outreach Bible Project.</p>
+                <a class="download-link" data-popup="testimonies">Read Testimonies</a>
+            </div>
+            <div class="evangelism-box">
+                <h2>Materials (UNDER CONSTRUCTION)</h2>
+                <p>Daily applications and reflections that can be utilized for daily sanctification.</p>
+                <a class="download-link" data-popup="devotions">Material N/A</a>
+            </div>
+            <div class="evangelism-box">
+                <h2>Prayer Needs</h2>
+                <p>Join us in prayer for the needs of our ministry.</p>
+                <a class="download-link" data-popup="prayer">Prayer List</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Sheets -->
+    <div id="events-popup" class="popup-sheet">
+        <button class="close-popup">&times;</button>
+        <h2>Outreach Events</h2>
+        <div class="popup-content">
+            <div id="events-list"></div>
+        </div>
+    </div>
+
+    <div id="testimonies-popup" class="popup-sheet">
+        <button class="close-popup">&times;</button>
+        <h2>Testimonies</h2>
+        <div class="popup-content">
+            <div class="testimony-box">
+                <p class="testimony-text">"These OBP events have given me confidence in my ability to evangelize, and even improved
+                     my ability to work as a pastor back home."</p>
+                <p class="testimony-author">- Sluggo Norris., Rison, AR</p>
+            </div>
+            <div class="testimony-box">
+                <p class="testimony-text">"These events beat me up, but if Jesus suffered the worst of all for me then
+                    I can get a little beat up for others."</p>
+                <p class="testimony-author">- James S., Waco, TX</p>
+            </div>
+            <div class="testimony-box">
+                <p class="testimony-text">"The Outreach Bible Project events give me the courage to keep getting out there 
+                    to share the Gospel with others."</p>
+                <p class="testimony-author">- Lori S., Waco, TX</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="devotions-popup" class="popup-sheet">
+        <button class="close-popup">&times;</button>
+        <h2>Evangelism Materials (in progress)</h2>
+        <div class="popup-content">
+            <div class="devotion-box">
+                <h3>Becoming a Nobody</h3>
+                <p class="devotion-description">A breif writing on growing in humility, and realize your role within in evangelism.</p>
+                <a href="#" class="devotion-link">
+                    <i class="fas fa-file-pdf"></i> Download PDF
+                </a>
+            </div>
+            <div class="devotion-box">
+                <h3>30 Day Devotional</h3>
+                <p class="devotion-description">30 day daily devotional designed to prepare you for the training provided at our events.</p>
+                <a href="#" class="devotion-link">
+                    <i class="fas fa-file-pdf"></i> Download PDF
+                </a>
+            </div>
+            <div class="devotion-box">
+                <h3>Your Secret Weapon</h3>
+                <p class="devotion-description">A writing on the power of prayer, and the role of prayer within daily evangelism.</p>
+                <a href="#" class="devotion-link">
+                    <i class="fas fa-file-pdf"></i> Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="prayer-popup" class="popup-sheet">
+        <button class="close-popup">&times;</button>
+        <h2>Prayer Needs</h2>
+        <div class="popup-content">
+            <div class="prayer-box">
+                <h3>Upcoming Outreach Events</h3>
+                <p class="prayer-description">Please pray for our upcoming evangelism events in various communities. Pray for open hearts, divine appointments, and boldness in sharing the Gospel.</p>
+                <ul class="prayer-details" id="prayer-event-list"></ul>
+            </div>
+            <div class="prayer-box">
+                <h3>Ministry Spotlight</h3>
+                <p class="prayer-description">Below are 3 ministries that I want to invite you to pray for alongside me.
+                    I encourage you to look into these ministries and see how you can support them.
+                </p>
+                <ul class="prayer-details">
+                    <li>Restoration Hill (Kerrville, TX)</li>
+                    <li>Compass NYC (New York City, NY)</li>
+                    <li>Labor of Love (Home Repair Ministry)</li>
+                </ul>
+            </div>
+            <div class="prayer-box">
+                <h3>Personal Prayer Needs</h3>
+                <p class="prayer-description">Please pray for humility, and discernment as I continue in 
+                    the early stages of learing the ministry God has called me to. Specific prayer requests include:
+                </p>
+                <ul class="prayer-details">
+                    <li>Seminary Studies</li>
+                    <li>Training Development</li>
+                    <li>Financial Support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Shared events array
+            const events = [
+                {
+                    title: "Milano Italy Olympics Outreach",
+                    date: "February 6-20, 2026",
+                    location: "Milano Italy",
+                    description: "People from around the world will be in Milano Italy for the 2026 winter olympics. This is a great opportunity to share the Gospel with people from all over the world.",
+                    details: [
+                        ,
+                        "Registration Required: Yes"
+                    ],
+                    link: "https://www.theobp.com/apply",
+                    linkText: "Apply Now"
+                },
+                {
+                    title: "World Cup Houston, TX",
+                    date: "Date TBD (Summer 2026)",
+                    location: "Alvin Missionary Baptist Church",
+                    description: "A special outreach event focused on getting scripture into the hands of many.",
+                    details: 
+                    [
+                        "Registration Required: Yes"
+                    ],
+                    link: "#",
+                    linkText: "Application N/A"
+                },
+                {
+                    title: "World Cup Arlington, TX",
+                    date: "Date TBD (Summer 2026)",
+                    location: "Memorial Park, Alvin, TX",
+                    description: "A special outreach event focused on getting scripture into the hands of many.",
+                    details: 
+                    [
+                        "Registration Required: Yes"
+                    ],
+                    link: "#",
+                    linkText: "Application N/A"
+                }
+            ];
+            // Populate events popup
+            const eventsList = document.getElementById('events-list');
+            if (eventsList) {
+                eventsList.innerHTML = events.map(event => `
+                    <div class="event-box">
+                        <h3>${event.title}</h3>
+                        <p class="event-date">${event.date}</p>
+                        <p class="event-location">${event.location}</p>
+                        <p class="event-description">${event.description}</p>
+                        <ul class="event-details">
+                            ${event.details.map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                        <a href="${event.link}" class="event-link">${event.linkText}</a>
+                    </div>
+                `).join('');
+            }
+            // Populate prayer event list
+            const prayerEventList = document.getElementById('prayer-event-list');
+            if (prayerEventList) {
+                prayerEventList.innerHTML = events.map(event => `<li>${event.title} - ${event.date}</li>`).join('');
+            }
+            // Get all download links
+            const downloadLinks = document.querySelectorAll('.download-link');
+            const closeButtons = document.querySelectorAll('.close-popup');
+
+            // Add click handlers for download links
+            downloadLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const popupId = this.getAttribute('data-popup') + '-popup';
+                    document.getElementById(popupId).classList.add('active');
+                });
+            });
+
+            // Add click handlers for close buttons
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.popup-sheet').classList.remove('active');
+                });
+            });
+
+            // Close popup when clicking outside the content
+            document.querySelectorAll('.popup-sheet').forEach(popup => {
+                popup.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
