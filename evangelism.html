@@ -456,9 +456,9 @@
                 <a class="download-link" data-popup="testimonies">Read Testimonies</a>
             </div>
             <div class="evangelism-box">
-                <h2>Devotions on Evangelism</h2>
+                <h2>Materials (UNDER CONSTRUCTION)</h2>
                 <p>Daily applications and reflections that can be utilized for daily sanctification.</p>
-                <a class="download-link" data-popup="devotions">View Materials</a>
+                <a class="download-link" data-popup="devotions">Material N/A</a>
             </div>
             <div class="evangelism-box">
                 <h2>Prayer Needs</h2>
@@ -473,42 +473,7 @@
         <button class="close-popup">&times;</button>
         <h2>Outreach Events</h2>
         <div class="popup-content">
-            <div class="event-box">
-                <h3>Ai Created event 1</h3>
-                <p class="event-date">March 15, 2024</p>
-                <p class="event-location">Alvin City Park, Alvin, TX</p>
-                <p class="event-description">Join us for a day of community service and evangelism. We'll be serving the local community through various activities and sharing the Gospel through personal conversations.</p>
-                <ul class="event-details">
-                    <li>Time: 9:00 AM - 3:00 PM</li>
-                    <li>Activities: Food distribution, prayer walks, children's activities</li>
-                    <li>Registration Required: Yes</li>
-                </ul>
-                <a href="#" class="event-link">Register Now</a>
-            </div>
-            <div class="event-box">
-                <h3>Ai Created event 2</h3>
-                <p class="event-date">March 22, 2024</p>
-                <p class="event-location">University of Houston, Houston, TX</p>
-                <p class="event-description">A special outreach event focused on engaging with college students. We'll be sharing the Gospel and connecting students with local campus ministries.</p>
-                <ul class="event-details">
-                    <li>Time: 11:00 AM - 2:00 PM</li>
-                    <li>Activities: One-on-one conversations, free Bibles, prayer</li>
-                    <li>Registration Required: No</li>
-                </ul>
-                <a href="#" class="event-link">Learn More</a>
-            </div>
-            <div class="event-box">
-                <h3>Ai Created event 3</h3>
-                <p class="event-date">March 29, 2024</p>
-                <p class="event-location">Memorial Park, Alvin, TX</p>
-                <p class="event-description">An afternoon of family-friendly activities and evangelism in the park. Perfect for families and individuals looking to share their faith in a relaxed setting.</p>
-                <ul class="event-details">
-                    <li>Time: 4:00 PM - 7:00 PM</li>
-                    <li>Activities: Games, music, free food, Gospel presentations</li>
-                    <li>Registration Required: No</li>
-                </ul>
-                <a href="#" class="event-link">Learn More</a>
-            </div>
+            <div id="events-list"></div>
         </div>
     </div>
 
@@ -517,23 +482,26 @@
         <h2>Testimonies</h2>
         <div class="popup-content">
             <div class="testimony-box">
-                <p class="testimony-text">"Through the evangelism training, I learned how to share my faith with confidence. The practical approach and biblical foundation gave me the tools I needed to start meaningful conversations about Jesus. I've seen God work in amazing ways as I've stepped out in faith."</p>
-                <p class="testimony-author">- John D., Houston, TX</p>
+                <p class="testimony-text">"These OBP events have given me confidence in my ability to evangelize, and even improved
+                     my ability to work as a pastor back home."</p>
+                <p class="testimony-author">- Sluggo Norris., Rison, AR</p>
             </div>
             <div class="testimony-box">
-                <p class="testimony-text">"The evangelism outreach changed my perspective on sharing the Gospel. I used to be afraid of rejection, but now I understand that it's not about me - it's about being faithful to share the good news. I've had the privilege of leading two people to Christ this year!"</p>
-                <p class="testimony-author">- Sarah M., Dallas, TX</p>
+                <p class="testimony-text">"These events beat me up, but if Jesus suffered the worst of all for me then
+                    I can get a little beat up for others."</p>
+                <p class="testimony-author">- James S., Waco, TX</p>
             </div>
             <div class="testimony-box">
-                <p class="testimony-text">"As a new believer, I wasn't sure how to talk about my faith. The training materials and practical exercises helped me develop my testimony and gave me confidence to share what God has done in my life. I'm now actively involved in our church's outreach ministry."</p>
-                <p class="testimony-author">- Michael R., Austin, TX</p>
+                <p class="testimony-text">"The Outreach Bible Project events give me the courage to keep getting out there 
+                    to share the Gospel with others."</p>
+                <p class="testimony-author">- Lori S., Waco, TX</p>
             </div>
         </div>
     </div>
 
     <div id="devotions-popup" class="popup-sheet">
         <button class="close-popup">&times;</button>
-        <h2>Devotions on Evangelism</h2>
+        <h2>Evangelism Materials (in progress)</h2>
         <div class="popup-content">
             <div class="devotion-box">
                 <h3>Becoming a Nobody</h3>
@@ -565,29 +533,29 @@
         <div class="popup-content">
             <div class="prayer-box">
                 <h3>Upcoming Outreach Events</h3>
-                <p class="prayer-description">Please pray for our upcoming evangelism events in local communities. Pray for open hearts, divine appointments, and boldness in sharing the Gospel.</p>
-                <ul class="prayer-details">
-                    <li>Community Outreach - March 15th</li>
-                    <li>College Campus Ministry - March 22nd</li>
-                    <li>Local Park Evangelism - March 29th</li>
-                </ul>
+                <p class="prayer-description">Please pray for our upcoming evangelism events in various communities. Pray for open hearts, divine appointments, and boldness in sharing the Gospel.</p>
+                <ul class="prayer-details" id="prayer-event-list"></ul>
             </div>
             <div class="prayer-box">
-                <h3>Ministry Partners</h3>
-                <p class="prayer-description">Pray for our ministry partners and their continued support. Ask God to bless their generosity and multiply their impact.</p>
+                <h3>Ministry Spotlight</h3>
+                <p class="prayer-description">Below are 3 ministries that I want to invite you to pray for alongside me.
+                    I encourage you to look into these ministries and see how you can support them.
+                </p>
                 <ul class="prayer-details">
-                    <li>Alvin Missionary Baptist Church</li>
-                    <li>Outreach Bible Project Team</li>
-                    <li>Local Church Partners</li>
+                    <li>Restoration Hill (Kerrville, TX)</li>
+                    <li>Compass NYC (New York City, NY)</li>
+                    <li>Labor of Love (Home Repair Ministry)</li>
                 </ul>
             </div>
             <div class="prayer-box">
                 <h3>Personal Prayer Needs</h3>
-                <p class="prayer-description">Pray for wisdom, strength, and guidance in ministry. Ask God to continue opening doors for evangelism and discipleship.</p>
+                <p class="prayer-description">Please pray for humility, and discernment as I continue in 
+                    the early stages of learing the ministry God has called me to. Specific prayer requests include:
+                </p>
                 <ul class="prayer-details">
                     <li>Seminary Studies</li>
-                    <li>Ministry Planning</li>
-                    <li>Personal Spiritual Growth</li>
+                    <li>Training Development</li>
+                    <li>Financial Support</li>
                 </ul>
             </div>
         </div>
@@ -595,6 +563,66 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Shared events array
+            const events = [
+                {
+                    title: "Milano Italy Olympics Outreach",
+                    date: "February 6-20, 2026",
+                    location: "Milano Italy",
+                    description: "People from around the world will be in Milano Italy for the 2026 winter olympics. This is a great opportunity to share the Gospel with people from all over the world.",
+                    details: [
+                        ,
+                        "Registration Required: Yes"
+                    ],
+                    link: "https://www.theobp.com/apply",
+                    linkText: "Apply Now"
+                },
+                {
+                    title: "World Cup Houston, TX",
+                    date: "Date TBD (Summer 2026)",
+                    location: "Alvin Missionary Baptist Church",
+                    description: "A special outreach event focused on getting scripture into the hands of many.",
+                    details: 
+                    [
+                        "Registration Required: Yes"
+                    ],
+                    link: "#",
+                    linkText: "Application N/A"
+                },
+                {
+                    title: "World Cup Arlington, TX",
+                    date: "Date TBD (Summer 2026)",
+                    location: "Memorial Park, Alvin, TX",
+                    description: "A special outreach event focused on getting scripture into the hands of many.",
+                    details: 
+                    [
+                        "Registration Required: Yes"
+                    ],
+                    link: "#",
+                    linkText: "Application N/A"
+                }
+            ];
+            // Populate events popup
+            const eventsList = document.getElementById('events-list');
+            if (eventsList) {
+                eventsList.innerHTML = events.map(event => `
+                    <div class="event-box">
+                        <h3>${event.title}</h3>
+                        <p class="event-date">${event.date}</p>
+                        <p class="event-location">${event.location}</p>
+                        <p class="event-description">${event.description}</p>
+                        <ul class="event-details">
+                            ${event.details.map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                        <a href="${event.link}" class="event-link">${event.linkText}</a>
+                    </div>
+                `).join('');
+            }
+            // Populate prayer event list
+            const prayerEventList = document.getElementById('prayer-event-list');
+            if (prayerEventList) {
+                prayerEventList.innerHTML = events.map(event => `<li>${event.title} - ${event.date}</li>`).join('');
+            }
             // Get all download links
             const downloadLinks = document.querySelectorAll('.download-link');
             const closeButtons = document.querySelectorAll('.close-popup');
