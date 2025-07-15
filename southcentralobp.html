@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>South Central Outreach Bible Project</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     <style>
         body, html {
             margin: 0;
@@ -59,6 +60,26 @@
             margin: 0 auto;
             padding: 20px;
             justify-items: center;
+        }
+
+        .evangelism-grid-with-giving {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .evangelism-grid-with-giving .evangelism-box:nth-child(4) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .evangelism-grid-with-giving .giving-section {
+            grid-column: 2;
+            grid-row: 3;
         }
 
         .evangelism-box {
@@ -437,6 +458,146 @@
                 font-size: 0.9em;
             }
         }
+
+        /* Newsletter Section Styles */
+        .newsletter-section {
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #mc_embed_signup {
+            background: transparent !important;
+            clear: left;
+            font: 14px Helvetica,Arial,sans-serif;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #mc_embed_signup .mc-field-group {
+            margin-bottom: 15px;
+        }
+
+        #mc_embed_signup input.email {
+            width: 100% !important;
+            padding: 10px !important;
+            margin-bottom: 10px !important;
+            border-radius: 5px !important;
+        }
+
+        #mc_embed_signup .button {
+            background-color: #4682B4 !important;
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: 5px !important;
+            margin-top: 10px !important;
+            transition: background-color 0.3s !important;
+            font-size: 16px !important;
+            display: inline-block !important;
+            text-align: center !important;
+            vertical-align: middle !important;
+            line-height: normal !important;
+            height: auto !important;
+            min-height: 40px !important;
+            border: none !important;
+            cursor: pointer !important;
+        }
+
+        #mc_embed_signup .button:hover {
+            background-color: #36648B !important;
+        }
+
+        .newsletter-pdf-link {
+            display: block;
+            color: #4682B4;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .newsletter-pdf-link:hover {
+            color: #36648B;
+            text-decoration: underline;
+        }
+
+        /* Giving Box Styles */
+        .giving-section {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .giving-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .giving-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #4682B4;
+        }
+
+        .giving-section p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .give-now-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4682B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .give-now-btn:hover {
+            background-color: #36648B;
+        }
+
+        /* Container for both boxes */
+        .bottom-boxes-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-section-standalone {
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            margin: 50px auto 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .bottom-boxes-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -444,7 +605,7 @@
 
     <section id="evangelism" class="section">
         <h1>South-Central Outreach Bible Project</h1>
-        <div class="evangelism-grid">
+        <div class="evangelism-grid-with-giving">
             <div class="evangelism-box">
                 <h2>Outreach Events</h2>
                 <p>Learn about upcoming evangelism events and how you can get involved.</p>
@@ -465,6 +626,43 @@
                 <p>Join us in prayer for the needs of our ministry.</p>
                 <a class="download-link" data-popup="prayer">Prayer List</a>
             </div>
+            <div class="giving-section">
+                <h2>Giving</h2>
+                <p>If you feel led to give to our ministry, the link below will lead you directly to the OBP bucket on our church's giving page.</p>
+                <a href="https://alvinmbc.com/give/obp" target="_blank" class="give-now-btn">
+                    Give Now
+                </a>
+            </div>
+        </div>
+
+        <div class="newsletter-section-standalone">
+            <h2 style="font-size: 1.5em;">Monthly Newsletter</h2>
+            <div id="mc_embed_signup">
+                <form action="https://hughroth.us14.list-manage.com/
+                subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;
+                f_id=00f5b3e0f0" method="post" id="mc-embedded-subscribe-form" 
+                name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll">
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_0d195388e607dce3844ecf1b8_b76b6737b6" tabindex="-1" value="">
+                        </div>
+                        <div class="clear foot">
+                            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <a href="img/June-Newsletter.pdf" class="newsletter-pdf-link" target="_blank">
+                <i class="fas fa-file-pdf"></i> View Most Recent Newsletter
+            </a>
         </div>
     </section>
 
@@ -652,6 +850,30 @@
                 });
             });
         });
+    </script>
+
+    <!-- Add Mailchimp JavaScript at the end of your body tag -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0]='EMAIL';
+            ftypes[0]='email';
+            fnames[1]='FNAME';
+            ftypes[1]='text';
+            fnames[2]='LNAME';
+            ftypes[2]='text';
+            fnames[3]='ADDRESS';
+            ftypes[3]='address';
+            fnames[4]='PHONE';
+            ftypes[4]='phone';
+            fnames[5]='BIRTHDAY';
+            ftypes[5]='birthday';
+            fnames[6]='COMPANY';
+            ftypes[6]='text';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
     </script>
 </body>
 </html> 
