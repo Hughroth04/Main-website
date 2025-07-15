@@ -81,6 +81,37 @@
             margin-bottom: 20px; /* Space between photo and text */
         }
 
+        /* Profile Images Container */
+        .profile-images-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Logo Style */
+        .profile-logo {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        @media screen and (max-width: 768px) {
+            .profile-images-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .profile-logo {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
         /* About Me Box */
         .about-me-box {
             background-color: rgba(255, 255, 255, 0.8); /* Same color as project boxes */
@@ -497,11 +528,15 @@
         <a href="#youtubecontent">Youtube Content</a>
         <a href="#contact">Contact</a>
         <a href="#giving">Giving</a>
+        <a href="evangelism.html">Outreach Bible Project</a>
     </nav>
 
     <section id="about" class="section">
         <div class="content">
-            <img src="img/evang2.jpg?v=1" alt="Profile Photo" class="profile-photo">
+            <div class="profile-images-container">
+                <img src="img/evang2.jpg?v=1" alt="Profile Photo" class="profile-photo">
+                <img src="img/logo1.png" alt="Ministry Logo" class="profile-logo">
+            </div>
             <div class="about-me-box">
                 <h2>About Me</h2>
                 <p>My name is  Hugh Roth, I am a second year seminary student, and evangelist sent out by Alvin Missionary
