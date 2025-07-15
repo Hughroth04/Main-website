@@ -865,12 +865,15 @@
             const downloadLinks = document.querySelectorAll('.download-link');
             const closeButtons = document.querySelectorAll('.close-popup');
 
-            // Add click handlers for download links
+            // Add click handlers for download links that have popup functionality
             downloadLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const popupId = this.getAttribute('data-popup') + '-popup';
-                    document.getElementById(popupId).classList.add('active');
+                    const popupId = this.getAttribute('data-popup');
+                    if (popupId) {
+                        e.preventDefault();
+                        document.getElementById(popupId + '-popup').classList.add('active');
+                    }
+                    // If no data-popup attribute, let the link work normally
                 });
             });
 
