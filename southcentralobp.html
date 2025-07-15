@@ -144,9 +144,16 @@
                 padding: 15px;
             }
 
+            .evangelism-grid-with-giving {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 20px;
+            }
+
             .evangelism-box {
                 padding: 15px;
                 max-width: 300px;
+                margin: 0 auto;
             }
 
             .evangelism-box h2 {
@@ -163,6 +170,11 @@
                 padding: 6px 12px;
                 font-size: 0.9em;
             }
+
+            .giving-section {
+                max-width: 300px;
+                margin: 0 auto;
+            }
         }
 
         @media screen and (max-width: 480px) {
@@ -171,9 +183,15 @@
                 padding: 10px;
             }
 
+            .evangelism-grid-with-giving {
+                gap: 25px;
+                padding: 15px;
+            }
+
             .evangelism-box {
                 max-width: 280px;
                 padding: 12px;
+                margin: 0 auto;
             }
 
             .evangelism-box h2 {
@@ -182,6 +200,11 @@
 
             .evangelism-box p {
                 font-size: 0.85em;
+            }
+
+            .giving-section {
+                max-width: 280px;
+                margin: 0 auto;
             }
         }
 
@@ -591,6 +614,15 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
+        .mission-subheading {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.3em;
+            margin: 10px 0 30px 0;
+            font-weight: normal;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
         @media screen and (max-width: 768px) {
             .bottom-boxes-container {
                 flex-direction: column;
@@ -605,7 +637,15 @@
 
     <section id="evangelism" class="section">
         <h1>South-Central Outreach Bible Project</h1>
+        <h2 class="mission-subheading">We take the scriptures into a lost and dying world,<br> and empower the average Christian 
+            to become an above average soulwinner.
+        </h2>
         <div class="evangelism-grid-with-giving">
+            <div class="evangelism-box">
+                <h2>What is the OBP?</h2>
+                <p>Learn about our mission, approach, and how we equip Christians for evangelism.</p>
+                <a href="about.html" class="download-link">Learn More</a>
+            </div>
             <div class="evangelism-box">
                 <h2>Outreach Events</h2>
                 <p>Learn about upcoming evangelism events and how you can get involved.</p>

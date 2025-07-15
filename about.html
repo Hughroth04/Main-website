@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - South Central Outreach Bible Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background-color: #FFFFFF;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.75);
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #4682B4;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 80px 20px 60px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            background-color: #B2E0F0;
+            text-align: center;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 80px 20px 60px;
+            background-color: #B2E0F0;
+        }
+
+        .hero-logo {
+            width: 400px;
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-mission {
+            font-size: 2.5em;
+            color: #4682B4;
+            margin-bottom: 20px;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .content-section {
+            padding: 60px 20px;
+            background-color: #B2E0F0;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .content-box h2 {
+            color: #4682B4;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content-box h3 {
+            color: #4682B4;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+
+        .content-box p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .content-box ul {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .content-box li {
+            margin-bottom: 10px;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #4682B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            z-index: 1001;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #36648B;
+        }
+
+        .mission-highlight {
+            background-color: rgba(70, 130, 180, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4682B4;
+            margin: 20px 0;
+        }
+
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .approach-step {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #4682B4;
+        }
+
+        .approach-step h4 {
+            color: #4682B4;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav {
+                padding: 5px 0;
+            }
+            
+            .nav a {
+                padding: 2px 8px;
+                margin: 0px 20px 40px 20px;
+                min-width: auto;
+                max-width: none;
+                font-size: 16px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                height: 20px;
+                justify-content: center;
+                flex: 0 0 auto;
+            }
+
+            .hero-mission {
+                font-size: 2em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1em;
+            }
+
+            .content-box {
+                padding: 25px;
+                margin: 20px auto;
+            }
+
+            .content-box h2 {
+                font-size: 1.6em;
+            }
+
+            .content-box h3 {
+                font-size: 1.2em;
+            }
+
+            .content-box p {
+                font-size: 1em;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .two-column-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-mission {
+                font-size: 1.6em;
+            }
+
+            .content-box {
+                padding: 20px;
+            }
+
+            .content-box h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="southcentralobp.html" class="back-button">Back to OBP</a>
+
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="southcentralobp.html">Outreach Bible Project</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="img/logo1.png" alt="OBP Logo" class="hero-logo">
+        <h1 class="hero-mission">We take the scriptures into a lost and dying world,<br> and empower the average Christian to become an above average soulwinner.</h1>
+        <p class="hero-subtitle">Empowering Christians for Evangelism</p>
+    </section>
+
+    <!-- About Hugh Section -->
+    <section class="content-section">
+        <div class="content-box">
+            <h2>About Hugh</h2>
+            <div class="profile-section">
+                <img src="img/evang2.jpg" alt="Hugh Roth" class="profile-photo">
+                <div class="profile-text">
+                    <p>My name is Hugh Roth, and I am a second-year seminary student at Texas Baptist Institute, called to serve as an evangelist sent out by Alvin Missionary Baptist Church.</p>
+                    <p>I did not grow up in a Christian home, but God's grace reached me when I was 14 years old, and I accepted Christ as my Lord and Savior. Though I was devoted to Jesus, I struggled with putting Him first during my high school years. However, God's abounding grace comforted me during difficult times and led me back to the right path.</p>
+                    <p>After graduating high school, God called me to ministry at age 18, and I surrendered my life to His service. I enrolled at Texas Baptist Institute in August 2022 and have been pursuing my education while actively serving in evangelism ministry.</p>
+                    <p>My heart beats for seeing Christians equipped and empowered to share the Gospel effectively. I believe that every believer can become an "above average soulwinner" through proper training and hands-on experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="content-section">
+        <div class="content-box">
+            <h2>Our Mission</h2>
+            <div class="mission-highlight">
+                <p><strong>We take the scriptures into a lost and dying world, and empower the average Christian to become an above average soulwinner.</strong></p>
+            </div>
+            <p>This mission drives everything we do. We believe that scripture distribution is not just about putting Bibles in people's hands—it's about equipping believers to confidently share the Gospel message that those scriptures contain.</p>
+            <p>The concept of an "above average soulwinner" isn't about creating spiritual superstars, but rather about helping ordinary Christians develop the confidence, skills, and heart to effectively share their faith in everyday situations. We believe that with proper training and encouragement, any believer can become more effective in evangelism.</p>
+            <p>Our approach combines the practical act of scripture distribution with comprehensive training that transforms hesitant Christians into bold witnesses for Christ.</p>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="content-section">
+        <div class="content-box">
+            <h2>How We Work</h2>
+            <p>Our ministry operates on two main fronts, each designed to maximize our impact for the Kingdom:</p>
+            
+            <div class="two-column-grid">
+                <div class="approach-step">
+                    <h4>Local Church Training</h4>
+                    <p>We partner with churches in their communities to host evangelism outreaches and equip their members for effective Gospel sharing. This includes:</p>
+                    <ul>
+                        <li>Helping churches plan and execute local outreach events</li>
+                        <li>Training church members in evangelism techniques</li>
+                        <li>Providing resources and materials for ongoing ministry</li>
+                        <li>Building lasting relationships with church leadership</li>
+                    </ul>
+                </div>
+                <div class="approach-step">
+                    <h4>Major Event Outreaches</h4>
+                    <p>We travel to major sporting events like the Olympics, World Cup, and Super Bowl to distribute scriptures and train Christians in street evangelism. These events provide:</p>
+                    <ul>
+                        <li>Unique opportunities to reach people from around the world</li>
+                        <li>High-visibility locations with large crowds</li>
+                        <li>Intensive training experiences for participants</li>
+                        <li>Maximum impact for scripture distribution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Training Approach Section -->
+    <section class="content-section">
+        <div class="content-box">
+            <h2>Our Training Approach</h2>
+            <p>At every event, we provide "on-the-job" training through a proven three-step process that ensures participants not only learn about evangelism but actually practice it:</p>
+            
+            <div class="two-column-grid">
+                <div class="approach-step">
+                    <h4>1. Orientation</h4>
+                    <p>We begin each event with comprehensive teaching about evangelism, our approach, and what to expect. This includes:</p>
+                    <ul>
+                        <li>Biblical foundation for evangelism</li>
+                        <li>Practical techniques for sharing the Gospel</li>
+                        <li>Understanding our scripture distribution approach</li>
+                        <li>Building confidence and overcoming fears</li>
+                    </ul>
+                </div>
+                <div class="approach-step">
+                    <h4>2. Street Evangelism</h4>
+                    <p>Participants immediately put their learning into practice through hands-on evangelism:</p>
+                    <ul>
+                        <li>Going out in teams to share the Gospel</li>
+                        <li>Distributing scriptures to people we meet</li>
+                        <li>Engaging in meaningful conversations</li>
+                        <li>Learning through real-world experience</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="approach-step" style="margin-top: 30px;">
+                <h4>3. Daily Recap</h4>
+                <p>Each day concludes with a time of reflection and encouragement:</p>
+                <ul>
+                    <li>Sharing experiences and testimonies from the day</li>
+                    <li>Discussing what we learned and how to improve</li>
+                    <li>Encouraging one another in our evangelism journey</li>
+                    <li>Praying for the people we encountered</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Sending Church Section -->
+    <section class="content-section">
+        <div class="content-box">
+            <h2>Our Sending Church</h2>
+            <p>I am sent out as an evangelist by <strong>Alvin Missionary Baptist Church</strong> in Alvin, Texas, for the specific purpose of training others in evangelism and facilitating evangelism outreaches.</p>
+            <p>This sending relationship is crucial to our ministry. Alvin Missionary Baptist Church provides:</p>
+            <ul>
+                <li><strong>Spiritual Authority:</strong> Biblical accountability and oversight for our ministry</li>
+                <li><strong>Financial Support:</strong> Administrative handling of donations and financial matters</li>
+                <li><strong>Prayer Support:</strong> Regular prayer from our church family</li>
+                <li><strong>Ministry Validation:</strong> Credibility and trust for churches considering partnership</li>
+            </ul>
+            <p>This relationship ensures that our ministry operates with proper accountability and support, allowing us to focus on our calling to equip Christians for evangelism.</p>
+        </div>
+    </section>
+
+    <!-- Our Focus Section -->
+    <section class="content-section">
+        <div class="content-box">
+            <h2>Our Focus</h2>
+            <p>While we primarily serve churches in <strong>Texas, Arkansas, New Mexico, Louisiana, Mississippi, and Oklahoma</strong>, we are not limited to these areas and welcome opportunities to serve wherever God leads.</p>
+            <p>Our geographic focus allows us to:</p>
+            <ul>
+                <li>Build deep relationships with churches in our region</li>
+                <li>Provide consistent follow-up and ongoing support</li>
+                <li>Develop a network of trained evangelists across the South-Central region</li>
+                <li>Maximize our impact through strategic partnerships</li>
+            </ul>
+            <p>However, we believe that God's call to evangelism knows no geographic boundaries. We are always open to serving churches outside our primary area if God opens those doors. Our heart is to equip Christians wherever we can, regardless of location.</p>
+            <p>If your church is interested in hosting an outreach event or receiving evangelism training, we encourage you to reach out. We would love to discuss how we can serve your congregation and community.</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
