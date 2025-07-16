@@ -12,22 +12,26 @@
             padding: 0;
             font-family: Arial, sans-serif;
             overflow-x: hidden;
+            overflow-y: auto;
             background-color: #FFFFFF;
+            position: relative;
         }
 
         /* Mobile Navigation Styles */
         .mobile-nav {
-            display: none;
+            display: block;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-nav-content {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between; /* Distribute back button and hamburger */
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
@@ -109,7 +113,7 @@
 
         .section {
             min-height: 100vh;
-            padding: 60px 20px;
+            padding: 80px 20px 60px 20px;
             box-sizing: border-box;
             overflow: hidden;
             position: relative;
@@ -189,9 +193,6 @@
         }
 
         .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
             padding: 10px 20px;
             background-color: #4682B4;
             color: white;
@@ -199,6 +200,10 @@
             border-radius: 5px;
             z-index: 1003;
             transform: translateZ(0);
+            will-change: transform;
+            display: inline-block;
+            font-size: 14px;
+            transition: background-color 0.3s;
         }
 
         .back-button:hover {
@@ -245,10 +250,8 @@
             }
 
             .back-button {
-                position: fixed !important;
-                top: 20px !important;
-                left: 20px !important;
-                z-index: 1003 !important;
+                padding: 8px 16px;
+                font-size: 13px;
             }
         }
 
@@ -821,6 +824,7 @@
     <!-- Mobile Navigation -->
     <nav class="mobile-nav">
         <div class="mobile-nav-content">
+            <a href="index.html" class="back-button">Back to Home</a>
             <button class="mobile-nav-toggle" id="mobile-nav-toggle">
                 <i class="fas fa-bars"></i>
             </button>
@@ -832,8 +836,6 @@
             <a href="https://alvinmbc.com/give/obp" target="_blank">Give</a>
         </div>
     </nav>
-
-    <a href="index.html" class="back-button">Back to Home</a>
 
     <section id="evangelism" class="section">
         <h1>South-Central Outreach Bible Project</h1>
