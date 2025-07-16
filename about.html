@@ -237,6 +237,67 @@
             font-size: 1.2em;
         }
 
+        /* Newsletter Styles */
+        .newsletter-section {
+            text-align: center;
+        }
+
+        #mc_embed_signup {
+            background: transparent !important;
+            clear: left;
+            font: 14px Helvetica,Arial,sans-serif;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #mc_embed_signup .mc-field-group {
+            margin-bottom: 15px;
+        }
+
+        #mc_embed_signup input.email {
+            width: 100% !important;
+            padding: 10px !important;
+            margin-bottom: 10px !important;
+            border-radius: 5px !important;
+        }
+
+        #mc_embed_signup .button {
+            background-color: #4682B4 !important;
+            color: white !important;
+            padding: 10px 20px !important;
+            border-radius: 5px !important;
+            margin-top: 10px !important;
+            transition: background-color 0.3s !important;
+            font-size: 16px !important;
+            display: inline-block !important;
+            text-align: center !important;
+            vertical-align: middle !important;
+            line-height: normal !important;
+            height: auto !important;
+            min-height: 40px !important;
+            border: none !important;
+            cursor: pointer !important;
+        }
+
+        #mc_embed_signup .button:hover {
+            background-color: #36648B !important;
+        }
+
+        .newsletter-pdf-link {
+            display: block;
+            color: #4682B4;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .newsletter-pdf-link:hover {
+            color: #36648B;
+            text-decoration: underline;
+        }
+
         @media screen and (max-width: 768px) {
             .nav {
                 padding: 5px 0;
@@ -293,6 +354,11 @@
             }
 
             .two-column-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-newsletter-container {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
@@ -448,7 +514,7 @@
 
 
 
-    <!-- Our Focus Section -->
+        <!-- Our Focus Section -->
     <section class="content-section">
         <div class="content-box">
             <h2>My Focus</h2>
@@ -462,11 +528,42 @@
                 around growth, encouragment, and accountability that bleeds into the churches we work with. The Outreach Bible Project is not just to give you the opportunity
                  to share your faith, but to bring what you learn back into the town God has placed you. The biggest and most exciting way your church can partner with us is to let
                   Allison and I come do outreach with you! All of that being said, My priority is in creating culture and training within the Outreach Bible Project and I also am blessed 
-                 to be the media guy! I get to run around with a camera, create our graphics, logos, and designs. I am beyond thankful to be a part of this ministry and 
-                 I pray you will join us whether it be in another country or in your own community!
+                   to be the media guy! I get to run around with a camera, create our graphics, logos, and designs. I am beyond thankful to be a part of this ministry and 
+                   I pray you will join us whether it be in another country or in your own community!
             </p>
-            
-        
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="content-section">
+        <div class="content-box">
+            <h2>Monthly Newsletter</h2>
+            <div id="mc_embed_signup">
+                <form action="https://hughroth.us14.list-manage.com/
+                subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;
+                f_id=00f5b3e0f0" method="post" id="mc-embedded-subscribe-form" 
+                name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll">
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_0d195388e607dce3844ecf1b8_b76b6737b6" tabindex="-1" value="">
+                        </div>
+                        <div class="clear foot">
+                            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <a href="img/June-Newsletter.pdf" class="newsletter-pdf-link" target="_blank">
+                <i class="fas fa-file-pdf"></i> View Most Recent Newsletter
+            </a>
         </div>
     </section>
 
@@ -497,6 +594,8 @@
         // Check on scroll and on page load
         window.addEventListener('scroll', checkScroll);
         window.addEventListener('load', checkScroll);
+
+
     </script>
 </body>
 </html> 

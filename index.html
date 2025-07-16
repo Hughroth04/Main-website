@@ -521,6 +521,112 @@
         .evangelism-button:hover {
             background-color: #36648B;
         }
+
+        /* Contact Form Styles */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #4682B4;
+            font-size: 1em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4682B4;
+        }
+
+        .submit-btn {
+            background-color: #4682B4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #36648B;
+        }
+
+        .contact-form-box {
+            min-width: 400px;
+        }
+
+        .contact-info-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .contact-info-section .contact-info {
+            margin-bottom: 15px;
+        }
+
+        .contact-info-section .contact-info p {
+            margin: 8px 0;
+            font-size: 1.1em;
+        }
+
+        .contact-info-section .contact-link {
+            color: #4682B4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info-section .contact-link:hover {
+            color: #36648B;
+            text-decoration: underline;
+        }
+
+        .contact-info-section .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-info-section .social-icons a {
+            color: #4682B4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info-section .social-icons a:hover {
+            color: #36648B;
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact-form-box {
+                min-width: auto;
+                width: 100%;
+            }
+        }
     </style>
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 </head>
@@ -590,17 +696,51 @@
 
     <section id="contact" class="section">
         <div class="contact-container">
-            <div class="content contact-info-box" style="font-size: 1.5em; padding: 40px;">
-                <h1 style="font-size: 2em;">Contact</h1>
-                <div class="contact-info">
-                    <p class="contact-info">
-                        Cell: <a href="tel:832-580-4096" class="contact-link">(832) 580-4096</a>
-                    </p>
-                    <p class="contact-info">
-                        Email: <a href="mailto:bro.roth@hughroth.com" class="contact-link">bro.roth@hughroth.com</a>
-                    </p>
-                    <div class="social-icons" style="font-size: 1.5em;">
-                        <a href="https://www.instagram.com/hughtrothofficial" target="_blank" class="social-icon">
+            <div class="contact-form-box contact-info-box">
+                <h2 style="font-size: 1.5em;">Get In Touch</h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="outreach-event">Just Making Contact</option>
+                            <option value="training">Evangelism Training</option>
+                            <option value="partnership">Ministry Presentation</option>
+                            <option value="support">Ministry Support</option>
+                            <option value="general">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell me about your interest in our ministry..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                
+                <div class="contact-info-section">
+                    <div class="contact-info">
+                        <p class="contact-info">
+                            Cell: <a href="tel:832-580-4096" class="contact-link">(832) 580-4096</a>
+                        </p>
+                        <p class="contact-info">
+                            Email: <a href="mailto:bro.roth@hughroth.com" class="contact-link">bro.roth@hughroth.com</a>
+                        </p>
+                    </div>
+                    <div class="social-icons" style="font-size: 2.2em; margin-top: 20px;">
+                        <a href="https://www.instagram.com/hughspeaksjesus" target="_blank" class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=100071903762860" target="_blank" class="social-icon">
@@ -775,6 +915,36 @@
                 hamburger.classList.remove('active');
             });
         });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Create email body
+                const emailBody = `
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone || 'Not provided'}
+Subject: ${data.subject}
+Message: ${data.message}
+                `;
+                
+                // Open email client with pre-filled information
+                const mailtoLink = `mailto:bro.roth@hughroth.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(emailBody)}`;
+                window.open(mailtoLink);
+                
+                // Show success message
+                alert('Thank you for your message! Your email client should open with a pre-filled message. If it doesn\'t, please email bro.roth@hughroth.com directly.');
+                
+                // Reset form
+                this.reset();
+            });
+        }
     </script>
 
     <!-- Add Mailchimp JavaScript at the end of your body tag -->
