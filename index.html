@@ -128,29 +128,7 @@
             font-size: 2em; /* Increased font size for the header */
         }
 
-        /* More Info Button */
-        .more-info-btn {
-            position: absolute;
-            right: 20px;
-            width: 100px;
-            height: 40px;
-            border-radius: 5px;
-            background-color: #4682B4;
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            z-index: 1001;
-            transition: all 0.3s ease-in-out;
-        }
 
-        #more-info-btn {
-            top: 100px;
-        }
-
-        #ministry-info-btn {
-            top: 160px;
-        }
 
         /* More Info Section */
         .more-info-section {
@@ -654,8 +632,7 @@
             <div class="about-me-box">
                 <h2>About Me</h2>
                 <p>My name is  Hugh Roth, I am a second year seminary student, and evangelist sent out by Alvin Missionary
-                    Baptist Church. Below you will find links to my newsletter, giving page, as well as my contact info. Click the
-                    buttons to the right to learn more about my calling. Feel free to reach out using my email or phone number.</p>
+                    Baptist Church. Below is more on my calling and the Outreach Bible Project ministry. Please reach out to me using the contact form below!</p>
                 <a href="southcentralobp.html" class="evangelism-button">Outreach Bible Project</a>
             </div>
         </div>
@@ -799,8 +776,7 @@
         </div>
     </section>
 
-    <button id="more-info-btn" class="more-info-btn">My Testimony</button> /** Free Floating put into containter */
-    <button id="ministry-info-btn" class="more-info-btn">My Ministry</button>
+
     
     <div id="more-info-section" class="more-info-section">
         <button id="close-info-btn" class="close-info-btn">&times;</button>
@@ -839,64 +815,7 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const moreInfoBtn = document.getElementById('more-info-btn');
-            const ministryInfoBtn = document.getElementById('ministry-info-btn');
-            const moreInfoSection = document.getElementById('more-info-section');
-            const ministryInfoSection = document.getElementById('ministry-info-section');
-            const closeInfoBtn = document.getElementById('close-info-btn');
-            const closeMinistryBtn = document.getElementById('close-ministry-btn');
 
-            function showSection(sectionToShow, buttonToHide, buttonToReposition) {
-                // Hide all sections except the one to show
-                moreInfoSection.style.display = 'none';
-                ministryInfoSection.style.display = 'none';
-                sectionToShow.style.display = 'block';
-
-                // Hide the clicked button
-                buttonToHide.style.display = 'none';
-
-                // Show the other button (no repositioning)
-                buttonToReposition.style.display = 'block';
-            }
-
-            function resetButtons() {
-                // Show both buttons
-                moreInfoBtn.style.display = 'block';
-                ministryInfoBtn.style.display = 'block';
-
-                // Hide both sections
-                moreInfoSection.style.display = 'none';
-                ministryInfoSection.style.display = 'none';
-            }
-
-            moreInfoBtn.addEventListener('click', function() {
-                showSection(moreInfoSection, moreInfoBtn, ministryInfoBtn);
-            });
-
-            ministryInfoBtn.addEventListener('click', function() {
-                showSection(ministryInfoSection, ministryInfoBtn, moreInfoBtn);
-            });
-
-            closeInfoBtn.addEventListener('click', resetButtons);
-            closeMinistryBtn.addEventListener('click', resetButtons);
-
-            // Add this new function
-            function closeInfoAndScrollTo(sectionId) {
-                resetButtons(); // Close info sections
-                const section = document.getElementById(sectionId);
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-
-            // Add click handler for the contact link inside ministry info
-            const ministryContactLink = document.querySelector('#ministry-info-section a[href="#contact"]');
-            if (ministryContactLink) {
-                ministryContactLink.addEventListener('click', function(e) {
-                    e.preventDefault(); // Prevent default anchor behavior
-                    closeInfoAndScrollTo('contact');
-                });
-            }
-        });
 
         // Add hamburger menu functionality
         const hamburger = document.getElementById('hamburger');
