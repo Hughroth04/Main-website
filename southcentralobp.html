@@ -22,25 +22,20 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 15px 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-nav-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 15px 20px;
         }
 
         .mobile-nav-title {
-            color: #4682B4;
-            font-size: 1.2em;
-            font-weight: bold;
+            display: none;
         }
 
         .mobile-nav-toggle {
@@ -50,6 +45,10 @@
             color: #4682B4;
             cursor: pointer;
             padding: 5px;
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            z-index: 1002;
         }
 
         .mobile-nav-menu {
@@ -198,7 +197,8 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            z-index: 1001;
+            z-index: 1003;
+            transform: translateZ(0);
         }
 
         .back-button:hover {
@@ -242,6 +242,13 @@
             .giving-section {
                 max-width: 300px;
                 margin: 0 auto;
+            }
+
+            .back-button {
+                position: fixed !important;
+                top: 20px !important;
+                left: 20px !important;
+                z-index: 1003 !important;
             }
         }
 
@@ -814,7 +821,6 @@
     <!-- Mobile Navigation -->
     <nav class="mobile-nav">
         <div class="mobile-nav-content">
-            <div class="mobile-nav-title">South-Central OBP</div>
             <button class="mobile-nav-toggle" id="mobile-nav-toggle">
                 <i class="fas fa-bars"></i>
             </button>
