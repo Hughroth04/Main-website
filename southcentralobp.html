@@ -136,6 +136,7 @@
         .evangelism-grid-with-giving {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, auto);
             gap: 20px;
             max-width: 1000px;
             margin: 0 auto;
@@ -143,9 +144,29 @@
             justify-items: center;
         }
 
+        .evangelism-grid-with-giving .evangelism-box:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .evangelism-grid-with-giving .evangelism-box:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .evangelism-grid-with-giving .evangelism-box:nth-child(3) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
         .evangelism-grid-with-giving .evangelism-box:nth-child(4) {
             grid-column: 2;
             grid-row: 2;
+        }
+
+        .evangelism-grid-with-giving .evangelism-box:nth-child(5) {
+            grid-column: 1;
+            grid-row: 3;
         }
 
         .evangelism-grid-with-giving .giving-section {
@@ -219,8 +240,19 @@
 
             .evangelism-grid-with-giving {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto;
                 gap: 30px;
                 padding: 20px;
+            }
+
+            .evangelism-grid-with-giving .evangelism-box:nth-child(1),
+            .evangelism-grid-with-giving .evangelism-box:nth-child(2),
+            .evangelism-grid-with-giving .evangelism-box:nth-child(3),
+            .evangelism-grid-with-giving .evangelism-box:nth-child(4),
+            .evangelism-grid-with-giving .evangelism-box:nth-child(5),
+            .evangelism-grid-with-giving .giving-section {
+                grid-column: 1;
+                grid-row: auto;
             }
 
             .evangelism-box {
