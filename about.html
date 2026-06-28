@@ -11,6 +11,7 @@
     <meta property="og:url" content="https://hughroth.com/about.html">
     <link rel="icon" href="img/logo1.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles/site.css">
     <style>
         body, html {
             margin: 0;
@@ -18,31 +19,6 @@
             font-family: Arial, sans-serif;
             overflow-x: hidden;
             background-color: #FFFFFF;
-        }
-
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.75);
-            padding: 10px 0;
-            text-align: center;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .nav a {
-            color: #4682B4;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 5px;
-            flex: 1;
-            min-width: 150px;
-            max-width: 200px;
-            text-align: center;
-            white-space: nowrap;
         }
 
         .section {
@@ -198,23 +174,6 @@
             flex: 1;
         }
 
-        .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background-color: #4682B4;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            z-index: 1001;
-            transition: background-color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #36648B;
-        }
-
         .mission-highlight {
             background-color: rgba(70, 130, 180, 0.1);
             padding: 20px;
@@ -305,24 +264,6 @@
         }
 
         @media screen and (max-width: 768px) {
-            .nav {
-                padding: 5px 0;
-            }
-            
-            .nav a {
-                padding: 2px 8px;
-                margin: 0px 20px 40px 20px;
-                min-width: auto;
-                max-width: none;
-                font-size: 16px;
-                font-weight: bold;
-                display: flex;
-                align-items: center;
-                height: 20px;
-                justify-content: center;
-                flex: 0 0 auto;
-            }
-
             .hero-mission {
                 font-size: 2em;
             }
@@ -390,9 +331,20 @@
     </style>
 </head>
 <body>
-    <a href="southcentralobp.html" class="back-button">Back to OBP</a>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-
+    <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="youtube.html">Sermons &amp; Videography</a>
+        <a href="southcentralobp.html">Outreach Bible Project</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#giving">Giving</a>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -607,5 +559,6 @@
 
 
     </script>
+    <script src="scripts/nav.js"></script>
 </body>
 </html> 
