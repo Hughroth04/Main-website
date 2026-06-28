@@ -3,671 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South-Central Outreach Bible Project</title>
+    <title>Hugh Roth | Evangelist &amp; South-Central OBP Director</title>
+    <meta name="description" content="Hugh Roth is an evangelist sent out by Alvin Missionary Baptist Church and Director of the South-Central Outreach Bible Project. Book a church presentation, partner in outreach, or learn more about the ministry.">
+    <meta property="og:title" content="Hugh Roth | Evangelist &amp; South-Central OBP Director">
+    <meta property="og:description" content="Evangelist, seminary student, and Director of the South-Central Outreach Bible Project serving churches across Texas.">
+    <meta property="og:image" content="https://hughroth.com/img/evang2.jpg">
+    <meta property="og:url" content="https://hughroth.com/">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="img/logo1.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-            background-color: #FFFFFF; /*white is right */
-        }
-
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.75);
-            padding: 10px 0;
-            text-align: center;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .nav a {
-            color: #4682B4;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 5px;
-            flex: 1;
-            min-width: 150px;
-            max-width: 200px;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        /* Add media query for mobile devices */
-        @media screen and (max-width: 768px) {
-            .nav {
-                padding: 5px 0;
-            }
-            
-            .nav a {
-                padding: 2px 8px;
-                margin: 0px 20px 40px 20px; /* Doubled bottom margin from 20px to 40px */
-                min-width: auto;
-                max-width: none;
-                font-size: 16px;
-                font-weight: bold;
-                display: flex;
-                align-items: center;
-                height: 20px;
-                justify-content: center;
-                flex: 0 0 auto;
-            }
-        }
-
-        .section {
-            min-height: 100vh;
-            padding: 60px 20px;
-            box-sizing: border-box;
-            overflow: hidden;
-            position: relative;
-            opacity: 1; /* Ensure sections are visible */
-            transition: opacity 0.5s ease-in-out;
-            background-color: #B2E0F0; /* Slightly lighter blue background for sections */
-            text-align: center; /* Center text in each section */
-        }
-
-        /* Profile Photo Style */
-        .profile-photo {
-            width: 200px; /* Doubled width for the photo */
-            height: 200px; /* Doubled height for the photo */
-            border-radius: 50%; /* Make it circular */
-            object-fit: cover; /* Ensure the image covers the area */
-            margin-bottom: 20px; /* Space between photo and text */
-        }
-
-        /* Profile Images Container */
-        .profile-images-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        /* Logo Style */
-        .profile-logo {
-            width: 300px;
-            height: 300px;
-            object-fit: contain;
-            border-radius: 10px;
-            background-color: transparent;
-        }
-
-        @media screen and (max-width: 768px) {
-            .profile-images-container {
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .profile-logo {
-                width: 240px;
-                height: 240px;
-            }
-        }
-
-        /* About Me Box */
-        .about-me-box {
-            background-color: rgba(255, 255, 255, 0.8); /* Same color as project boxes */
-            border-radius: 10px; /* Rounded corners */
-            padding: 40px; /* Increased padding for the box */
-            margin: 20px auto; /* Center the box */
-            max-width: 800px; /* Increased maximum width for the box */
-            text-align: center; /* Center text in the box */
-            font-size: 1.5em; /* Increased font size */
-        }
-
-        .about-me-box h2 {
-            margin: 0 0 10px; /* Margin for the header */
-            font-size: 2em; /* Increased font size for the header */
-        }
-
-
-
-        /* More Info Section */
-        .more-info-section {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-            color: white;
-            padding: 60px 20px 100px; /* Added more padding at bottom for button */
-            box-sizing: border-box;
-            z-index: 1000; /* Ensure it covers the home page */
-            overflow-y: auto; /* Allow scrolling if content is too large */
-        }
-
-        .close-info-btn {
-            background-color: transparent;
-            border: none;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        /* Portfolio Section (now containing Projects) */
-        #portfolio {
-            padding: 60px 20px;
-        }
-
-        .projects-container {
-            display: flex;
-            flex-direction: column; /* Stack project items vertically */
-            gap: 20px; /* Space between project items */
-        }
-
-        .project-item {
-            background-color: rgba(255, 255, 255, 0.8); /* Light background for project items */
-            padding: 20px;
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-
-        .project-item h2 {
-            margin: 0 0 10px; /* Margin for project title */
-        }
-
-        .project-item a {
-            color: #4682B4; /* Link color */
-            text-decoration: underline; /* Underline for links */
-            transition: color 0.3s; /* Smooth color transition */
-        }
-
-        .project-item a:hover {
-            color: #36648B; /* Darker color on hover */
-        }
-
-        /* Contact Info Box */
-        .contact-info-box {
-            background-color: rgba(240, 234, 214, 0.75); /* Eggshell white with 75% opacity */
-            border-radius: 10px;
-            padding: 20px;
-            display: inline-block;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            margin: 10px 0; /* Margin for contact info */
-        }
-
-        /* Writings Description */
-        .writing-description {
-            font-size: 14px; /* Smaller font size for descriptions */
-            color: #555; /* Darker gray for better readability */
-            margin-top: 5px; /* Space above the description */
-        }
-
-        /* Buttons are now positioned within the about section */
-
-        /* Update the link styles */
-        .more-info-section a {
-            color: #CCCCCC; /* Light grey color */
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        .more-info-section a:hover {
-            color: #FFFFFF; /* White on hover */
-        }
-
-        /* Add these styles to your existing style section */
-        .more-info-section .content-box {
-            background-color: rgba(178, 224, 240, 0.75); /* Light blue with 75% opacity */
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 800px;
-            font-size: 18px;
-            color: #333333; /* Dark grey text color */
-        }
-
-        .more-info-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2em;
-        }
-
-        /* Add these styles to your existing style section */
-        .video-container {
-            position: relative;
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-            max-width: 560px;
-        }
-
-        /* Update mobile styles */
-        @media screen and (max-width: 768px) {
-            .video-container {
-                width: 90%;
-            }
-        }
-
-        /* Update the newsletter section styles */
-        .newsletter-section {
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        #mc_embed_signup {
-            background: transparent !important;
-            clear: left;
-            font: 14px Helvetica,Arial,sans-serif;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        #mc_embed_signup .mc-field-group {
-            margin-bottom: 15px;
-        }
-
-        #mc_embed_signup input.email {
-            width: 100% !important;
-            padding: 10px !important;
-            margin-bottom: 10px !important;
-            border-radius: 5px !important;
-        }
-
-        #mc_embed_signup .button {
-            background-color: #4682B4 !important;
-            color: white !important;
-            padding: 10px 20px !important;
-            border-radius: 5px !important;
-            margin-top: 10px !important;
-            transition: background-color 0.3s !important;
-            font-size: 16px !important;
-            display: inline-block !important;
-            text-align: center !important;
-            vertical-align: middle !important;
-            line-height: normal !important;
-            height: auto !important;
-            min-height: 40px !important;
-            border: none !important;
-            cursor: pointer !important;
-        }
-
-        #mc_embed_signup .button:hover {
-            background-color: #36648B !important;
-        }
-
-        /* Update the contact section styles */
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px; /* Space between boxes */
-            width: 100%;
-        }
-
-        /* Update the content-box style in the giving section */
-        #giving .content-box {
-            background-color: rgba(255, 255, 255, 0.5); /* Change opacity from 0.8 to 0.5 */
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-        }
-
-        /* Add these styles */
-        .hamburger {
-            display: none;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1001;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px 0;
-            background: #4682B4;
-            transition: 0.3s;
-        }
-
-        @media screen and (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                height: 100vh;
-                width: 250px;
-                background-color: rgba(255, 255, 255, 0.95);
-                flex-direction: column;
-                padding-top: 60px; /* Increased from 20px to 60px to start below hamburger */
-                transition: 0.3s;
-                display: flex;
-                justify-content: flex-start;
-                padding-bottom: 33vh;
-            }
-
-            .nav.active {
-                left: 0;
-            }
-
-            .nav a {
-                padding: 2px 8px;
-                margin: 0px 20px 40px 20px; /* Doubled bottom margin from 20px to 40px */
-                min-width: auto;
-                max-width: none;
-                font-size: 16px;
-                font-weight: bold;
-                display: flex;
-                align-items: center;
-                height: 20px;
-                justify-content: center;
-                flex: 0 0 auto;
-            }
-        }
-
-        /* Add styles for evangelism grid */
-        .evangelism-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .evangelism-box {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            min-height: 150px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .evangelism-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .evangelism-box h2 {
-            margin: 0 0 10px;
-            color: #4682B4;
-        }
-
-        .evangelism-box p {
-            margin: 0;
-            color: #555;
-        }
-
-        @media screen and (max-width: 768px) {
-            .evangelism-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .evangelism-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Add styles for ministry section image */
-        .ministry-image {
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .ministry-content-wrapper + .ministry-image {
-            width: 400px;
-            max-width: 400px;
-            margin: 20px auto;
-            display: block;
-        }
-
-        .ministry-content-wrapper {
-            margin-bottom: 20px;
-        }
-
-        .ministry-content-wrapper p {
-            margin: 0;
-        }
-
-        @media screen and (max-width: 768px) {
-            .ministry-content-wrapper + .ministry-image {
-                width: 100%;
-                max-width: 400px;
-                margin: 20px auto;
-            }
-        }
-
-        /* Add styles for newsletter PDF link */
-        .newsletter-pdf-link {
-            display: block;
-            color: #4682B4;
-            text-decoration: none;
-            margin-top: 15px;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .newsletter-pdf-link:hover {
-            color: #36648B;
-            text-decoration: underline;
-        }
-
-        /* Add styles for evangelism button */
-        .evangelism-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #4682B4;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-            transition: background-color 0.3s;
-        }
-
-        .evangelism-button:hover {
-            background-color: #36648B;
-        }
-
-        /* Contact Form Styles */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-weight: bold;
-            color: #4682B4;
-            font-size: 1em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #4682B4;
-        }
-
-        .submit-btn {
-            background-color: #4682B4;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            background-color: #36648B;
-        }
-
-        .contact-form-box {
-            min-width: 400px;
-        }
-
-        .contact-info-section {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 2px solid #e0e0e0;
-        }
-
-        .contact-info-section .contact-info {
-            margin-bottom: 15px;
-        }
-
-        .contact-info-section .contact-info p {
-            margin: 8px 0;
-            font-size: 1.1em;
-        }
-
-        .contact-info-section .contact-link {
-            color: #4682B4;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-info-section .contact-link:hover {
-            color: #36648B;
-            text-decoration: underline;
-        }
-
-        .contact-info-section .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .contact-info-section .social-icons a {
-            color: #4682B4;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-info-section .social-icons a:hover {
-            color: #36648B;
-        }
-
-        @media screen and (max-width: 768px) {
-            .contact-form-box {
-                min-width: auto;
-                width: 100%;
-            }
-        }
-    </style>
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles/site.css">
+    <link href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <button class="hamburger" id="hamburger">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
     <nav class="nav" id="nav">
-        <a href="about.html">About Me</a>
-        <a href="#youtubecontent">Youtube Content</a>
+        <a href="#about">About Me</a>
+        <a href="#youtubecontent">YouTube Content</a>
         <a href="#contact">Contact</a>
         <a href="#giving">Giving</a>
         <a href="southcentralobp.html">Outreach Bible Project</a>
     </nav>
 
     <section id="about" class="section">
-        <div class="content">
+        <div class="hero-content">
             <div class="profile-images-container">
-                <img src="img/evang2.jpg?v=1" alt="Profile Photo" class="profile-photo">
-                <img src="img/logo1.png" alt="Ministry Logo" class="profile-logo">
+                <img src="img/evang2.jpg?v=1" alt="Hugh Roth sharing the Gospel" class="profile-photo">
+                <img src="img/logo1.png" alt="Outreach Bible Project logo" class="profile-logo">
             </div>
+            <h1 class="hero-title">Hugh Roth</h1>
+            <p class="hero-tagline">Evangelist &amp; Director of the South-Central Outreach Bible Project</p>
             <div class="about-me-box">
                 <h2>About Me</h2>
-                <p>My name is  Hugh Roth, I am a second year seminary student, and evangelist sent out by Alvin Missionary
-                    Baptist Church. Below is more on my calling and the Outreach Bible Project ministry. Please reach out to me using the contact form below!</p>
-                <a href="southcentralobp.html" class="evangelism-button">Outreach Bible Project</a>
+                <p>My name is Hugh Roth. I am a seminary student at Texas Baptist Institute and an evangelist sent out by Alvin Missionary Baptist Church. God has called me to share the Gospel, equip believers for evangelism, and lead the South-Central region of the Outreach Bible Project across Texas.</p>
+                <div class="about-actions">
+                    <a href="#contact" class="btn" data-subject="church-presentation">Request a Church Presentation</a>
+                    <button type="button" class="btn btn-secondary" id="open-testimony-btn">My Testimony</button>
+                    <button type="button" class="btn btn-secondary" id="open-ministry-btn">My Ministry</button>
+                    <a href="southcentralobp.html" class="btn btn-secondary">Outreach Bible Project</a>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="youtubecontent" class="section">
-        <h1>YouTube Content</h1>
-        <div class="projects-container">
-            <div class="project-item" style="text-align: center;background-color: rgba(255, 255, 255, 0.6); padding: 20px; border-radius: 5px;">
-                <h2>Turkana Missions (3 minute)</h2>
-                <p>3 minute deputation video for missionary Eddie Williams.</p>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/YaqhYe9a_58" frameborder="0" allowfullscreen></iframe>
+        <div class="section-inner">
+            <h2 class="section-heading">YouTube Content</h2>
+            <div class="projects-container">
+                <div class="project-item">
+                    <h3>Turkana Missions (3 minute)</h3>
+                    <p>3 minute deputation video for missionary Eddie Williams.</p>
+                    <div class="video-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/YaqhYe9a_58?rel=0"
+                            title="Turkana Missions 2025 | SUBC | Eddie Williams"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=YaqhYe9a_58" class="video-link" target="_blank" rel="noopener noreferrer">View on YouTube</a>
                 </div>
-                <br>
-                <a href="https://www.youtube.com/watch?v=7N9nViWQayU&t=1s" target="_blank">View on YouTube</a>
+                <div class="project-item">
+                    <h3>Turkana Missions 20th Anniversary</h3>
+                    <p>20 year anniversary of mission work among Turkana Kenya.</p>
+                    <div class="video-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/7N9nViWQayU?rel=0"
+                            title="20th Anniversary | Turkana Missions | South Union Baptist Church"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=7N9nViWQayU" class="video-link" target="_blank" rel="noopener noreferrer">View on YouTube</a>
+                </div>
+                <div class="project-item">
+                    <h3>It's Not About Me</h3>
+                    <p>A recent sermon God blessed me with the opportunity to preach.</p>
+                    <div class="video-container">
+                        <iframe
+                            src="https://www.youtube.com/embed/P0bRR28zV8o?rel=0"
+                            title="It's Not About Me (1 John 4:7-21)"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=P0bRR28zV8o" class="video-link" target="_blank" rel="noopener noreferrer">View on YouTube</a>
+                </div>
             </div>
-        </div>
-        <div class="project-item" style="text-align: center;background-color: rgba(255, 255, 255, 0.6); padding: 20px; border-radius: 5px;"> 
-            <h2>Turkana Missions 20th Anniversary</h2>
-            <p>20 year anniversary of mission work among Turkana Kenya.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/7N9nViWQayU" frameborder="0" allowfullscreen></iframe>
+
+            <div class="testimonials-grid">
+                <blockquote class="testimonial-card">
+                    <p>&ldquo;These OBP events have given me confidence in my ability to evangelize, and even improved my ability to work as a pastor back home.&rdquo;</p>
+                    <cite>&mdash; Sluggo Norris, Rison, AR</cite>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <p>&ldquo;The Outreach Bible Project events give me the courage to keep getting out there to share the Gospel with others.&rdquo;</p>
+                    <cite>&mdash; Lori S., Waco, TX</cite>
+                </blockquote>
             </div>
-            <br>
-            <a href="https://www.youtube.com/embed/7N9nViWQayU" target="_blank">View on YouTube</a>
-        </div>
-        <div class="project-item" style="text-align: center;background-color: rgba(255, 255, 255, 0.6); padding: 20px; border-radius: 5px;">
-            <h2>It's Not About Me</h2>
-            <p>A recent sermon God blessed me with the opportunity to preach.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/P0bRR28zV8o" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <br>
-            <a href="https://youtu.be/P0bRR28zV8o?si=fWTIitvv1lDKduQY" target="_blank">View on YouTube</a>
         </div>
     </section>
 
@@ -675,7 +113,11 @@
         <div class="contact-container">
             <div class="contact-form-box contact-info-box">
                 <h2 style="font-size: 1.5em;">Get In Touch</h2>
-                <form id="contact-form" class="contact-form">
+                <form id="contact-form" class="contact-form" action="https://formsubmit.co/bro.roth@hughroth.com" method="POST">
+                    <input type="hidden" name="_subject" value="New message from hughroth.com">
+                    <input type="hidden" name="_next" value="https://hughroth.com/#contact">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <div class="form-group">
                         <label for="name">Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -690,15 +132,14 @@
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject *</label>
-                        
                         <select id="subject" name="subject" required>
                             <option value="">Select a subject</option>
-                            <option value="outreach-event">Outreach Event Information</option>
-                            <option value="training">Evangelism Training Request</option>
-                            <option value="church-presentation">Church Presentation Request</option>
-                            <option value="ministry-support">Ministry Support/Partnership</option>
-                            <option value="prayer-request">Prayer Request</option>
-                            <option value="general-inquiry">General Inquiry</option>
+                            <option value="Outreach Event Information">Outreach Event Information</option>
+                            <option value="Evangelism Training Request">Evangelism Training Request</option>
+                            <option value="Church Presentation Request">Church Presentation Request</option>
+                            <option value="Ministry Support/Partnership">Ministry Support/Partnership</option>
+                            <option value="Prayer Request">Prayer Request</option>
+                            <option value="General Inquiry">General Inquiry</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -707,24 +148,20 @@
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
-                
+
                 <div class="contact-info-section">
                     <div class="contact-info">
-                        <p class="contact-info">
-                            Cell: <a href="tel:832-580-4096" class="contact-link">(832) 580-4096</a>
-                        </p>
-                        <p class="contact-info">
-                            Email: <a href="mailto:bro.roth@hughroth.com" class="contact-link">bro.roth@hughroth.com</a>
-                        </p>
+                        <p>Cell: <a href="tel:832-580-4096" class="contact-link">(832) 580-4096</a></p>
+                        <p>Email: <a href="mailto:bro.roth@hughroth.com" class="contact-link">bro.roth@hughroth.com</a></p>
                     </div>
-                    <div class="social-icons" style="font-size: 2.2em; margin-top: 20px;">
-                        <a href="https://www.instagram.com/hughspeaksjesus" target="_blank" class="social-icon">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/hughspeaksjesus" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=100071903762860" target="_blank" class="social-icon">
+                        <a href="https://www.facebook.com/profile.php?id=100071903762860" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://www.youtube.com/@Hugh-Roth" target="_blank" class="social-icon">
+                        <a href="https://www.youtube.com/@Hugh-Roth" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
@@ -734,14 +171,11 @@
             <div class="newsletter-section contact-info-box">
                 <h2 style="font-size: 1.5em;">Monthly Newsletter</h2>
                 <div id="mc_embed_signup">
-                    <form action="https://hughroth.us14.list-manage.com/
-                    subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;
-                    f_id=00f5b3e0f0" method="post" id="mc-embedded-subscribe-form" 
-                    name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <form action="https://hughroth.us14.list-manage.com/subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;f_id=00f5b3e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                         <div id="mc_embed_signup_scroll">
                             <div class="mc-field-group">
                                 <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
                             </div>
                             <div id="mce-responses" class="clear foot">
                                 <div class="response" id="mce-error-response" style="display: none;"></div>
@@ -756,8 +190,8 @@
                         </div>
                     </form>
                 </div>
-                <a href="img/January Newsletter (1).pdf" class="newsletter-pdf-link" target="_blank">
-                    <i class="fas fa-file-pdf"></i> View Most Recent Newsletter
+                <a href="https://mailchi.mp/0dc22c93667c/outreach-bible-project-marchapril-report" class="newsletter-pdf-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> View March/April Newsletter
                 </a>
             </div>
         </div>
@@ -766,129 +200,94 @@
     <section id="giving" class="section">
         <div class="contact-container">
             <div class="content contact-info-box" style="font-size: 1.5em; padding: 40px;">
-                <h1 style="font-size: 2em;">Giving</h1>
+                <h2 class="section-heading">Giving</h2>
                 <div class="content-box">
                     <p>If you feel led to give to our ministry, the link below will lead you directly to the OBP bucket on our church's giving page.</p>
-                    <a href="https://alvinmbc.com/give/obp" target="_blank" class="newsletter-btn" style="margin-top: 20px;">
-                        Give Now
-                    </a>
+                    <a href="https://alvinmbc.com/give/obp" target="_blank" rel="noopener noreferrer" class="give-now-btn">Give Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-
-    
-    <div id="more-info-section" class="more-info-section">
-        <button id="close-info-btn" class="close-info-btn">&times;</button>
-        <h2>My Testimony</h2>
+    <div id="more-info-section" class="more-info-section" role="dialog" aria-modal="true" aria-labelledby="testimony-heading">
+        <button type="button" id="close-info-btn" class="close-info-btn" aria-label="Close testimony">&times;</button>
+        <h2 id="testimony-heading">My Testimony</h2>
         <div class="content-box">
-            <p>I am 20 years old. I did not grow up in a Christian home, but did grow up around church. Mymom 
-                did teach my siblings and I to pray, but it was not until middle school that we got involved in 
-                church. I came to accept Christ as my Lord and Savior when I was 14, and was baptized with 
-                my brother, mom, and step dad. I was devoted to Jesus, but as highschool went on, I 
-                grew into the habit of leaning on my own understanding and putting Jesus second. Despite my selfishness,
-                Our Lord in His abounding grace was a comfort to me in the latter half of highschool as life began to 
-                hit hard. This led me back on the right path, and the summer after I graduated Highschool God called 
-                me to ministry, and I surrendered my life to ministry a few months after recieving the call at age 18. 
-                I enrolled in Seminary at Texas Baptist Institute in August 2022, and have remained a student there since.
-             </p>
+            <p>I did not grow up in a Christian home, but did grow up around church. My mom did teach my siblings and I to pray, but it was not until middle school that we got involved in church. I came to accept Christ as my Lord and Savior when I was 14, and was baptized with my brother, mom, and step dad.</p>
+            <p>I was devoted to Jesus, but as high school went on, I grew into the habit of leaning on my own understanding and putting Jesus second. Despite my selfishness, our Lord in His abounding grace was a comfort to me in the latter half of high school as life began to hit hard. This led me back on the right path, and the summer after I graduated high school God called me to ministry. I surrendered my life to ministry a few months after receiving the call at age 18.</p>
+            <p>I enrolled in seminary at Texas Baptist Institute in August 2022, and have remained a student there since.</p>
         </div>
     </div>
 
-    <div id="ministry-info-section" class="more-info-section">
-        <button id="close-ministry-btn" class="close-info-btn">&times;</button>
-        <h2>My ministry</h2>
+    <div id="ministry-info-section" class="more-info-section" role="dialog" aria-modal="true" aria-labelledby="ministry-heading">
+        <button type="button" id="close-ministry-btn" class="close-info-btn" aria-label="Close ministry details">&times;</button>
+        <h2 id="ministry-heading">My Ministry</h2>
         <div class="content-box">
-            <div class="ministry-content-wrapper">
-                <p>As you read in my testimony, I am a student at Texas Baptist Institute, and I am pursuing an education 
-                that has and will continue to equip me for Kingdom work. As of 04/09/2025, I am an evangelist sent out by 
-                Alvin Missionary Baptist Church in Alvin, Texas. I have been sent out for the purpose of sharing the Gospel,
-                creating training materials and curriculum, and hosting evangelism outreaches. God has called me to work 
-                with the Outreach Bible Project as Director of the South-Central region. I am also the social media coordinator 
-                for the OBP. Within my role, I am blessed with the opportunity to present the Project to churches throughout 
-                the state of Texas, and raise support for both the project as a whole and the role that God has called me 
-                to have within it.If you feel led to support my ministry, you can sign up for my newsletter in the <a href="#contact">Contact</a> section, or give 
-                at <a href="https://alvinmbc.com/give/obp">alvinmbc.com/give/obp</a>. More on the Outreach Bible Project can be found <a href="southcentralobp.html">here</a>.</p>
-            </div>
-            <img src="img/evangelizing.jpg" alt="Ministry Photo" class="ministry-image">
+            <p>As you read in my testimony, I am a student at Texas Baptist Institute pursuing an education that has and will continue to equip me for Kingdom work. As of April 9, 2025, I am an evangelist sent out by Alvin Missionary Baptist Church in Alvin, Texas. I have been sent out for the purpose of sharing the Gospel, creating training materials and curriculum, and hosting evangelism outreaches.</p>
+            <p>God has called me to work with the Outreach Bible Project as Director of the South-Central region. I am also the social media coordinator for the OBP. Within my role, I am blessed with the opportunity to present the Project to churches throughout the state of Texas, and raise support for both the project as a whole and the role that God has called me to have within it.</p>
+            <p>If you feel led to support my ministry, you can sign up for my newsletter in the <a href="#contact">Contact</a> section, or give at <a href="https://alvinmbc.com/give/obp">alvinmbc.com/give/obp</a>. More on the Outreach Bible Project can be found <a href="southcentralobp.html">here</a>.</p>
+            <img src="img/evangelizing.jpg" alt="Hugh Roth evangelizing in the community" class="ministry-image">
         </div>
     </div>
 
     <script>
-
-
-        // Add hamburger menu functionality
         const hamburger = document.getElementById('hamburger');
         const nav = document.getElementById('nav');
 
         hamburger.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            // Optional: animate hamburger to X
-            this.classList.toggle('active');
+            const isOpen = nav.classList.toggle('active');
+            this.setAttribute('aria-expanded', isOpen);
         });
 
-        // Close menu when clicking a link
         document.querySelectorAll('.nav a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
-                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
 
-        // Contact form handling
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData);
-                
-                // Create email body
-                const emailBody = `
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone || 'Not provided'}
-Subject: ${data.subject}
-Message: ${data.message}
-                `;
-                
-                // Open email client with pre-filled information
-                const mailtoLink = `mailto:bro.roth@hughroth.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(emailBody)}`;
-                window.open(mailtoLink);
-                
-                // Show success message
-                alert('Thank you for your message! Your email client should open with a pre-filled message. If it doesn\'t, please email bro.roth@hughroth.com directly.');
-                
-                // Reset form
-                this.reset();
-            });
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
-    </script>
 
-    <!-- Add Mailchimp JavaScript at the end of your body tag -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
-        (function($) {
-            window.fnames = new Array();
-            window.ftypes = new Array();
-            fnames[0]='EMAIL';
-            ftypes[0]='email';
-            fnames[1]='FNAME';
-            ftypes[1]='text';
-            fnames[2]='LNAME';
-            ftypes[2]='text';
-            fnames[3]='ADDRESS';
-            ftypes[3]='address';
-            fnames[4]='PHONE';
-            ftypes[4]='phone';
-            fnames[5]='BIRTHDAY';
-            ftypes[5]='birthday';
-            fnames[6]='COMPANY';
-            ftypes[6]='text';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('open-testimony-btn').addEventListener('click', () => openModal('more-info-section'));
+        document.getElementById('open-ministry-btn').addEventListener('click', () => openModal('ministry-info-section'));
+        document.getElementById('close-info-btn').addEventListener('click', () => closeModal('more-info-section'));
+        document.getElementById('close-ministry-btn').addEventListener('click', () => closeModal('ministry-info-section'));
+
+        document.querySelectorAll('.more-info-section').forEach(modal => {
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal('more-info-section');
+                closeModal('ministry-info-section');
+            }
+        });
+
+        document.querySelectorAll('[data-subject]').forEach(button => {
+            button.addEventListener('click', () => {
+                const subjectSelect = document.getElementById('subject');
+                const valueMap = {
+                    'church-presentation': 'Church Presentation Request'
+                };
+                const mappedValue = valueMap[button.dataset.subject];
+                if (mappedValue && subjectSelect) {
+                    subjectSelect.value = mappedValue;
+                }
+            });
+        });
     </script>
 </body>
 </html>
