@@ -351,7 +351,14 @@ body, html {
     flex-direction: column;
     gap: 20px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
+}
+
+.video-category-heading {
+    color: var(--color-primary);
+    font-size: 1.75em;
+    margin: 0 auto 24px;
+    max-width: 900px;
 }
 
 .project-item {
