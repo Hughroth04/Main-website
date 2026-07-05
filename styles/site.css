@@ -3,8 +3,6 @@
     --color-primary-dark: #36648B;
     --color-section-bg: #B2E0F0;
     --color-text: #555;
-    --color-box-bg: rgba(255, 255, 255, 0.8);
-    --color-contact-bg: rgba(240, 234, 214, 0.75);
 }
 
 *, *::before, *::after {
@@ -90,23 +88,31 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.hero-title,
+.hero-byline {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-banner {
     width: 100%;
-    margin: 0 0 24px;
-    padding: 72px 20px 36px;
+    margin: 0;
+    padding: 72px 20px 48px;
     background: linear-gradient(
         180deg,
         #ffffff 0%,
-        #f8fbfd 55%,
-        rgba(255, 255, 255, 0.4) 80%,
-        transparent 100%
+        #e4f3f9 45%,
+        #c8e8f4 75%,
+        var(--color-section-bg) 100%
     );
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .hero-banner-inner {
@@ -187,19 +193,41 @@ body, html {
     flex-shrink: 0;
 }
 
-.about-me-box {
-    background-color: var(--color-box-bg);
+.about-me-box,
+.content-box {
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     padding: 40px;
-    margin: 20px auto;
-    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 1.2em;
+    box-sizing: border-box;
 }
 
+.content-box--wide {
+    max-width: 800px;
+}
+
+.content-box h2,
 .about-me-box h2 {
-    margin: 0 0 10px;
+    color: var(--color-primary);
     font-size: 2em;
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.content-box p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.content-box .contact-form {
+    text-align: left;
 }
 
 .about-actions {
@@ -327,8 +355,8 @@ body, html {
 }
 
 .project-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -385,7 +413,7 @@ body, html {
 }
 
 .testimonial-card {
-    background-color: var(--color-box-bg);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 24px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -406,20 +434,42 @@ body, html {
     font-style: normal;
 }
 
+.hero-testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(8px, 2vw, 16px);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.testimonial-card--compact {
+    padding: clamp(10px, 2vw, 14px);
+    margin: 0;
+}
+
+.testimonial-card--compact p {
+    font-size: clamp(0.68rem, 2.4vw, 0.82rem);
+    line-height: 1.4;
+    margin: 0 0 6px;
+}
+
+.testimonial-card--compact cite {
+    font-size: clamp(0.62rem, 2vw, 0.72rem);
+    text-align: right;
+}
+
 .contact-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     width: 100%;
-}
-
-.contact-info-box {
-    background-color: var(--color-contact-bg);
-    border-radius: 10px;
-    padding: 20px;
-    display: inline-block;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .contact-form {
@@ -477,7 +527,6 @@ body, html {
 }
 
 .contact-form-box {
-    min-width: 400px;
     max-width: 520px;
     width: 100%;
 }
@@ -526,25 +575,29 @@ body, html {
     color: var(--color-primary-dark);
 }
 
-.newsletter-section {
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 #mc_embed_signup {
     background: transparent !important;
-    clear: left;
+    clear: both !important;
+    float: none !important;
     font: 14px Helvetica, Arial, sans-serif;
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     margin: 0 auto;
+    text-align: center;
+}
+
+#mc_embed_signup form {
+    margin: 0 auto;
+    float: none !important;
 }
 
 #mc_embed_signup .mc-field-group {
     margin-bottom: 15px;
+}
+
+#mc_embed_signup .mc-field-group label {
+    color: var(--color-primary);
+    font-weight: bold;
 }
 
 #mc_embed_signup input.email {
@@ -587,23 +640,25 @@ body, html {
     text-decoration: underline;
 }
 
-#giving .content-box {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 640px;
-}
-
 .section-heading {
     font-size: 2em;
     margin-bottom: 10px;
 }
 
 #about.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
+}
+
+#contact.section,
+#giving.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -654,8 +709,7 @@ body, html {
     }
 
     .hero-banner {
-        padding: 68px 16px 28px;
-        margin-bottom: 16px;
+        padding: 68px 16px 40px;
     }
 
     .hero-banner-inner {
@@ -670,11 +724,14 @@ body, html {
         margin-bottom: 12px;
     }
 
+    .content-box,
     .about-me-box {
-        margin-top: 8px;
-        margin-bottom: 12px;
         padding: 24px;
-        font-size: 1.05em;
+    }
+
+    .content-box h2,
+    .about-me-box h2 {
+        font-size: 1.6em;
     }
 
     .hero-intro {
@@ -689,8 +746,11 @@ body, html {
         max-width: 100%;
     }
 
+    .contact-container {
+        padding: 0 16px;
+    }
+
     .contact-form-box {
-        min-width: auto;
         width: 100%;
     }
 }

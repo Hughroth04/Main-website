@@ -77,19 +77,15 @@
             grid-row: 2;
         }
 
-        .evangelism-grid-with-giving .evangelism-box:nth-child(5) {
-            grid-column: 1;
-            grid-row: 3;
-        }
-
         .evangelism-grid-with-giving .giving-section {
-            grid-column: 2;
+            grid-column: 1 / -1;
             grid-row: 3;
+            justify-self: center;
         }
 
         .evangelism-box {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
@@ -162,7 +158,6 @@
             .evangelism-grid-with-giving .evangelism-box:nth-child(2),
             .evangelism-grid-with-giving .evangelism-box:nth-child(3),
             .evangelism-grid-with-giving .evangelism-box:nth-child(4),
-            .evangelism-grid-with-giving .evangelism-box:nth-child(5),
             .evangelism-grid-with-giving .giving-section {
                 grid-column: 1;
                 grid-row: auto;
@@ -322,59 +317,6 @@
 
             .testimony-text {
                 font-size: 1em;
-            }
-        }
-
-        .devotion-box {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .devotion-box h3 {
-            color: #4682B4;
-            margin: 0 0 15px 0;
-            font-size: 1.4em;
-        }
-
-        .devotion-description {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .devotion-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #4682B4;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .devotion-link:hover {
-            background-color: #36648B;
-        }
-
-        .devotion-link i {
-            margin-right: 8px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .devotion-box {
-                padding: 20px;
-                margin-bottom: 20px;
-            }
-
-            .devotion-box h3 {
-                font-size: 1.2em;
-            }
-
-            .devotion-description {
-                font-size: 0.9em;
             }
         }
 
@@ -576,8 +518,8 @@
 
         /* Giving Box Styles */
         .giving-section {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
@@ -775,7 +717,7 @@
         <a href="youtube.html">Sermons &amp; Videography</a>
         <a href="southcentralobp.html">Outreach Bible Project</a>
         <a href="index.html#contact">Contact</a>
-        <a href="index.html#giving">Giving</a>
+        <a href="https://alvinmbc.com/give/obp" target="_blank" rel="noopener noreferrer">Giving</a>
     </nav>
 
     <section id="evangelism" class="section">
@@ -800,11 +742,6 @@
                 <a class="download-link" data-popup="testimonies">Read Testimonies</a>
             </div>
             <div class="evangelism-box">
-                <h2>Materials (UNDER CONSTRUCTION)</h2>
-                <p>Daily applications and reflections that can be utilized for daily sanctification.</p>
-                <a class="download-link" data-popup="devotions">Material N/A</a>
-            </div>
-            <div class="evangelism-box">
                 <h2>Prayer Needs</h2>
                 <p>Join us in prayer for the needs of our ministry.</p>
                 <a class="download-link" data-popup="prayer">Prayer List</a>
@@ -819,8 +756,8 @@
         </div>
 
         <div class="bottom-boxes-container">
-            <div class="contact-form-box contact-info-box">
-                <h2 style="font-size: 1.5em;">Get In Touch!</h2>
+            <div class="content-box contact-form-box">
+                <h2>Get In Touch!</h2>
                 <form id="contact-form" class="contact-form" action="https://formsubmit.co/bro.roth@hughroth.com" method="POST">
                     <input type="hidden" name="_subject" value="New message from hughroth.com (OBP page)">
                     <input type="hidden" name="_next" value="https://hughroth.com/southcentralobp.html">
@@ -858,8 +795,8 @@
                 </form>
             </div>
 
-            <div class="newsletter-section contact-info-box">
-                <h2 style="font-size: 1.5em;">Monthly Newsletter</h2>
+            <div class="content-box">
+                <h2>Monthly Newsletter</h2>
                 <div id="mc_embed_signup">
                     <form action="https://hughroth.us14.list-manage.com/
                     subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;
@@ -903,7 +840,7 @@
                         <a href="https://www.facebook.com/profile.php?id=100071903762860" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://www.youtube.com/@Hugh-Roth" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                        <a href="https://www.youtube.com/@sent-setapart" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
@@ -939,34 +876,6 @@
                 <p class="testimony-text">"The Outreach Bible Project events give me the courage to keep getting out there 
                     to share the Gospel with others."</p>
                 <p class="testimony-author">- Lori S., Waco, TX</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="devotions-popup" class="popup-sheet">
-        <button class="close-popup">&times;</button>
-        <h2>Evangelism Materials (in progress)</h2>
-        <div class="popup-content">
-            <div class="devotion-box">
-                <h3>Becoming a Nobody</h3>
-                <p class="devotion-description">A brief writing on growing in humility, and understanding your role within evangelism.</p>
-                <a href="#" class="devotion-link">
-                    <i class="fas fa-file-pdf"></i> Unavailable
-                </a>
-            </div>
-            <div class="devotion-box">
-                <h3>30 Day Devotional</h3>
-                <p class="devotion-description">30 day daily devotional designed to prepare you for outreach.</p>
-                <a href="#" class="devotion-link">
-                    <i class="fas fa-file-pdf"></i> Unavailable
-                </a>
-            </div>
-            <div class="devotion-box">
-                <h3>Your Secret Weapon</h3>
-                <p class="devotion-description">A writing on the power of prayer, and the role of prayer within the life of a soulwinner.</p>
-                <a href="#" class="devotion-link">
-                        <i class="fas fa-file-pdf"></i> Unavailable
-                </a>
             </div>
         </div>
     </div>
