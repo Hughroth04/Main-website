@@ -105,7 +105,7 @@ body, html {
 .hero-banner {
     width: 100%;
     margin: 0;
-    padding: 72px 20px 48px;
+    padding: 28px 20px 36px;
     background: linear-gradient(
         180deg,
         #ffffff 0%,
@@ -113,6 +113,37 @@ body, html {
         #c8e8f4 75%,
         var(--color-section-bg) 100%
     );
+}
+
+.photo-banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: clamp(160px, 28vw, 320px);
+    overflow: hidden;
+    background-color: #1a2a33;
+}
+
+.photo-banner__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photo-banner__img--olympics {
+    object-position: center 35%;
+}
+
+.photo-banner__img--street {
+    object-position: center 20%;
+}
+
+.photo-banner__img--conversation {
+    object-position: center 25%;
 }
 
 .hero-banner-inner {
@@ -656,7 +687,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 0;
+    padding-top: 56px;
     padding-left: 0;
     padding-right: 0;
 }
@@ -709,13 +740,17 @@ body, html {
     }
 
     #about.section {
-        padding-top: 0;
+        padding-top: 56px;
         padding-bottom: 40px;
         min-height: auto;
     }
 
     .hero-banner {
-        padding: 68px 16px 40px;
+        padding: 20px 16px 28px;
+    }
+
+    .photo-banner {
+        height: clamp(140px, 32vw, 220px);
     }
 
     .hero-banner-inner {
