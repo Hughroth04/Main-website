@@ -131,16 +131,25 @@ body, html {
     height: 100%;
     max-width: none;
     object-fit: cover;
+    object-position: 50% 50%;
 }
 
-/* Left & middle: center of each photo. Right: leave focal point unchanged. */
+/*
+ * Left & middle: show the band from 20%–90% of each photo
+ * (crop 20% top + 10% bottom). Right stays centered as before.
+ */
 .photo-banner__img--left,
 .photo-banner__img--middle {
-    object-position: center center;
+    height: calc(100% / 0.7);
+    object-position: center top;
+    align-self: start;
+    transform: translateY(calc(-20% / 0.7));
 }
 
 .photo-banner__img--right {
+    height: 100%;
     object-position: 50% 50%;
+    transform: none;
 }
 
 .photo-banner__overlay {
