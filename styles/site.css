@@ -135,7 +135,8 @@ body, html {
 }
 
 .photo-banner__img--left {
-    object-position: 50% 55%;
+    /* Shift down from top-aligned crop to the vertical middle of the photo */
+    object-position: 50% 62%;
 }
 
 .photo-banner__img--middle {
