@@ -134,15 +134,15 @@ body, html {
     object-position: 50% 50%;
 }
 
-/*
- * Left & middle: keep ~20% top / 10% bottom of each photo out of view
- * by anchoring the cover crop at the center of the remaining band (55%).
- * Do NOT stretch the image taller than the cell — that over-zooms landscape
- * photos and can hide the subject (what happened to the preaching image).
- */
-.photo-banner__img--left,
-.photo-banner__img--middle {
+.photo-banner__img--left {
     object-position: 50% 55%;
+}
+
+/* Show more of the preaching photo — cover was cropping/zooming it too tightly */
+.photo-banner__img--middle {
+    object-fit: contain;
+    object-position: 50% 50%;
+    background-color: #1a2a33;
 }
 
 .photo-banner__img--right {
