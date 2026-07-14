@@ -716,7 +716,7 @@
     <nav class="nav" id="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="youtube.html">Sermons &amp; Videography</a>
+        <a href="youtube.html">Sermons</a>
         <a href="southcentralobp.html">Outreach Bible Project</a>
         <a href="index.html#contact">Contact</a>
         <a href="https://alvinmbc.com/give/obp" target="_blank" rel="noopener noreferrer">Giving</a>
@@ -736,7 +736,7 @@
             <div class="evangelism-box">
                 <h2>Outreach Events</h2>
                 <p>Learn about upcoming evangelism events and how you can get involved.</p>
-                <a class="download-link" data-popup="events">View Events</a>
+                <a class="download-link" href="https://www.theobp.com/events" target="_blank" rel="noopener noreferrer">View Events</a>
             </div>
             <div class="evangelism-box">
                 <h2>Testimonies</h2>
@@ -844,14 +844,6 @@
     </section>
 
     <!-- Popup Sheets -->
-    <div id="events-popup" class="popup-sheet">
-        <button class="close-popup">&times;</button>
-        <h2>Outreach Events</h2>
-        <div class="popup-content">
-            <div id="events-list"></div>
-        </div>
-    </div>
-
     <div id="testimonies-popup" class="popup-sheet">
         <button class="close-popup">&times;</button>
         <h2>Testimonies</h2>
@@ -949,22 +941,6 @@
                     linkText: "Application N/A"
                 }
             ];
-            // Populate events popup
-            const eventsList = document.getElementById('events-list');
-            if (eventsList) {
-                eventsList.innerHTML = events.map(event => `
-                    <div class="event-box">
-                        <h3>${event.title}</h3>
-                        <p class="event-date">${event.date}</p>
-                        <p class="event-location">${event.location}</p>
-                        <p class="event-description">${event.description}</p>
-                        <ul class="event-details">
-                            ${event.details.map(detail => `<li>${detail}</li>`).join('')}
-                        </ul>
-                        <a href="${event.link}" class="event-link">${event.linkText}</a>
-                    </div>
-                `).join('');
-            }
             // Populate prayer event list
             const prayerEventList = document.getElementById('prayer-event-list');
             if (prayerEventList) {
