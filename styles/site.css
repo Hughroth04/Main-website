@@ -774,6 +774,23 @@ body, html {
         height: clamp(126px, 28vw, 196px);
     }
 
+    .photo-banner__img--left,
+    .photo-banner__img--right {
+        flex: 0 0 auto;
+        width: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+
+    .photo-banner__img--middle {
+        flex: 1 1 auto;
+        min-width: 0;
+        width: auto;
+        object-fit: cover;
+        object-position: center center;
+    }
+
     .photo-banner__logo {
         width: clamp(344px, 88vw, 500px);
     }
