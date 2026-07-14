@@ -873,17 +873,9 @@
             <div class="prayer-box">
                 <h3>Upcoming Outreach Events</h3>
                 <p class="prayer-description">Please pray for our upcoming evangelism events in various communities. Pray for open hearts, divine appointments, and boldness in sharing the Gospel.</p>
-                <ul class="prayer-details" id="prayer-event-list"></ul>
-            </div>
-            <div class="prayer-box">
-                <h3>Ministry Spotlight</h3>
-                <p class="prayer-description">Below are 3 ministries that I want to invite you to pray for alongside me.
-                    I encourage you to look into these ministries and see how you can support them.
-                </p>
                 <ul class="prayer-details">
-                    <li>Restoration Hill (Kerrville, TX)</li>
-                    <li>Compass NYC (New York City, NY)</li>
-                    <li>Labor of Love (Home Repair Ministry)</li>
+                    <li>Los Angeles Olympic Outreach (Summer 2028)</li>
+                    <li>Super Bowl Outreach 2026 (Los Angeles)</li>
                 </ul>
             </div>
             <div class="prayer-box">
@@ -893,7 +885,7 @@
                 </p>
                 <ul class="prayer-details">
                     <li>Seminary Studies</li>
-                    <li>Evangelism Training Development</li>
+                    <li>Our Marriage Foundation</li>
                     <li>Financial Support</li>
                 </ul>
             </div>
@@ -902,50 +894,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Shared events array
-            const events = [
-                {
-                    title: "Milan, Italy Olympics Outreach",
-                    date: "February 6-20, 2026",
-                    location: "Milan, Italy",
-                    description: "People from around the world will be in Milan, Italy for the 2026 winter olympics. This is a great opportunity to share the Gospel with people from all over the world.",
-                    details: [
-                        ,
-                        "Registration Required: Yes"
-                    ],
-                    link: "https://www.theobp.com/apply",
-                    linkText: "Apply Now"
-                },
-                {
-                    title: "World Cup Houston, TX",
-                    date: "Date TBD (Summer 2026)",
-                    location: "Alvin Missionary Baptist Church",
-                    description: "A special outreach event focused on getting scripture into the hands of many.",
-                    details: 
-                    [
-                        "Registration Required: Yes"
-                    ],
-                    link: "#",
-                    linkText: "Application N/A"
-                },
-                {
-                    title: "World Cup Arlington, TX",
-                    date: "Date TBD (Summer 2026)",
-                    location: "Sublett Road Baptist Church",
-                    description: "A special outreach event focused on getting scripture into the hands of many.",
-                    details: 
-                    [
-                        "Registration Required: Yes"
-                    ],
-                    link: "#",
-                    linkText: "Application N/A"
-                }
-            ];
-            // Populate prayer event list
-            const prayerEventList = document.getElementById('prayer-event-list');
-            if (prayerEventList) {
-                prayerEventList.innerHTML = events.map(event => `<li>${event.title} - ${event.date}</li>`).join('');
-            }
             // Get all download links
             const downloadLinks = document.querySelectorAll('.download-link');
             const closeButtons = document.querySelectorAll('.close-popup');
