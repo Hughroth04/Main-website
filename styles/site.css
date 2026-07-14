@@ -138,10 +138,9 @@ body, html {
     object-position: 50% 55%;
 }
 
-/* Full scene visible; padded square asset fills the cell like left/right */
 .photo-banner__img--middle {
     object-fit: cover;
-    object-position: 50% 50%;
+    object-position: center center;
 }
 
 .photo-banner__img--right {
