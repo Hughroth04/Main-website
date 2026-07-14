@@ -3,6 +3,7 @@
     --color-primary-dark: #36648B;
     --color-section-bg: #B2E0F0;
     --color-text: #555;
+    --site-header-height: 64px;
 }
 
 *, *::before, *::after {
@@ -21,23 +22,25 @@ body, html {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.75);
-    padding: 10px 0;
+    height: var(--site-header-height);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0;
     text-align: center;
     z-index: 1000;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 .nav a {
     color: var(--color-primary);
     text-decoration: none;
-    padding: 10px 20px;
-    margin: 5px;
-    flex: 1;
-    min-width: 150px;
-    max-width: 200px;
+    padding: 8px 16px;
+    margin: 0 4px;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: none;
     text-align: center;
     white-space: nowrap;
 }
@@ -118,8 +121,9 @@ body, html {
     position: absolute;
     inset: 0;
     z-index: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -127,25 +131,27 @@ body, html {
 
 .photo-banner__img {
     display: block;
-    width: 100%;
     height: 100%;
     max-width: none;
-    object-fit: cover;
-    object-position: 50% 50%;
 }
 
-.photo-banner__img--left {
-    /* Shift down so faces/rings sit lower in the banner frame */
-    object-position: 50% 78%;
-}
-
-.photo-banner__img--middle {
-    object-fit: cover;
-    object-position: center center;
-}
-
+/* Side panels grow wider as needed so they meet the middle photo */
+.photo-banner__img--left,
 .photo-banner__img--right {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    object-fit: cover;
     object-position: 50% 50%;
+}
+
+/* Middle: natural aspect ratio at full banner height — no crop, no side gaps */
+.photo-banner__img--middle {
+    flex: 0 0 auto;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
 }
 
 .photo-banner__overlay {
@@ -154,10 +160,10 @@ body, html {
     z-index: 1;
     pointer-events: none;
     background: linear-gradient(
-        180deg,
-        rgba(70, 130, 180, 0.35) 0%,
-        rgba(70, 130, 180, 0.22) 45%,
-        rgba(70, 130, 180, 0.45) 100%
+        0deg,
+        rgba(70, 130, 180, 0.65) 0%,
+        rgba(70, 130, 180, 0.25) 45%,
+        rgba(70, 130, 180, 0) 100%
     );
 }
 
@@ -167,9 +173,9 @@ body, html {
     left: 50%;
     z-index: 2;
     transform: translate(-50%, -50%);
-    width: clamp(120px, 18vw, 220px);
-    max-width: 40%;
-    max-height: 70%;
+    width: clamp(375px, 56vw, 688px);
+    max-width: 90%;
+    max-height: 95%;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.35));
@@ -706,7 +712,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 56px;
+    padding-top: var(--site-header-height);
     padding-left: 0;
     padding-right: 0;
 }
@@ -759,7 +765,7 @@ body, html {
     }
 
     #about.section {
-        padding-top: 56px;
+        padding-top: var(--site-header-height);
         padding-bottom: 40px;
         min-height: auto;
     }
@@ -769,7 +775,7 @@ body, html {
     }
 
     .photo-banner__logo {
-        width: clamp(110px, 28vw, 160px);
+        width: clamp(344px, 88vw, 500px);
     }
 
     .hero-content {
