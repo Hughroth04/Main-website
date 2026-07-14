@@ -131,6 +131,15 @@ body, html {
     height: 100%;
     max-width: none;
     object-fit: cover;
+}
+
+/* Left & middle: center of each photo. Right: leave focal point unchanged. */
+.photo-banner__img--left,
+.photo-banner__img--middle {
+    object-position: center center;
+}
+
+.photo-banner__img--right {
     object-position: 50% 50%;
 }
 
