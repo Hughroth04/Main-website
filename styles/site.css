@@ -135,21 +135,18 @@ body, html {
 }
 
 /*
- * Left & middle: show the band from 20%–90% of each photo
- * (crop 20% top + 10% bottom). Right stays centered as before.
+ * Left & middle: keep ~20% top / 10% bottom of each photo out of view
+ * by anchoring the cover crop at the center of the remaining band (55%).
+ * Do NOT stretch the image taller than the cell — that over-zooms landscape
+ * photos and can hide the subject (what happened to the preaching image).
  */
 .photo-banner__img--left,
 .photo-banner__img--middle {
-    height: calc(100% / 0.7);
-    object-position: center top;
-    align-self: start;
-    transform: translateY(calc(-20% / 0.7));
+    object-position: 50% 55%;
 }
 
 .photo-banner__img--right {
-    height: 100%;
     object-position: 50% 50%;
-    transform: none;
 }
 
 .photo-banner__overlay {
