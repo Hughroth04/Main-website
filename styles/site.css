@@ -661,8 +661,7 @@ body, html {
     padding-right: 0;
 }
 
-#contact.section,
-#giving.section {
+#contact.section {
     display: flex;
     flex-direction: column;
     align-items: center;
