@@ -135,8 +135,8 @@ body, html {
 }
 
 .photo-banner__img--left {
-    /* Shift down from top-aligned crop to the vertical middle of the photo */
-    object-position: 50% 62%;
+    /* Shift down so faces/rings sit lower in the banner frame */
+    object-position: 50% 78%;
 }
 
 .photo-banner__img--middle {
