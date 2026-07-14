@@ -91,7 +91,7 @@ body, html {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 28px 20px 0;
     box-sizing: border-box;
 }
 
@@ -102,28 +102,22 @@ body, html {
     margin-right: auto;
 }
 
-.hero-banner {
-    width: 100%;
-    margin: 0;
-    padding: 28px 20px 36px;
-    background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #e4f3f9 45%,
-        #c8e8f4 75%,
-        var(--color-section-bg) 100%
-    );
-}
-
 .photo-banner {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    display: block;
     width: 100%;
     margin: 0;
     padding: 0;
     height: clamp(240px, 42vw, 480px);
     overflow: hidden;
     background-color: #1a2a33;
+}
+
+.photo-banner__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
 }
 
 .photo-banner__img {
@@ -135,14 +129,29 @@ body, html {
     object-position: 50% 50%;
 }
 
-.hero-banner-inner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(16px, 4vw, 40px);
-    max-width: 720px;
-    margin: 0 auto;
+.photo-banner__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        180deg,
+        rgba(70, 130, 180, 0.35) 0%,
+        rgba(70, 130, 180, 0.22) 45%,
+        rgba(70, 130, 180, 0.45) 100%
+    );
+}
+
+.photo-banner__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    width: clamp(140px, 22vw, 240px);
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.35));
 }
 
 .back-button {
@@ -734,16 +743,16 @@ body, html {
         min-height: auto;
     }
 
-    .hero-banner {
-        padding: 20px 16px 28px;
-    }
-
     .photo-banner {
         height: clamp(180px, 40vw, 280px);
     }
 
-    .hero-banner-inner {
-        gap: 12px;
+    .photo-banner__logo {
+        width: clamp(110px, 28vw, 160px);
+    }
+
+    .hero-content {
+        padding-top: 20px;
     }
 
     .hero-title {
