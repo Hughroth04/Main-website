@@ -7,3 +7,33 @@ document.querySelectorAll('.contact-form').forEach(function (form) {
         }
     });
 });
+
+(function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+        var toast = document.createElement('div');
+        toast.className = 'toast-notification';
+        toast.textContent = 'Thanks! Your message was sent.';
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(function () {
+            toast.classList.add('toast-visible');
+        });
+
+        setTimeout(function () {
+            toast.classList.remove('toast-visible');
+            toast.classList.add('toast-hidden');
+        }, 4000);
+
+        setTimeout(function () {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 4500);
+
+        var cleanUrl = window.location.pathname + window.location.hash;
+        if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', cleanUrl);
+        }
+    }
+})();
