@@ -9,8 +9,16 @@ document.querySelectorAll('.contact-form').forEach(function (form) {
 });
 
 (function () {
-    var params = new URLSearchParams(window.location.search);
-    if (params.get('sent') === '1') {
+    var toastShown = false;
+
+    function showSuccessToast() {
+        if (toastShown) return;
+
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('sent') !== '1') return;
+
+        toastShown = true;
+
         var toast = document.createElement('div');
         toast.className = 'toast-notification';
         toast.textContent = 'Thanks! Your message was sent.';
@@ -36,4 +44,12 @@ document.querySelectorAll('.contact-form').forEach(function (form) {
             window.history.replaceState(null, '', cleanUrl);
         }
     }
+
+    showSuccessToast();
+
+    window.addEventListener('pageshow', function (event) {
+        if (event.persisted) {
+            showSuccessToast();
+        }
+    });
 })();
