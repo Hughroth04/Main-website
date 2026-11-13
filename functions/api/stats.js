@@ -1,11 +1,31 @@
+function timingSafeEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string') {
+    return false;
+  }
+  const maxLen = Math.max(a.length, b.length);
+  let result = a.length ^ b.length;
+  for (let i = 0; i < maxLen; i++) {
+    const aChar = i < a.length ? a.charCodeAt(i) : 0;
+    const bChar = i < b.length ? b.charCodeAt(i) : 0;
+    result |= aChar ^ bChar;
+  }
+  return result === 0;
+}
+
 export async function onRequestGet(context) {
   const { request, env } = context;
+
+  if (!env.STATS_TOKEN) {
+    return new Response(JSON.stringify({ error: 'Service unavailable' }), {
+      status: 503,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
   const url = new URL(request.url);
-  const token = url.searchParams.get('token');
+  const token = url.searchParams.get('token') || '';
 
-  const expectedToken = env.STATS_TOKEN || 'hughroth-stats-2024';
-
-  if (token !== expectedToken) {
+  if (!timingSafeEqual(token, env.STATS_TOKEN)) {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' },
@@ -68,7 +88,7 @@ export async function onRequestGet(context) {
     });
   } catch (error) {
     console.error('Stats error:', error);
-    return new Response(JSON.stringify({ error: 'Internal error', details: error.message }), {
+    return new Response(JSON.stringify({ error: 'Service error' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });

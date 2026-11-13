@@ -38,15 +38,15 @@ The tracking script counts clicks on these links (anonymously - no cookies, no I
 5. D1 database: select `hughroth-clicks`
 6. Click **Save**
 
-### Step 3: Set the Stats Token (Optional but Recommended)
+### Step 3: Set the Stats Token (Required)
 
 1. In the same **Settings** → **Functions** area
 2. Under **Environment variables**, click **Add variable**
 3. Variable name: `STATS_TOKEN`
-4. Value: choose a secret string (e.g., generate one at random)
+4. Value: choose a secret string (e.g., generate one with `openssl rand -base64 32`)
 5. Click **Save**
 
-If you don't set this, the default token is `hughroth-stats-2024`.
+**Important:** The stats and init endpoints will return 503 if this is not set.
 
 ### Step 4: Initialize the Database
 

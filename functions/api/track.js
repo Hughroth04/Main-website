@@ -7,23 +7,21 @@ export async function onRequestPost(context) {
     'Access-Control-Allow-Headers': 'Content-Type',
   };
 
+  if (!env.DB) {
+    return new Response(null, { status: 204, headers: corsHeaders });
+  }
+
   try {
     const body = await request.json();
     const { linkType, page } = body;
 
     if (!linkType || !page) {
-      return new Response(JSON.stringify({ error: 'Missing required fields' }), {
-        status: 400,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+      return new Response(null, { status: 204, headers: corsHeaders });
     }
 
     const allowedTypes = ['give', 'newsletter_signup', 'newsletter_pdf', 'events'];
     if (!allowedTypes.includes(linkType)) {
-      return new Response(JSON.stringify({ error: 'Invalid link type' }), {
-        status: 400,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+      return new Response(null, { status: 204, headers: corsHeaders });
     }
 
     const today = new Date().toISOString().split('T')[0];
@@ -34,16 +32,10 @@ export async function onRequestPost(context) {
       ON CONFLICT(link_type, page, date) DO UPDATE SET count = count + 1
     `).bind(linkType, page, today).run();
 
-    return new Response(JSON.stringify({ ok: true }), {
-      status: 200,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
+    return new Response(null, { status: 204, headers: corsHeaders });
   } catch (error) {
     console.error('Track error:', error);
-    return new Response(JSON.stringify({ error: 'Internal error' }), {
-      status: 500,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
+    return new Response(null, { status: 204, headers: corsHeaders });
   }
 }
 
