@@ -1665,3 +1665,134 @@ h1, h2, h3, h4, h5, h6 {
         gap: 16px;
     }
 }
+
+/* ========== Footer Newsletter Signup ========== */
+.footer-newsletter {
+    margin: 0 0 24px;
+}
+
+.footer-newsletter-heading {
+    font-family: var(--font-serif);
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 4px;
+}
+
+.footer-newsletter-subtext {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 12px;
+    line-height: 1.4;
+}
+
+.footer-newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.footer-newsletter-form input[type="email"] {
+    flex: 1 1 200px;
+    min-width: 180px;
+    max-width: 260px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    font-family: var(--font-sans);
+}
+
+.footer-newsletter-form input[type="email"]::placeholder {
+    color: #999;
+}
+
+.footer-newsletter-form button {
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+
+.footer-newsletter-form button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.footer-newsletter-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-newsletter-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+    .footer-newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .footer-newsletter-form input[type="email"] {
+        max-width: none;
+        width: 100%;
+    }
+
+    .footer-newsletter-form button {
+        width: 100%;
+    }
+}
+
+/* ========== Newsletter Signup Section (Content Pages) ========== */
+.newsletter-section {
+    padding: 48px 20px;
+    background-color: var(--color-section-alt);
+    text-align: center;
+}
+
+.newsletter-section-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-section h2 {
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+    font-size: 1.75em;
+    margin: 0 0 8px;
+}
+
+.newsletter-section-subtext {
+    color: var(--color-text);
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0 0 24px;
+}
+
+.newsletter-section-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.2s;
+}
+
+.newsletter-section-link:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
