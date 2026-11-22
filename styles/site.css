@@ -169,12 +169,12 @@ body, html {
 
 .photo-banner__logo {
     position: absolute;
-    bottom: -8%;
+    bottom: 8px;
     left: 50%;
     z-index: 2;
     transform: translateX(-50%);
-    width: clamp(260px, 42vw, 480px);
-    max-width: 85%;
+    width: clamp(220px, 36vw, 400px);
+    max-width: 80%;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.35));
@@ -791,8 +791,8 @@ body, html {
     }
 
     .photo-banner__logo {
-        width: clamp(200px, 55vw, 320px);
-        bottom: -10%;
+        width: clamp(180px, 48vw, 280px);
+        bottom: 6px;
     }
 
     .hero-content {
@@ -1336,7 +1336,7 @@ body, html {
     }
 
     .photo-banner__logo {
-        width: clamp(180px, 50vw, 260px);
+        width: clamp(160px, 44vw, 220px);
     }
 
     .hero-title {
