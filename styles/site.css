@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
 
 :root {
     --color-primary: #4682B4;
@@ -266,8 +266,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
     font-size: 1.05em;
     line-height: 1.7;
-    color: var(--color-text);
-    font-style: italic;
+    color: #666;
     margin: 0 auto 24px;
     max-width: 640px;
 }
@@ -528,8 +527,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .testimonial-card p {
-    font-family: var(--font-serif);
-    font-style: italic;
     line-height: 1.65;
     color: #333;
     margin: 0 0 12px;
@@ -559,7 +556,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .testimonial-card--compact p {
-    font-family: var(--font-serif);
     font-size: clamp(0.78rem, 2.6vw, 0.92rem);
     line-height: 1.5;
     margin: 0 0 8px;
@@ -1107,7 +1103,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.35em;
     margin: 10px 0 30px;
     font-weight: normal;
-    font-style: italic;
     line-height: 1.5;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -1247,12 +1242,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .testimony-text {
-    font-family: var(--font-serif);
     font-size: 1.1em;
     line-height: 1.65;
     color: #333;
     margin-bottom: 15px;
-    font-style: italic;
 }
 
 .testimony-author {
