@@ -225,9 +225,12 @@
             });
         });
 
-        // Scroll animation for content boxes
+        // Scroll animation for content boxes (progressive enhancement)
+        // Add animate-in class to enable scroll animations; content is visible by default for no-JS
+        const contentBoxes = document.querySelectorAll('.content-section .content-box');
+        contentBoxes.forEach(box => box.classList.add('animate-in'));
+
         function checkScroll() {
-            const contentBoxes = document.querySelectorAll('.content-section .content-box');
             contentBoxes.forEach(box => {
                 const boxTop = box.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
@@ -241,8 +244,6 @@
         // Check on scroll and on page load
         window.addEventListener('scroll', checkScroll);
         window.addEventListener('load', checkScroll);
-
-
     </script>
 
     <footer class="site-footer">
