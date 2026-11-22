@@ -2,6 +2,9 @@
   'use strict';
 
   var INVITE_ENDPOINT = '/api/invite';
+  // Email alert to Hugh via FormSubmit, sent from the visitor's browser.
+  // (Server-side calls from Cloudflare get rate-limited by FormSubmit.)
+  var ALERT_ENDPOINT = 'https://formsubmit.co/ajax/bro.roth@hughroth.com';
   var MAX_FIELD_LENGTH = 500;
   var MAX_TOTAL_SIZE = 4000;
 
@@ -50,6 +53,31 @@
       detailsGroup.style.display = 'none';
     }
   });
+
+  function sendEmailAlert(data) {
+    try {
+      fetch(ALERT_ENDPOINT, {
+        method: 'POST',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'New Invite Hugh request: ' + data.reason + ' from ' + data.name,
+          _template: 'table',
+          _captcha: 'false',
+          _replyto: data.email,
+          Name: data.name,
+          Email: data.email,
+          Phone: data.phone || '(not provided)',
+          Reason: data.reason,
+          Details: data.details || '(none)',
+          Page: data.page,
+          Submitted: new Date().toISOString()
+        })
+      }).catch(function() {});
+    } catch (err) {
+      // Alert is best-effort; the request is already saved.
+    }
+  }
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -130,6 +158,7 @@
       return response.json();
     })
     .then(function() {
+      sendEmailAlert(payload);
       form.reset();
       detailsGroup.style.display = 'none';
       showModal();

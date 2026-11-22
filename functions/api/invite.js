@@ -17,14 +17,13 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-const NOTIFY_EMAIL = 'bro.roth@hughroth.com';
-const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${NOTIFY_EMAIL}`;
-
-// Email alert via FormSubmit (the same service the old contact form used,
-// already activated for bro.roth@hughroth.com). Never blocks or fails the submission.
+// The email alert is sent from the visitor's browser (scripts/invite-form.js):
+// FormSubmit rate-limits (HTTP 429) server-side calls from Cloudflare's shared IPs.
+// Optional server-side alert only if INVITE_FORMSUBMIT_URL is set.
 async function sendEmailNotification(env, data) {
+  if (!env.INVITE_FORMSUBMIT_URL) return;
   try {
-    const res = await fetch(env.INVITE_FORMSUBMIT_URL || FORMSUBMIT_ENDPOINT, {
+    const res = await fetch(env.INVITE_FORMSUBMIT_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
