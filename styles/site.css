@@ -1660,12 +1660,18 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
+.footer-ministry-line {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 8px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 .footer-copyright {
     font-size: 0.85em;
     color: rgba(255, 255, 255, 0.6);
     margin: 0;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 @media screen and (max-width: 768px) {
