@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap');
+
 :root {
     --color-primary: #4682B4;
     --color-primary-dark: #36648B;
     --color-section-bg: #B2E0F0;
     --color-text: #555;
     --site-header-height: 64px;
+    --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 *, *::before, *::after {
@@ -13,10 +17,19 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.65;
     overflow-x: hidden;
     background-color: #FFFFFF;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
 
 .nav {
     position: fixed;
@@ -235,10 +248,10 @@ body, html {
 }
 
 .hero-byline {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     color: var(--color-text);
     margin: 0 0 20px;
-    line-height: 1.5;
+    line-height: 1.6;
     max-width: 520px;
 }
 
@@ -250,8 +263,9 @@ body, html {
 }
 
 .hero-scripture {
-    font-size: 0.95em;
-    line-height: 1.6;
+    font-family: var(--font-serif);
+    font-size: 1.05em;
+    line-height: 1.7;
     color: var(--color-text);
     font-style: italic;
     margin: 0 auto 24px;
@@ -514,8 +528,9 @@ body, html {
 }
 
 .testimonial-card p {
+    font-family: var(--font-serif);
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #333;
     margin: 0 0 12px;
 }
@@ -539,18 +554,19 @@ body, html {
 }
 
 .testimonial-card--compact {
-    padding: clamp(10px, 2vw, 14px);
+    padding: clamp(12px, 2.5vw, 16px);
     margin: 0;
 }
 
 .testimonial-card--compact p {
-    font-size: clamp(0.68rem, 2.4vw, 0.82rem);
-    line-height: 1.4;
-    margin: 0 0 6px;
+    font-family: var(--font-serif);
+    font-size: clamp(0.78rem, 2.6vw, 0.92rem);
+    line-height: 1.5;
+    margin: 0 0 8px;
 }
 
 .testimonial-card--compact cite {
-    font-size: clamp(0.62rem, 2vw, 0.72rem);
+    font-size: clamp(0.72rem, 2.2vw, 0.82rem);
     text-align: right;
 }
 
@@ -1086,11 +1102,13 @@ body, html {
 }
 
 .mission-subheading {
+    font-family: var(--font-serif);
     color: rgba(255, 255, 255, 0.95);
-    font-size: 1.3em;
+    font-size: 1.35em;
     margin: 10px 0 30px;
     font-weight: normal;
     font-style: italic;
+    line-height: 1.5;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -1229,8 +1247,9 @@ body, html {
 }
 
 .testimony-text {
+    font-family: var(--font-serif);
     font-size: 1.1em;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #333;
     margin-bottom: 15px;
     font-style: italic;
