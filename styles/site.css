@@ -169,15 +169,44 @@ body, html {
 
 .photo-banner__logo {
     position: absolute;
-    bottom: 8px;
+    top: 50%;
     left: 50%;
     z-index: 2;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: clamp(220px, 36vw, 400px);
     max-width: 80%;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.35));
+}
+
+/* Two-photo banner variant (home page) */
+.photo-banner--two-photos {
+    overflow: visible;
+}
+
+.photo-banner--two-photos .photo-banner__grid {
+    overflow: hidden;
+}
+
+.photo-banner--two-photos .photo-banner__img--left,
+.photo-banner--two-photos .photo-banner__img--right {
+    flex: 1 1 50%;
+    width: 50%;
+    object-fit: cover;
+}
+
+.photo-banner--two-photos .photo-banner__img--left {
+    object-position: 30% 30%;
+}
+
+.photo-banner--two-photos .photo-banner__img--right {
+    object-position: 70% 25%;
+}
+
+.photo-banner--two-photos .photo-banner__logo {
+    width: clamp(280px, 40vw, 480px);
+    max-height: 90%;
 }
 
 .back-button {
@@ -792,7 +821,26 @@ body, html {
 
     .photo-banner__logo {
         width: clamp(180px, 48vw, 280px);
-        bottom: 6px;
+    }
+
+    .photo-banner--two-photos .photo-banner__img--left,
+    .photo-banner--two-photos .photo-banner__img--right {
+        flex: 1 1 50%;
+        width: 50%;
+        aspect-ratio: auto;
+        object-fit: cover;
+    }
+
+    .photo-banner--two-photos .photo-banner__img--left {
+        object-position: 25% 30%;
+    }
+
+    .photo-banner--two-photos .photo-banner__img--right {
+        object-position: 65% 20%;
+    }
+
+    .photo-banner--two-photos .photo-banner__logo {
+        width: clamp(200px, 52vw, 300px);
     }
 
     .hero-content {
@@ -1337,6 +1385,10 @@ body, html {
 
     .photo-banner__logo {
         width: clamp(160px, 44vw, 220px);
+    }
+
+    .photo-banner--two-photos .photo-banner__logo {
+        width: clamp(170px, 46vw, 240px);
     }
 
     .hero-title {
