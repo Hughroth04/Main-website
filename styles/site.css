@@ -319,7 +319,10 @@ body, html {
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
-    margin-top: 24px;
+    align-items: center;
+    margin: 24px auto 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .btn {
@@ -861,13 +864,17 @@ body, html {
         flex-direction: column;
         width: 100%;
         max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
         gap: 10px;
+        box-sizing: border-box;
     }
 
     .about-actions .btn {
         width: 100%;
         text-align: center;
         padding: 14px 20px;
+        box-sizing: border-box;
     }
 
     .hero-testimonials {
