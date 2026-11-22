@@ -112,7 +112,7 @@ body, html {
     min-width: 100%;
     margin: 0;
     padding: 0;
-    height: clamp(280px, 38vw, 440px);
+    height: clamp(220px, 30vw, 345px);
     overflow: hidden;
     background-color: #1a2a33;
 }
@@ -205,7 +205,7 @@ body, html {
 }
 
 .photo-banner--two-photos .photo-banner__logo {
-    width: clamp(280px, 40vw, 480px);
+    width: clamp(220px, 31vw, 375px);
     max-height: 90%;
 }
 
