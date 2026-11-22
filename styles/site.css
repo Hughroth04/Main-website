@@ -876,6 +876,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-heading {
     font-size: 2em;
     margin-bottom: 10px;
+    color: var(--color-primary);
 }
 
 #about.section {
