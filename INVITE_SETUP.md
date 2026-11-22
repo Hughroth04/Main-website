@@ -6,7 +6,7 @@ This document explains how "Invite Hugh" form submissions are stored and how ema
 
 When someone submits the invite form at `/invite`, the Pages Function `functions/api/invite.js`:
 1. Saves the submission to the D1 database (source of truth)
-2. Sends an email alert to `bro.roth@hughroth.com` through [FormSubmit](https://formsubmit.co) (in the background via `context.waitUntil`)
+2. Returns `{ok:true}`; the visitor's browser then sends an email alert to `bro.roth@hughroth.com` through [FormSubmit](https://formsubmit.co)
 3. Optionally posts to a webhook if `INVITE_NOTIFY_WEBHOOK` is set
 
 Email failures never affect the form submission - the D1 database is authoritative.
@@ -15,15 +15,17 @@ Email failures never affect the form submission - the D1 database is authoritati
 
 No Cloudflare email setup is needed. **Do not enable Email Routing or change MX records** - hughroth.com mail is handled by Google Workspace.
 
-The function POSTs JSON to `https://formsubmit.co/ajax/bro.roth@hughroth.com` with
-`Origin`/`Referer` set to `https://hughroth.com`. FormSubmit is already activated for this
-address (the old contact form used it), so no confirmation step is needed.
+After `/api/invite` saves the request, the visitor's browser (`scripts/invite-form.js`) POSTs
+JSON to `https://formsubmit.co/ajax/bro.roth@hughroth.com`. It is sent from the browser, not the
+Pages Function, because FormSubmit answers server-side calls from Cloudflare's shared IPs with
+HTTP 429 (rate limit). FormSubmit is already activated for this address (the old contact form
+used it), so no confirmation step is needed.
 
 Optional environment variables:
 
 | Variable | Purpose |
 |----------|---------|
-| `INVITE_FORMSUBMIT_URL` | Override the FormSubmit endpoint (e.g. a hashed alias URL) |
+| `INVITE_FORMSUBMIT_URL` | If set, the Pages Function also POSTs the alert server-side to this URL (off by default) |
 | `INVITE_NOTIFY_WEBHOOK` | Extra webhook that receives the submission as JSON |
 
 ## Database Initialization
@@ -79,7 +81,7 @@ This is fire-and-forget and does not affect form submission success.
 ### Emails not arriving
 
 1. Check the spam folder for mail from `submissions@formsubmit.co`
-2. Check the Pages function logs for the `FormSubmit notification:` line (status and response)
+2. In the browser dev tools Network tab, check the POST to `formsubmit.co/ajax/...` after submitting
 3. Submissions are still saved - view them with `/api/invites?token=...`
 
 ### Database errors
