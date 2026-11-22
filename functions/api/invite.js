@@ -1,5 +1,3 @@
-import { EmailMessage } from 'cloudflare:email';
-
 const MAX_FIELD_LENGTH = 500;
 const MAX_TOTAL_SIZE = 4000;
 const VALID_REASONS = ['Ministry Presentation', 'Evangelism Training', 'Organize an Outreach', 'Other'];
@@ -19,68 +17,37 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function encodeRfc2047(str) {
-  if (/^[\x20-\x7E]*$/.test(str)) return str;
-  return '=?UTF-8?B?' + btoa(unescape(encodeURIComponent(str))) + '?=';
-}
+const NOTIFY_EMAIL = 'bro.roth@hughroth.com';
+const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${NOTIFY_EMAIL}`;
 
-function buildRawEmail(from, to, replyTo, subject, bodyText) {
-  const boundary = '----=_Part_' + Date.now().toString(36);
-  const lines = [
-    `From: ${from}`,
-    `To: ${to}`,
-    `Reply-To: ${replyTo}`,
-    `Subject: ${encodeRfc2047(subject)}`,
-    `MIME-Version: 1.0`,
-    `Content-Type: text/plain; charset=UTF-8`,
-    `Content-Transfer-Encoding: 7bit`,
-    ``,
-    bodyText,
-  ];
-  return lines.join('\r\n');
-}
-
+// Email alert via FormSubmit (the same service the old contact form used,
+// already activated for bro.roth@hughroth.com). Never blocks or fails the submission.
 async function sendEmailNotification(env, data) {
-  if (!env.INVITE_EMAIL || !env.INVITE_NOTIFY_TO || !env.INVITE_NOTIFY_FROM) {
-    console.log('Email notification skipped: missing INVITE_EMAIL binding or env vars');
-    return;
-  }
-
   try {
-    const timestamp = new Date().toISOString();
-    const subject = `New Invite Hugh request: ${data.reason} from ${data.name}`;
-
-    const bodyText = `New invitation request received
-
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone || '(not provided)'}
-Reason: ${data.reason}
-Details: ${data.details || '(none)'}
-Page: ${data.page}
-Submitted: ${timestamp}
-
----
-This email was sent automatically from hughroth.com.
-Reply directly to this email to respond to ${data.name}.`;
-
-    const fromHeader = `Invite Hugh <${env.INVITE_NOTIFY_FROM}>`;
-    const rawEmail = buildRawEmail(
-      fromHeader,
-      env.INVITE_NOTIFY_TO,
-      data.email,
-      subject,
-      bodyText
-    );
-
-    const message = new EmailMessage(
-      env.INVITE_NOTIFY_FROM,
-      env.INVITE_NOTIFY_TO,
-      new TextEncoder().encode(rawEmail)
-    );
-
-    await env.INVITE_EMAIL.send(message);
-    console.log('Email notification sent successfully');
+    const res = await fetch(env.INVITE_FORMSUBMIT_URL || FORMSUBMIT_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Origin: 'https://hughroth.com',
+        Referer: 'https://hughroth.com/invite',
+      },
+      body: JSON.stringify({
+        _subject: `New Invite Hugh request: ${data.reason} from ${data.name}`,
+        _template: 'table',
+        _captcha: 'false',
+        _replyto: data.email,
+        Name: data.name,
+        Email: data.email,
+        Phone: data.phone || '(not provided)',
+        Reason: data.reason,
+        Details: data.details || '(none)',
+        Page: data.page,
+        Submitted: new Date().toISOString(),
+      }),
+    });
+    const text = await res.text();
+    console.log('FormSubmit notification:', res.status, text.slice(0, 200));
   } catch (error) {
     console.error('Email notification failed (non-fatal):', error);
   }
@@ -90,7 +57,7 @@ async function sendWebhookNotification(env, data) {
   if (!env.INVITE_NOTIFY_WEBHOOK) return;
 
   try {
-    fetch(env.INVITE_NOTIFY_WEBHOOK, {
+    await fetch(env.INVITE_NOTIFY_WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -102,7 +69,7 @@ async function sendWebhookNotification(env, data) {
         page: data.page,
         timestamp: new Date().toISOString(),
       }),
-    }).catch(() => {});
+    });
   } catch {
     // Fire and forget - don't fail the submission
   }
@@ -188,8 +155,9 @@ export async function onRequestPost(context) {
       VALUES (?, ?, ?, ?, ?, ?)
     `).bind(name, phone, email, reason, details, page).run();
 
-    sendEmailNotification(env, { name, phone, email, reason, details, page });
-    sendWebhookNotification(env, { name, phone, email, reason, details, page });
+    const notifyData = { name, phone, email, reason, details, page };
+    context.waitUntil(sendEmailNotification(env, notifyData));
+    context.waitUntil(sendWebhookNotification(env, notifyData));
 
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
