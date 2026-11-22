@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+
 :root {
     --color-primary: #4682B4;
     --color-primary-dark: #36648B;
     --color-section-bg: #B2E0F0;
+    --color-section-alt: #f8fbfd;
+    --color-footer-bg: #1a3a52;
     --color-text: #555;
     --site-header-height: 64px;
+    --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 *, *::before, *::after {
@@ -13,10 +19,19 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.65;
     overflow-x: hidden;
     background-color: #FFFFFF;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
 
 .nav {
     position: fixed;
@@ -74,12 +89,15 @@ body, html {
 }
 
 .section {
-    min-height: 100vh;
     padding: 60px 20px;
     overflow: hidden;
     position: relative;
     background-color: var(--color-section-bg);
     text-align: center;
+}
+
+.section--alt {
+    background-color: var(--color-section-alt);
 }
 
 .section-inner {
@@ -235,10 +253,10 @@ body, html {
 }
 
 .hero-byline {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     color: var(--color-text);
     margin: 0 0 20px;
-    line-height: 1.5;
+    line-height: 1.6;
     max-width: 520px;
 }
 
@@ -250,10 +268,10 @@ body, html {
 }
 
 .hero-scripture {
-    font-size: 0.95em;
-    line-height: 1.6;
-    color: var(--color-text);
-    font-style: italic;
+    font-family: var(--font-serif);
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: #666;
     margin: 0 auto 24px;
     max-width: 640px;
 }
@@ -514,8 +532,7 @@ body, html {
 }
 
 .testimonial-card p {
-    font-style: italic;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #333;
     margin: 0 0 12px;
 }
@@ -539,18 +556,18 @@ body, html {
 }
 
 .testimonial-card--compact {
-    padding: clamp(10px, 2vw, 14px);
+    padding: clamp(12px, 2.5vw, 16px);
     margin: 0;
 }
 
 .testimonial-card--compact p {
-    font-size: clamp(0.68rem, 2.4vw, 0.82rem);
-    line-height: 1.4;
-    margin: 0 0 6px;
+    font-size: clamp(0.78rem, 2.6vw, 0.92rem);
+    line-height: 1.5;
+    margin: 0 0 8px;
 }
 
 .testimonial-card--compact cite {
-    font-size: clamp(0.62rem, 2vw, 0.72rem);
+    font-size: clamp(0.72rem, 2.2vw, 0.82rem);
     text-align: right;
 }
 
@@ -798,7 +815,6 @@ body, html {
     #about.section {
         padding-top: var(--site-header-height);
         padding-bottom: 40px;
-        min-height: auto;
     }
 
     .photo-banner {
@@ -935,7 +951,6 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     padding: 80px 20px 60px;
     background-color: var(--color-section-bg);
     position: relative;
@@ -1086,11 +1101,12 @@ body, html {
 }
 
 .mission-subheading {
+    font-family: var(--font-serif);
     color: rgba(255, 255, 255, 0.95);
-    font-size: 1.3em;
+    font-size: 1.35em;
     margin: 10px 0 30px;
     font-weight: normal;
-    font-style: italic;
+    line-height: 1.5;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -1230,10 +1246,9 @@ body, html {
 
 .testimony-text {
     font-size: 1.1em;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #333;
     margin-bottom: 15px;
-    font-style: italic;
 }
 
 .testimony-author {
@@ -1412,5 +1427,99 @@ body, html {
 
     .hero-scripture {
         font-size: 0.85em;
+    }
+}
+
+/* ========== Site Footer ========== */
+.site-footer {
+    background-color: var(--color-footer-bg);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 48px 20px 24px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-ministry-name {
+    font-family: var(--font-serif);
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.footer-tagline {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 24px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.5em;
+    margin: 0 0 24px;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: #fff;
+}
+
+.footer-copyright {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media screen and (max-width: 768px) {
+    .site-footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-ministry-name {
+        font-size: 1.25em;
+    }
+
+    .footer-links {
+        gap: 6px 16px;
+    }
+
+    .footer-social {
+        font-size: 1.3em;
+        gap: 16px;
     }
 }
