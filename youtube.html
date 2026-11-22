@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="styles/site.css?v=27">
+    <link rel="stylesheet" href="styles/site.css?v=29">
 </head>
 <body>
     <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav">
@@ -25,6 +25,7 @@
         <a href="about.html">About</a>
         <a href="youtube.html">Sermons</a>
         <a href="southcentralobp.html">Outreach Bible Project</a>
+        <a href="invite.html" data-track="invite_hugh">Invite Hugh</a>
         <a href="index.html#contact">Contact</a>
         <a href="https://alvinmbc.com/give/obp" target="_blank" rel="noopener noreferrer">Giving</a>
     </nav>
@@ -97,28 +98,84 @@
                 </div>
             </div>
 
-            <div class="testimonials-grid">
-                <blockquote class="testimonial-card">
-                    <p>&ldquo;These OBP events have given me confidence in my ability to evangelize, and even improved my ability to work as a pastor back home.&rdquo;</p>
-                    <cite>&mdash; Sluggo Norris, Rison, AR</cite>
-                </blockquote>
-                <blockquote class="testimonial-card">
-                    <p>&ldquo;The Outreach Bible Project events give me the courage to keep getting out there to share the Gospel with others.&rdquo;</p>
-                    <cite>&mdash; Lori S., Waco, TX</cite>
-                </blockquote>
+            <div class="hero-testimonials" style="max-width: 900px;">
+                <p class="testimonials-label">What people are saying</p>
+                <div class="testimonials-row">
+                    <blockquote class="testimonial-card testimonial-card--enhanced">
+                        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                        <p class="testimonial-text">These OBP events have given me confidence in my ability to evangelize, and even improved my ability to work as a pastor back home.</p>
+                        <footer class="testimonial-footer">
+                            <span class="testimonial-initials" aria-hidden="true">SN</span>
+                            <cite class="testimonial-attribution">
+                                <span class="testimonial-name">Sluggo Norris</span>
+                                <span class="testimonial-location">Rison, AR</span>
+                            </cite>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonial-card testimonial-card--enhanced">
+                        <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                        <p class="testimonial-text">The Outreach Bible Project events give me the courage to keep getting out there to share the Gospel with others.</p>
+                        <footer class="testimonial-footer">
+                            <span class="testimonial-initials" aria-hidden="true">LS</span>
+                            <cite class="testimonial-attribution">
+                                <span class="testimonial-name">Lori S.</span>
+                                <span class="testimonial-location">Waco, TX</span>
+                            </cite>
+                        </footer>
+                    </blockquote>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="newsletter-section-inner">
+            <h2>Receive Testimonies, Devotionals &amp; Prayer Requests</h2>
+            <p class="newsletter-section-subtext">A short update every other month: what God is doing on the streets, how to pray, and where we're headed next. No spam.</p>
+            <div id="mc_embed_signup">
+                <form action="https://hughroth.us14.list-manage.com/subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;f_id=00f5b3e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll">
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_0d195388e607dce3844ecf1b8_b76b6737b6" tabindex="-1" value="">
+                        </div>
+                        <div class="clear foot">
+                            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <a href="https://mailchi.mp/af27e5764ce3/outreach-bible-project-marchapril-report-9324970" class="newsletter-section-link" target="_blank" rel="noopener noreferrer" data-track="newsletter_pdf">
+                <i class="fas fa-external-link-alt"></i> Read the Latest Issue
+            </a>
         </div>
     </section>
 
     <footer class="site-footer">
         <div class="footer-content">
-            <h2 class="footer-ministry-name">South Central Outreach Bible Project</h2>
-            <p class="footer-tagline">Sent out of Alvin Missionary Baptist Church</p>
+            <div class="footer-newsletter">
+                <p class="footer-newsletter-heading">Receive Testimonies, Devotionals &amp; Prayer Requests</p>
+                <p class="footer-newsletter-subtext">A short update every other month. No spam.</p>
+                <form class="footer-newsletter-form" action="https://hughroth.us14.list-manage.com/subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;f_id=00f5b3e0f0" method="post" target="_blank">
+                    <input type="email" name="EMAIL" placeholder="Your email" required>
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_0d195388e607dce3844ecf1b8_b76b6737b6" tabindex="-1" value=""></div>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <a href="https://mailchi.mp/af27e5764ce3/outreach-bible-project-marchapril-report-9324970" class="footer-newsletter-link" target="_blank" rel="noopener noreferrer" data-track="newsletter_pdf">Read the latest issue &rarr;</a>
+            </div>
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="youtube.html">Sermons</a></li>
                 <li><a href="southcentralobp.html">Outreach Bible Project</a></li>
+                <li><a href="invite.html">Invite Hugh</a></li>
                 <li><a href="https://alvinmbc.com/give/obp" target="_blank" rel="noopener noreferrer">Giving</a></li>
             </ul>
             <div class="footer-social">
@@ -132,7 +189,8 @@
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
-            <p class="footer-copyright">&copy; 2026 South Central Outreach Bible Project. All rights reserved.</p>
+            <p class="footer-ministry-line">A ministry of Alvin Missionary Baptist Church</p>
+            <p class="footer-copyright">&copy; 2026 South Central Outreach Bible Project</p>
         </div>
     </footer>
 

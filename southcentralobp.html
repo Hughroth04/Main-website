@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="styles/site.css?v=27">
+    <link rel="stylesheet" href="styles/site.css?v=29">
 </head>
 <body>
     <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav">
@@ -29,6 +29,7 @@
         <a href="about.html">About</a>
         <a href="youtube.html">Sermons</a>
         <a href="southcentralobp.html">Outreach Bible Project</a>
+        <a href="invite.html" data-track="invite_hugh">Invite Hugh</a>
         <a href="index.html#contact">Contact</a>
         <a href="https://alvinmbc.com/give/obp" target="_blank" rel="noopener noreferrer">Giving</a>
     </nav>
@@ -69,39 +70,30 @@
         </div>
 
         <div class="bottom-boxes-container">
-            <div class="content-box contact-form-box">
-                <h2>Get In Touch!</h2>
-                <form id="contact-form" class="contact-form" action="https://formsubmit.co/bro.roth@hughroth.com" method="POST">
-                    <input type="hidden" name="_subject" value="New message from hughroth.com (OBP page)">
-                    <input type="hidden" name="_next" value="https://hughroth.com/southcentralobp.html?sent=1">
-                    <input type="hidden" name="_captcha" value="true">
-                    <input type="hidden" name="_template" value="table">
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Tell me about your interest in our ministry..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+            <div class="content-box contact-box">
+                <h2>Contact</h2>
+                <a href="invite.html" class="btn invite-btn" data-track="invite_hugh">Invite Hugh</a>
+                <p class="contact-inquiries">For general inquiries:</p>
+                <div class="contact-info">
+                    <p><a href="tel:832-580-4096" class="contact-link"><i class="fas fa-phone"></i> (832) 580-4096</a></p>
+                    <p><a href="mailto:bro.roth@hughroth.com" class="contact-link"><i class="fas fa-envelope"></i> bro.roth@hughroth.com</a></p>
+                </div>
+                <div class="social-icons" style="font-size: 2.2em; margin-top: 20px;">
+                    <a href="https://www.instagram.com/hughspeaksjesus" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100071903762860" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@theoutreachbibleproject" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
             </div>
 
             <div class="content-box">
-                <h2>Monthly Newsletter</h2>
+                <h2>Receive Testimonies, Devotionals &amp; Prayer Requests</h2>
+                <p style="margin-bottom: 20px;">A short update every other month: what God is doing on the streets, how to pray, and where we're headed next. No spam.</p>
                 <div id="mc_embed_signup">
                     <form action="https://hughroth.us14.list-manage.com/subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;f_id=00f5b3e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                         <div id="mc_embed_signup_scroll">
@@ -122,31 +114,9 @@
                         </div>
                     </form>
                 </div>
-                <a href="https://mailchi.mp/af27e5764ce3/outreach-bible-project-marchapril-report-9324970" class="newsletter-pdf-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-external-link-alt"></i> View September–October Newsletter
+                <a href="https://mailchi.mp/af27e5764ce3/outreach-bible-project-marchapril-report-9324970" class="newsletter-pdf-link" target="_blank" rel="noopener noreferrer" data-track="newsletter_pdf">
+                    <i class="fas fa-external-link-alt"></i> Read the Latest Issue
                 </a>
-                
-                <div class="contact-info-section">
-                    <div class="contact-info">
-                        <p class="contact-info">
-                            Cell: <a href="tel:832-580-4096" class="contact-link">(832) 580-4096</a>
-                        </p>
-                        <p class="contact-info">
-                            Email: <a href="mailto:bro.roth@hughroth.com" class="contact-link">bro.roth@hughroth.com</a>
-                        </p>
-                    </div>
-                    <div class="social-icons" style="font-size: 2.2em; margin-top: 20px;">
-                        <a href="https://www.instagram.com/hughspeaksjesus" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=100071903762860" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@theoutreachbibleproject" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -240,13 +210,22 @@
 
     <footer class="site-footer">
         <div class="footer-content">
-            <h2 class="footer-ministry-name">South Central Outreach Bible Project</h2>
-            <p class="footer-tagline">Sent out of Alvin Missionary Baptist Church</p>
+            <div class="footer-newsletter">
+                <p class="footer-newsletter-heading">Receive Testimonies, Devotionals &amp; Prayer Requests</p>
+                <p class="footer-newsletter-subtext">A short update every other month. No spam.</p>
+                <form class="footer-newsletter-form" action="https://hughroth.us14.list-manage.com/subscribe/post?u=0d195388e607dce3844ecf1b8&amp;id=b76b6737b6&amp;f_id=00f5b3e0f0" method="post" target="_blank">
+                    <input type="email" name="EMAIL" placeholder="Your email" required>
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_0d195388e607dce3844ecf1b8_b76b6737b6" tabindex="-1" value=""></div>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <a href="https://mailchi.mp/af27e5764ce3/outreach-bible-project-marchapril-report-9324970" class="footer-newsletter-link" target="_blank" rel="noopener noreferrer" data-track="newsletter_pdf">Read the latest issue &rarr;</a>
+            </div>
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="youtube.html">Sermons</a></li>
                 <li><a href="southcentralobp.html">Outreach Bible Project</a></li>
+                <li><a href="invite.html">Invite Hugh</a></li>
                 <li><a href="https://alvinmbc.com/give/obp" target="_blank" rel="noopener noreferrer">Giving</a></li>
             </ul>
             <div class="footer-social">
@@ -260,12 +239,12 @@
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
-            <p class="footer-copyright">&copy; 2026 South Central Outreach Bible Project. All rights reserved.</p>
+            <p class="footer-ministry-line">A ministry of Alvin Missionary Baptist Church</p>
+            <p class="footer-copyright">&copy; 2026 South Central Outreach Bible Project</p>
         </div>
     </footer>
 
     <script src="scripts/nav.js"></script>
-    <script src="scripts/contact-form.js"></script>
     <script src="scripts/track.js"></script>
 </body>
 </html>

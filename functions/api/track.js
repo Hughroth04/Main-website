@@ -19,7 +19,7 @@ export async function onRequestPost(context) {
       return new Response(null, { status: 204, headers: corsHeaders });
     }
 
-    const allowedTypes = ['give', 'newsletter_signup', 'newsletter_pdf', 'events'];
+    const allowedTypes = ['give', 'newsletter_signup', 'newsletter_pdf', 'events', 'invite_hugh'];
     if (!allowedTypes.includes(linkType)) {
       return new Response(null, { status: 204, headers: corsHeaders });
     }
