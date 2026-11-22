@@ -112,7 +112,7 @@ body, html {
     min-width: 100%;
     margin: 0;
     padding: 0;
-    height: clamp(168px, 29vw, 336px);
+    height: clamp(220px, 30vw, 345px);
     overflow: hidden;
     background-color: #1a2a33;
 }
@@ -151,7 +151,7 @@ body, html {
     width: auto;
     height: 100%;
     object-fit: contain;
-    object-position: center center;
+    object-position: center 30%;
 }
 
 .photo-banner__overlay {
@@ -169,16 +169,44 @@ body, html {
 
 .photo-banner__logo {
     position: absolute;
-    top: 50%;
+    top: 58%;
     left: 50%;
     z-index: 2;
     transform: translate(-50%, -50%);
-    width: clamp(375px, 56vw, 688px);
-    max-width: 90%;
-    max-height: 95%;
+    width: clamp(220px, 36vw, 400px);
+    max-width: 80%;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.35));
+}
+
+/* Two-photo banner variant (home page) */
+.photo-banner--two-photos {
+    overflow: visible;
+}
+
+.photo-banner--two-photos .photo-banner__grid {
+    overflow: hidden;
+}
+
+.photo-banner--two-photos .photo-banner__img--left,
+.photo-banner--two-photos .photo-banner__img--right {
+    flex: 1 1 50%;
+    width: 50%;
+    object-fit: cover;
+}
+
+.photo-banner--two-photos .photo-banner__img--left {
+    object-position: 30% 30%;
+}
+
+.photo-banner--two-photos .photo-banner__img--right {
+    object-position: 70% 25%;
+}
+
+.photo-banner--two-photos .photo-banner__logo {
+    width: clamp(220px, 31vw, 375px);
+    max-height: 90%;
 }
 
 .back-button {
@@ -291,7 +319,10 @@ body, html {
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
-    margin-top: 24px;
+    align-items: center;
+    margin: 24px auto 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .btn {
@@ -771,7 +802,7 @@ body, html {
     }
 
     .photo-banner {
-        height: clamp(126px, 28vw, 196px);
+        height: clamp(180px, 45vw, 260px);
     }
 
     .photo-banner__img--left,
@@ -780,7 +811,7 @@ body, html {
         width: auto;
         aspect-ratio: 1 / 1;
         object-fit: cover;
-        object-position: 50% 50%;
+        object-position: 50% 30%;
     }
 
     .photo-banner__img--middle {
@@ -788,11 +819,31 @@ body, html {
         min-width: 0;
         width: auto;
         object-fit: cover;
-        object-position: center center;
+        object-position: center 25%;
     }
 
     .photo-banner__logo {
-        width: clamp(344px, 88vw, 500px);
+        width: clamp(180px, 48vw, 280px);
+    }
+
+    .photo-banner--two-photos .photo-banner__img--left,
+    .photo-banner--two-photos .photo-banner__img--right {
+        flex: 1 1 50%;
+        width: 50%;
+        aspect-ratio: auto;
+        object-fit: cover;
+    }
+
+    .photo-banner--two-photos .photo-banner__img--left {
+        object-position: 25% 30%;
+    }
+
+    .photo-banner--two-photos .photo-banner__img--right {
+        object-position: 65% 20%;
+    }
+
+    .photo-banner--two-photos .photo-banner__logo {
+        width: clamp(200px, 52vw, 300px);
     }
 
     .hero-content {
@@ -801,10 +852,50 @@ body, html {
 
     .hero-title {
         margin-bottom: 4px;
+        font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+        padding: 0 8px;
     }
 
     .hero-byline {
         margin-bottom: 12px;
+    }
+
+    .about-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    .about-actions .btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+        box-sizing: border-box;
+    }
+
+    .hero-testimonials {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        max-width: 320px;
+        margin: 16px auto 0;
+    }
+
+    .testimonial-card--compact {
+        padding: 14px 16px;
+    }
+
+    .testimonial-card--compact p {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin: 0 0 8px;
+    }
+
+    .testimonial-card--compact cite {
+        font-size: 0.78rem;
     }
 
     .content-box,
@@ -1294,4 +1385,32 @@ body, html {
     .evangelism-box h2 { font-size: 1.1em; }
     .evangelism-box p { font-size: 0.85em; }
     .giving-section { max-width: 280px; }
+
+    .photo-banner {
+        height: clamp(160px, 42vw, 220px);
+    }
+
+    .photo-banner__logo {
+        width: clamp(160px, 44vw, 220px);
+    }
+
+    .photo-banner--two-photos .photo-banner__logo {
+        width: clamp(170px, 46vw, 240px);
+    }
+
+    .hero-title {
+        font-size: clamp(1.2rem, 5vw, 1.5rem);
+    }
+
+    .content-box--wide {
+        padding: 20px 16px;
+    }
+
+    .hero-intro {
+        font-size: 1rem;
+    }
+
+    .hero-scripture {
+        font-size: 0.85em;
+    }
 }
