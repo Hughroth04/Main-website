@@ -4,6 +4,8 @@
     --color-primary: #4682B4;
     --color-primary-dark: #36648B;
     --color-section-bg: #B2E0F0;
+    --color-section-alt: #f8fbfd;
+    --color-footer-bg: #1a3a52;
     --color-text: #555;
     --site-header-height: 64px;
     --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
@@ -87,12 +89,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
-    min-height: 100vh;
     padding: 60px 20px;
     overflow: hidden;
     position: relative;
     background-color: var(--color-section-bg);
     text-align: center;
+}
+
+.section--alt {
+    background-color: var(--color-section-alt);
 }
 
 .section-inner {
@@ -810,7 +815,6 @@ h1, h2, h3, h4, h5, h6 {
     #about.section {
         padding-top: var(--site-header-height);
         padding-bottom: 40px;
-        min-height: auto;
     }
 
     .photo-banner {
@@ -947,7 +951,6 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     padding: 80px 20px 60px;
     background-color: var(--color-section-bg);
     position: relative;
@@ -1424,5 +1427,99 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-scripture {
         font-size: 0.85em;
+    }
+}
+
+/* ========== Site Footer ========== */
+.site-footer {
+    background-color: var(--color-footer-bg);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 48px 20px 24px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-ministry-name {
+    font-family: var(--font-serif);
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.footer-tagline {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 24px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.5em;
+    margin: 0 0 24px;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: #fff;
+}
+
+.footer-copyright {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media screen and (max-width: 768px) {
+    .site-footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-ministry-name {
+        font-size: 1.25em;
+    }
+
+    .footer-links {
+        gap: 6px 16px;
+    }
+
+    .footer-social {
+        font-size: 1.3em;
+        gap: 16px;
     }
 }
