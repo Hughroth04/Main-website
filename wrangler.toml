@@ -9,3 +9,13 @@ compatibility_date = "2024-01-01"
 binding = "DB"
 database_name = "hughroth-clicks"
 database_id = "placeholder-create-in-dashboard"
+
+# Email sending binding for invite notifications
+# See INVITE_SETUP.md for configuration instructions
+[[send_email]]
+name = "INVITE_EMAIL"
+
+# Environment variables to set in Cloudflare Dashboard:
+# INVITE_NOTIFY_FROM = "invites@hughroth.com"  (must be verified sender)
+# INVITE_NOTIFY_TO = "bro.roth@hughroth.com"   (must be verified destination)
+# INVITE_NOTIFY_WEBHOOK = (optional) webhook URL for additional notifications

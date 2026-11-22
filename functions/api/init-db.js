@@ -59,6 +59,23 @@ export async function onRequestGet(context) {
       CREATE INDEX IF NOT EXISTS idx_clicks_type ON clicks(link_type)
     `).run();
 
+    await env.DB.prepare(`
+      CREATE TABLE IF NOT EXISTS invite_requests (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        created_at TEXT DEFAULT (datetime('now')),
+        name TEXT NOT NULL,
+        phone TEXT,
+        email TEXT NOT NULL,
+        reason TEXT NOT NULL,
+        details TEXT,
+        page TEXT
+      )
+    `).run();
+
+    await env.DB.prepare(`
+      CREATE INDEX IF NOT EXISTS idx_invite_requests_created_at ON invite_requests(created_at)
+    `).run();
+
     return new Response(JSON.stringify({ ok: true, message: 'Database initialized' }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },

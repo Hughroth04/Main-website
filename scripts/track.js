@@ -34,6 +34,10 @@
     return href && href.indexOf('mailchi.mp/') !== -1;
   }
 
+  function isInviteHughLink(el) {
+    return el && el.getAttribute('data-track') === 'invite_hugh';
+  }
+
   function handleClick(e) {
     var target = e.target;
     while (target && target !== document.body) {
@@ -49,6 +53,10 @@
         }
         if (isNewsletterPdfLink(href)) {
           sendTrack('newsletter_pdf');
+          return;
+        }
+        if (isInviteHughLink(target)) {
+          sendTrack('invite_hugh');
           return;
         }
       }
